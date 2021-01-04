@@ -1,4 +1,4 @@
-%LET path = /folders/myshortcuts/git/sas-dev/macro_dev/;
+%LET path = /folders/myshortcuts/git/SMILE-SmartSASMacros/macros;
 %INCLUDE "&path/smile_attrn.sas";
 
 OPTIONS MINOPERATOR MINDELIMITER=',';

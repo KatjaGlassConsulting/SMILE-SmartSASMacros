@@ -1,4 +1,4 @@
-%LET path = /folders/myshortcuts/git/sas-dev/macro_dev/;
+%LET path = /folders/myshortcuts/git/SMILE-SmartSASMacros/macros;
 %INCLUDE "&path/smile_attr_var.sas";
 
 %PUT VARTYPE for name:  %smile_attr_var(sashelp.class, name, vartype);
