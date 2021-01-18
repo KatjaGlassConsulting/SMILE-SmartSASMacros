@@ -1,23 +1,62 @@
 %************************************************************************************************************************;
-%* Project    : SMILE – SAS Macros, Intuitive Library Extention 
-%* Purpose    : Example program for macro calls of %smile_attr_var
+%* Project    : n.a. 
+%* Purpose    : Example program for available SAS TOC issue
 %* Author     : Katja Glass
 %* Creation	  : 2021-01-18
 %* SAS Version: SAS 9.4
 %* License    : MIT (see bottom)
 %************************************************************************************************************************;
 
-%LET path = /folders/myshortcuts/git/SMILE-SmartSASMacros/macros;
-%INCLUDE "&path/smile_attr_var.sas";
+%LET root = /folders/myshortcuts/git/SMILE-SmartSASMacros;
+%LET out = &root/results;
 
-%PUT VARTYPE for name:  %smile_attr_var(sashelp.class, name, vartype);
-%PUT VARTYPE for age:   %smile_attr_var(sashelp.class, age, vartype);
-%PUT VARLABEL for name: %smile_attr_var(sashelp.class, name, varlabel);
-%PUT VARLEN for name:   %smile_attr_var(sashelp.class, name, varlen);
+DATA class;
+	SET sashelp.class;
+	const = 1;
+RUN;
+PROC SORT DATA=class; BY sex; RUN;
+       
+* start new ODS DOCUMENT;
+ODS DOCUMENT NAME=doc_results(WRITE);       
 
-%PUT data does not exist:     %smile_attr_var(dummy, name, varlen);
-%PUT variable does not exist: %smile_attr_var(sashelp.class, dummy, varlen);
-%PUT invalid attribute:       %smile_attr_var(sashelp.class, name, dummy);
+* create outputs;
+ODS PROCLABEL="Table 1: By Group Report about class";
+TITLE "Table 1: By Group Report about class";
+PROC REPORT DATA=class CONTENTS=""; 
+   BY sex;
+   COLUMN sex name age height weight; 
+   DEFINE sex / GROUP NOPRINT; 
+   BREAK BEFORE sex / CONTENTS="" page; 
+RUN; 
+
+TITLE "Table 2: Table Class Output";
+ODS PROCLABEL "Table 2: Table Class Output";	
+PROC REPORT DATA=class CONTENTS="";
+   COLUMN const name sex age height weight;
+   DEFINE const / GROUP NOPRINT; 
+   BREAK BEFORE const / CONTENTS="" page;
+RUN; 
+
+ODS DOCUMENT CLOSE;
+
+PROC DOCUMENT NAME=doc_results(READ);
+    LIST / levels=all details;
+RUN;
+
+PROC DOCUMENT NAME=doc_results;
+	COPY \Report#1\ByGroup1#1\Report#1 TO \Report#1;
+	COPY \Report#1\ByGroup2#1\Report#1 TO \Report#1;
+	DELETE \Report#1\ByGroup1#1;
+	DELETE \Report#1\ByGroup2#1;
+RUN;QUIT;
+
+PROC DOCUMENT NAME=doc_results(READ);
+    LIST / levels=all details;
+RUN;
+
+ODS PDF FILE= "&out/bug_sas_toc.pdf" contents;
+PROC DOCUMENT name=doc_results; replay; QUIT;
+ODS PDF CLOSE;
 
 %************************************************************************************************************************;
 %**                                                                                                                    **;
@@ -39,3 +78,4 @@
 %** TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE     **;
 %** SOFTWARE.                                                                                                          **;
 %************************************************************************************************************************;
+
