@@ -11,9 +11,10 @@
 %*				reduced to one level only. Optionally a label can be applied to all content items or the navigation label
 %*				can be removed completely.
 %* Comment    : The navigation in PDF documents can be one level only with this macro. CONTENTS="" must be applied to 
-%*				the PROC REPORT as option and additionally for a BREAK PAGE option.
+%*				the PROC REPORT as option and additionally for a BREAK BEFORE PAGE option.
 %* Issues     : The table of contents created per default by SAS (ODS PDF option TOC) is not linking the pages correctly when
-%*              using BY groups. Either use not TOC or create an own TOC, e.g. like described here:
+%*              using BY groups and having one ODS DOCUMENT with multiple outputs, using single ODS DOCUMENTS (one per each output)
+%*              then this is working correctly. In such a case, do use not a TOC or create an own TOC, e.g. like described here:
 %*              https://www.mwsug.org/proceedings/2012/S1/MWSUG-2012-S125.pdf
 %*
 %* ExampleProg: ../programs/test_smile_ods_document_flat_label.sas

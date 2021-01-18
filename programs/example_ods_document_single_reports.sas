@@ -90,6 +90,39 @@ PROC SGPLOT DATA = sashelp.class;
 RUN; 
 ODS DOCUMENT CLOSE;
 
+%***********************************************************************************************;
+%* a special output containing a custom TOC is created with the following code;
+%***********************************************************************************************;
+
+DATA titles;
+    LENGTH const 8 link $50 cat $50 caption $230 page 8;
+    const = 1; link = "#table1_x1";  cat = "Table 1"; caption = "content for 1"; page = 2;   OUTPUT;
+    const = 1; link = "#table2_x1";  cat = "Table 2"; caption = "content for 2"; page = 6;   OUTPUT;
+    const = 1; link = "#table3_x1";  cat = "Table 3"; caption = "content for 3"; page = 7;   OUTPUT;
+    const = 1; link = "#table4_x1";  cat = "Table 4"; caption = "content for 4"; page = 8;   OUTPUT;
+RUN;
+
+TITLE; FOOTNOTE;
+ODS DOCUMENT NAME = work.doc_toc(write);
+ODS PROCLABEL = "Table of Contents";
+PROC REPORT DATA = titles NOWD SPLIT = ' ' NOHEADER CONTENTS = "";
+    COLUMN const link cat caption page;
+    DEFINE const / ORDER NOPRINT;
+    DEFINE link / NOPRINT;
+    COMPUTE cat;
+        CALL define(_col_, 'url', link);
+    ENDCOMP;
+    COMPUTE caption;
+        CALL define(_col_, 'url', link);
+    ENDCOMP;
+    COMPUTE page;
+        CALL define(_col_, 'url', link);
+    ENDCOMP;
+    BREAK BEFORE const / CONTENTS = "" PAGE;
+RUN;
+ODS DOCUMENT CLOSE;
+
+
 %************************************************************************************************************************;
 %**                                                                                                                    **;
 %** License: MIT                                                                                                       **;

@@ -119,6 +119,49 @@ PROC DOCUMENT name=doc_res3; replay; QUIT;
 PROC DOCUMENT name=doc_res4; replay; QUIT;
 ODS PDF CLOSE;
 
+*************************************************************************;
+* create flat navigation PDF using multiple ODS DOCUMENTS with custom TOC;
+* comment: 
+*    - Table 1 and Table 3 have no label and no bookmark entry, but are included in the PDF
+*    - a looping macro might be feasible for generic use
+*    - the SAS TOC is created and linking correctly
+*************************************************************************;
+
+%INCLUDE "&root/programs/example_ods_document_single_reports.sas";
+%smile_ods_document_flat_label(document=doc_res1);
+%smile_ods_document_flat_label(document=doc_res2);
+%smile_ods_document_flat_label(document=doc_res3);
+%smile_ods_document_flat_label(document=doc_res4);
+ODS PDF FILE= "&out/ods_document_flat5_custom_toc.pdf" NOCONTENTS BOOKMARKGEN;
+%* include a custom TOC, but without an anchor;
+PROC DOCUMENT name=doc_toc; replay; QUIT;
+%* include tables with anchor;
+ODS PDF ANCHOR = 'table1_x1';
+PROC DOCUMENT name=doc_res1; replay; QUIT;
+ODS PDF ANCHOR = 'table2_x1';
+PROC DOCUMENT name=doc_res2; replay; QUIT;
+ODS PDF ANCHOR = 'table3_x1';
+PROC DOCUMENT name=doc_res3; replay; QUIT;
+ODS PDF ANCHOR = 'table4_x1';
+PROC DOCUMENT name=doc_res4; replay; QUIT;
+ODS PDF CLOSE;
+
+*************************************************************************;
+* create flat navigation PDF using multiple ODS DOCUMENTS - many outputs;
+*************************************************************************;
+%INCLUDE "&root/programs/example_ods_document_single_reports_big.sas";
+%MACRO do_it();
+	%DO i = 1 %TO 100;	
+		%smile_ods_document_flat_label(document=doc_res&i);
+	%END;
+	ODS PDF FILE= "&out/ods_document_flat6_big.pdf" CONTENTS;
+	%DO i = 1 %TO 100;	
+		PROC DOCUMENT name=doc_res&i; replay; QUIT;
+	%END;
+	ODS PDF CLOSE;
+%MEND;
+%do_it();
+
 
 %************************************************************************************************************************;
 %**                                                                                                                    **;
