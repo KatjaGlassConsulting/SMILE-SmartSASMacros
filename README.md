@@ -1,7 +1,7 @@
 # SMILE - Smart SAS Macros
 SMILE stands for <b>S</b>mart SAS <b>M</b>acros - an <b>I</b>ntuitive <b>L</b>ibrary <b>E</b>xtension
 
-Smile contains various small SAS macros supporting various tasks of a SAS programmer. Some macros are inspired by other open source macros and some by available papers. A complete overview can be seen below. More detailed documentation can be found in the macro headers or in the [wiki](./wiki).
+Smile contains various small SAS macros supporting various tasks of a SAS programmer. Some macros are inspired by other open source macros and some by available papers. A complete overview can be seen below. More detailed documentation can be found in the macro headers or in the [wiki](https://github.com/KatjaGlassConsulting/SMILE-SmartSASMacros/wiki).
 
 # Macro Overview
 
