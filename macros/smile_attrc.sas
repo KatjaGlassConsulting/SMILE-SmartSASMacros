@@ -7,7 +7,6 @@
 %* Purpose    : Function-style macro to return a character attribute of a dataset. The following attributes are available: 
 %*              CHARSET, COMPRESS, DATAREP, ENCODING, ENCRYPT, ENGINE, LABEL, LIB, MEM, MODE, MTYPE, SORTEDBY, SORTLVL, 
 %*              SORTSEQ, TYPE
-%* Comment    : When using MINOPERATOR and MINDELIMITER=',', then the ATTRIB parameter is checked for validitiy
 %*
 %* Author     : Katja Glass
 %* Creation   : 2021-01-04

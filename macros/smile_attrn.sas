@@ -8,7 +8,6 @@
 %*              ALTERPW, ANOBS, ANY, ARAND, ARWU, AUDIT, AUDIT_DATA, AUDIT_BEFORE, AUDIT_ERROR, CRDTE, ICONST, INDEX, 
 %*              ISINDEX, ISSUBSET, LRECL, LRID, MAXGEN, MAXRC, MODTE, NDEL, NEXTGEN, NLOBS, NLOBSF, NOBS, NVARS, PW, RADIX, 
 %*              READPW, REUSE, TAPE, WHSTMT, WRITEPW
-%* Comment    : When using MINOPERATOR and MINDELIMITER=',', then the ATTRIB parameter is checked for validitiy
 %*
 %* Author     : Katja Glass
 %* Creation   : 2021-01-04
@@ -22,7 +21,6 @@
 %************************************************************************************************************************;
 /*
 Examples:
-OPTIONS MINOPERATOR MINDELIMITER=',';
 %PUT Number of observations: %smile_attrn(sashelp.class, nobs);
 %IF %smile_attrn(sashelp.class, nvars) > 0 %THEN %PUT Dataset has variables;
 */
