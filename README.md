@@ -28,6 +28,7 @@ Folder | Content
 --- |---
 macros | This folder contains the core macros
 programs | General programs can be found here - test_* programs are available to check the functionality of macros
+results | Outputs generated through programs
 
 # License
 

@@ -10,7 +10,7 @@
 %* Comment    : When using MINOPERATOR and MINDELIMITER=',', then the ATTRIB parameter is checked for validitiy
 %*
 %* Author     : Katja Glass
-%* Creation	  : 2021-01-04
+%* Creation   : 2021-01-04
 %*
 %* Reference  : Main programming parts are coming from attrc.sas macro from Roland Rashleigh-Berry who 
 %*              has published his code under the unlicence license in his utility package 
@@ -51,28 +51,28 @@ PROC SORT DATA=sashelp.class OUT=class; BY sex name; RUN;
 %************************************************************************************************************************;
 
 %MACRO smile_attrc(data, attrib) / MINOPERATOR MINDELIMITER=',';
-	%LOCAL dsid rc macro;
-	
-	%LET macro = &sysmacroname;
-	
-	%IF NOT (%UPCASE(&attrib) IN (CHARSET,COMPRESS,DATAREP,ENCODING,ENCRYPT,ENGINE,LABEL,LIB,MEM,MODE,MTYPE,
-	                              SORTEDBY,SORTLVL,SORTSEQ,TYPE))
-	%THEN %DO;
-		%PUT %STR(ERR)OR: &macro - Invalid value for ATTRIB (&attrib).;
-		-1
-		%RETURN;
-	%END;
-	
-	%* perform action and put value for processing;
-  	%LET dsid=%SYSFUNC(OPEN(&data,is));
-  	
-  	%IF &dsid EQ 0 
-  	%THEN %DO;
-  		%PUT %STR(ERR)OR: &macro - DATA (&data) does not exist.;
-  		-1
-  	%END;
-  	%ELSE %DO;
-		%SYSFUNC(attrc(&dsid,&attrib))
-    	%LET rc=%SYSFUNC(CLOSE(&dsid));    	
-  	%END;
+    %LOCAL dsid rc macro;
+    
+    %LET macro = &sysmacroname;
+    
+    %IF NOT (%UPCASE(&attrib) IN (CHARSET,COMPRESS,DATAREP,ENCODING,ENCRYPT,ENGINE,LABEL,LIB,MEM,MODE,MTYPE,
+                                  SORTEDBY,SORTLVL,SORTSEQ,TYPE))
+    %THEN %DO;
+        %PUT %STR(ERR)OR: &macro - Invalid value for ATTRIB (&attrib).;
+        -1
+        %RETURN;
+    %END;
+    
+    %* perform action and put value for processing;
+    %LET dsid=%SYSFUNC(OPEN(&data,is));
+      
+    %IF &dsid EQ 0 
+    %THEN %DO;
+        %PUT %STR(ERR)OR: &macro - DATA (&data) does not exist.;
+        -1
+    %END;
+    %ELSE %DO;
+        %SYSFUNC(attrc(&dsid,&attrib))
+        %LET rc=%SYSFUNC(CLOSE(&dsid));
+    %END;
 %MEND smile_attrc;

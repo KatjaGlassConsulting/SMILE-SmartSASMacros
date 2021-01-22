@@ -11,7 +11,7 @@
 %* Comment    : When using MINOPERATOR and MINDELIMITER=',', then the ATTRIB parameter is checked for validitiy
 %*
 %* Author     : Katja Glass
-%* Creation	  : 2021-01-04
+%* Creation   : 2021-01-04
 %*
 %* Reference  : Main programming parts are coming from attrn.sas macro from Roland Rashleigh-Berry who 
 %*              has published his code under the unlicence license in his utility package 
@@ -51,30 +51,30 @@ OPTIONS MINOPERATOR MINDELIMITER=',';
 %************************************************************************************************************************;
 
 %MACRO smile_attrn(data, attrib) / MINOPERATOR MINDELIMITER=',';
-	%LOCAL dsid rc macro;
-	
-	%LET macro = &sysmacroname;
-	
-	%* check for valid options for ATTRIB when MINOPERATOR and MINDELIMITER is set;	
-	%IF NOT (%UPCASE(&attrib) IN (ALTERPW,ANOBS,ANY,ARAND,ARWU,AUDIT,AUDIT_DATA,AUDIT_BEFORE,AUDIT_ERROR,CRDTE,ICONST,INDEX,
-							     ISINDEX,ISSUBSET,LRECL,LRID,MAXGEN,MAXRC,MODTE,NDEL,NEXTGEN,NLOBS,NLOBSF,NOBS,NVARS,PW,RADIX,
-							     READPW,REUSE,TAPE,WHSTMT,WRITEPW))
-	%THEN %DO;
-		%PUT %STR(ERR)OR: &macro - Invalid value for ATTRIB (&attrib).;
-		-1
-		%RETURN;
-	%END;
-	
-	%* perform action and put value for processing;
-  	%LET dsid=%SYSFUNC(OPEN(&data,is));
-  	
-  	%IF &dsid EQ 0 
-  	%THEN %DO;
-  		%PUT %STR(ERR)OR: &macro - DATA (&data) does not exist.;
-  		-1
-  	%END;
-  	%ELSE %DO;
-		%SYSFUNC(attrn(&dsid,&attrib))
-    	%LET rc=%SYSFUNC(CLOSE(&dsid));    	
-  	%END;
+    %LOCAL dsid rc macro;
+    
+    %LET macro = &sysmacroname;
+    
+    %* check for valid options for ATTRIB when MINOPERATOR and MINDELIMITER is set;    
+    %IF NOT (%UPCASE(&attrib) IN (ALTERPW,ANOBS,ANY,ARAND,ARWU,AUDIT,AUDIT_DATA,AUDIT_BEFORE,AUDIT_ERROR,CRDTE,ICONST,INDEX,
+                                 ISINDEX,ISSUBSET,LRECL,LRID,MAXGEN,MAXRC,MODTE,NDEL,NEXTGEN,NLOBS,NLOBSF,NOBS,NVARS,PW,RADIX,
+                                 READPW,REUSE,TAPE,WHSTMT,WRITEPW))
+    %THEN %DO;
+        %PUT %STR(ERR)OR: &macro - Invalid value for ATTRIB (&attrib).;
+        -1
+        %RETURN;
+    %END;
+    
+    %* perform action and put value for processing;
+    %LET dsid=%SYSFUNC(OPEN(&data,is));
+      
+    %IF &dsid EQ 0 
+    %THEN %DO;
+        %PUT %STR(ERR)OR: &macro - DATA (&data) does not exist.;
+        -1
+    %END;
+    %ELSE %DO;
+        %SYSFUNC(attrn(&dsid,&attrib))
+        %LET rc=%SYSFUNC(CLOSE(&dsid));        
+    %END;
 %MEND smile_attrn;

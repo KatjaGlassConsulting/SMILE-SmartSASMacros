@@ -9,7 +9,7 @@
 %*              VARTYPE, VARLEN, VARLABEL, VARFMT and VARINFMT
 %*
 %* Author     : Katja Glass
-%* Creation	  : 2021-01-04
+%* Creation   : 2021-01-04
 %*
 %* Reference  : Main programming parts are coming from attrv.sas macro from Roland Rashleigh-Berry who 
 %*              has published his code under the unlicence license in his utility package 
@@ -50,40 +50,40 @@ Examples:
 %************************************************************************************************************************;
 
 %MACRO smile_attr_var(data, var, attrib);
-	%LOCAL dsid rc macro varnum;
-	
-	%LET macro = &sysmacroname;
-	
-	%* check for valid options for ATTRIB;
-	%IF %UPCASE(&attrib) NE VARTYPE AND
-		%UPCASE(&attrib) NE VARLEN AND
-		%UPCASE(&attrib) NE VARLABEL AND
-		%UPCASE(&attrib) NE VARFMT AND
-		%UPCASE(&attrib) NE VARINFMT
-	%THEN %DO;
-		%PUT %STR(ERR)OR: &macro - Invalid value for ATTRIB (&attrib) - only the following are supported:;
-		%PUT &macro - VARTYPE, VARLEN, VARLABEL, VARFMT and VARINFMT;
-		-1
-		%RETURN;
-	%END;
-	
-	%* perform action and put value for processing;
-  	%LET dsid=%SYSFUNC(OPEN(&data,is));
-  	
-  	%IF &dsid EQ 0 
-  	%THEN %DO;
-  		%PUT %STR(ERR)OR: &macro - DATA (&data) does not exist.;
-  		-1
-  	%END;
-  	%ELSE %DO;
-  		%LET varnum = %SYSFUNC(VARNUM(&dsid,&var));
-  		%IF &varnum LT 1
-  		%THEN %DO;
-  			%PUT %STR(ERR)OR: &macro - Variable VAR (&var) does not exist in DATA (&data).;
-  			-1
-  			%RETURN;
-  		%END;
-		%SYSFUNC(&attrib(&dsid,&varnum))
-    	%LET rc=%SYSFUNC(CLOSE(&dsid));    	
-  	%END;
+    %LOCAL dsid rc macro varnum;
+    
+    %LET macro = &sysmacroname;
+    
+    %* check for valid options for ATTRIB;
+    %IF %UPCASE(&attrib) NE VARTYPE AND
+        %UPCASE(&attrib) NE VARLEN AND
+        %UPCASE(&attrib) NE VARLABEL AND
+        %UPCASE(&attrib) NE VARFMT AND
+        %UPCASE(&attrib) NE VARINFMT
+    %THEN %DO;
+        %PUT %STR(ERR)OR: &macro - Invalid value for ATTRIB (&attrib) - only the following are supported:;
+        %PUT &macro - VARTYPE, VARLEN, VARLABEL, VARFMT and VARINFMT;
+        -1
+        %RETURN;
+    %END;
+    
+    %* perform action and put value for processing;
+    %LET dsid=%SYSFUNC(OPEN(&data,is));
+      
+    %IF &dsid EQ 0 
+    %THEN %DO;
+        %PUT %STR(ERR)OR: &macro - DATA (&data) does not exist.;
+        -1
+    %END;
+    %ELSE %DO;
+        %LET varnum = %SYSFUNC(VARNUM(&dsid,&var));
+        %IF &varnum LT 1
+        %THEN %DO;
+            %PUT %STR(ERR)OR: &macro - Variable VAR (&var) does not exist in DATA (&data).;
+            -1
+            %RETURN;
+        %END;
+        %SYSFUNC(&attrib(&dsid,&varnum))
+        %LET rc=%SYSFUNC(CLOSE(&dsid));        
+    %END;
 %MEND smile_attr_var;

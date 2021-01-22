@@ -10,7 +10,7 @@
 %*              998 - url not provided in quotes, otherwise html-return code (e.g. 404 file not found)
 %*
 %* Author     : Katja Glass
-%* Creation	  : 2021-01-04
+%* Creation   : 2021-01-04
 %*
 %* Reference  : The idea from this macro is coming from a paper by Joseph Henry - The ABCs of PROC HTTP
 %*              (https://www.sas.com/content/dam/SAS/support/en/sas-global-forum-proceedings/2019/3232-2019.pdf)
@@ -53,64 +53,64 @@ OPTIONS NONOTES;
 
 %MACRO smile_url_check(url=, return=rc, info=NO);
 
-	%LOCAL macro issue;	
-	%LET macro = &sysmacroname;
-	%LET issue = 0;
-	
-	%* check that URL is provided;
-	%IF %LENGTH(&url) = 0
-	%THEN %DO;
-		%PUT %STR(ERR)OR: &macro - URL must be provided.;
-		%IF %LENGTH(&return) > 0
-		%THEN %DO;
-			%LET &return = 999;
-		%END;
-		%RETURN;
-	%END;
-	
-	%* check that URL is provided in quotes;
-	DATA _NULL_;
-		ATTRIB url FORMAT=$2000.;
-		url = SYMGET('url');
-		IF NOT (SUBSTR(url,1,1) IN ("'",'"') AND SUBSTR(url,LENGTH(url))  IN ("'",'"'))
-		THEN DO;
-			PUT "ERR" "OR: &macro - URL must be provided in quotes.";
-			%IF %LENGTH(&return) > 0
-			%THEN %DO;
-				CALL SYMPUT("&return", "998");
-			%END;
-			CALL SYMPUT("issue", "1");
-		END;
-	RUN;
-	%IF &issue = 1
-		%THEN %RETURN;
-	
-	%* perform URL check;
-	FILENAME out TEMP;
-	FILENAME hdrs TEMP;
+    %LOCAL macro issue;    
+    %LET macro = &sysmacroname;
+    %LET issue = 0;
+    
+    %* check that URL is provided;
+    %IF %LENGTH(&url) = 0
+    %THEN %DO;
+        %PUT %STR(ERR)OR: &macro - URL must be provided.;
+        %IF %LENGTH(&return) > 0
+        %THEN %DO;
+            %LET &return = 999;
+        %END;
+        %RETURN;
+    %END;
+    
+    %* check that URL is provided in quotes;
+    DATA _NULL_;
+        ATTRIB url FORMAT=$2000.;
+        url = SYMGET('url');
+        IF NOT (SUBSTR(url,1,1) IN ("'",'"') AND SUBSTR(url,LENGTH(url))  IN ("'",'"'))
+        THEN DO;
+            PUT "ERR" "OR: &macro - URL must be provided in quotes.";
+            %IF %LENGTH(&return) > 0
+            %THEN %DO;
+                CALL SYMPUT("&return", "998");
+            %END;
+            CALL SYMPUT("issue", "1");
+        END;
+    RUN;
+    %IF &issue = 1
+        %THEN %RETURN;
+    
+    %* perform URL check;
+    FILENAME out TEMP;
+    FILENAME hdrs TEMP;
 
-	PROC HTTP URL=&url
-		HEADEROUT=hdrs;
-	RUN;
+    PROC HTTP URL=&url
+        HEADEROUT=hdrs;
+    RUN;
 
-	DATA _NULL_;
-		INFILE hdrs SCANOVER TRUNCOVER;
-		INPUT @'HTTP/1.1' code 4. message $255.;
+    DATA _NULL_;
+        INFILE hdrs SCANOVER TRUNCOVER;
+        INPUT @'HTTP/1.1' code 4. message $255.;
 
-		%IF %LENGTH(&return) > 0
-		%THEN %DO;
-			IF code=200 
-				THEN CALL SYMPUT("&return", "0");
-				ELSE CALL SYMPUT("&return", code);
-		%END;
-		%IF %UPCASE(&info) NE NO 
-		%THEN %DO;
-			PUT "Return Code: " code;
-			PUT "Return Message: " message;
-		%END;
-	RUN;
-	
-	FILENAME out;
-	FILENAME hdrs;
+        %IF %LENGTH(&return) > 0
+        %THEN %DO;
+            IF code=200 
+                THEN CALL SYMPUT("&return", "0");
+                ELSE CALL SYMPUT("&return", code);
+        %END;
+        %IF %UPCASE(&info) NE NO 
+        %THEN %DO;
+            PUT "Return Code: " code;
+            PUT "Return Message: " message;
+        %END;
+    RUN;
+    
+    FILENAME out;
+    FILENAME hdrs;
 
 %MEND smile_url_check;
