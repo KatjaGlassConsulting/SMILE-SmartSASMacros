@@ -9,11 +9,12 @@
 %*              SOURCEFILE      - Optional sas program file where PROC GROOVY code is stored, default is TEMP (only temporary)
 %*              RUN_GROOVY      - NO/YES indicator whether to run the final GROOVY code (default YES)
 %*              
-%* Purpose    : Merge multiple PDF files and create one bookmark entry per PDF file
+%* Purpose    : Merge multiple PDF files and create one bookmark entry per PDF file with PROC GROOVY and open-source Tool PDFBox
 %* Comment    : Make sure to download PDFBOX, e.g. from here https://pdfbox.apache.org/download.html - the full "app" version
 %* Issues     : "unable to resolve class" messages mean the PDFBOX is not provided correctly.
 %*              "ERROR: PROCEDURE GROOVY cannot be used when SAS is in the lockdown state." means that your SAS environment 
 %*              does not support PROC GROOVY, for this the macro cannot run the groovy code.
+%*              "WARNUNG: Removed /IDTree from /Names dictionary, doesn't belong there" - this message is coming from PDFBox.
 %*
 %* ExampleProg: ../programs/test_smile_pdf_merge.sas
 %*

@@ -13,6 +13,7 @@ smile_attr_var |Function-style macro to return a variable attribute of a dataset
 smile_attrc |Function-style macro to return a character attribute of a dataset. The following attributes are available: CHARSET, COMPRESS, DATAREP, ENCODING, ENCRYPT, ENGINE, LABEL, LIB, MEM, MODE, MTYPE, SORTEDBY, SORTLVL, SORTSEQ, TYPE
 smile_attrn |Function-style macro to return a numeric attribute of a dataset. The following attributes are available: ALTERPW, ANOBS, ANY, ARAND, ARWU, AUDIT, AUDIT_DATA, AUDIT_BEFORE, AUDIT_ERROR, CRDTE, ICONST, INDEX, ISINDEX, ISSUBSET, LRECL, LRID, MAXGEN, MAXRC, MODTE, NDEL, NEXTGEN, NLOBS, NLOBSF, NOBS, NVARS, PW, RADIX, READPW, REUSE, TAPE, WHSTMT, WRITEPW
 smile_ods_document_flat_label |Flat navigation and optionally re-label navigation for ODS DOCUMENT. The navigation bookmark level is reduced to one level only. Optionally a label can be applied to all content items or the navigation label can be removed completely.
+smile_pdf_merge |Merge multiple PDF files and create one bookmark entry per PDF file with PROC GROOVY and open-source Tool PDFBox
 smile_url_check |Check existence of URL and store result in return code, information can optionally be printed to the log
 smile_url_download |Downloads a file from an URL and store it locally on OUTFILE. Additionally return code can be stored and information can optionally be printed to the log.
 
