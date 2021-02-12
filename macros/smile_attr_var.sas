@@ -10,6 +10,7 @@
 %*
 %* Author     : Katja Glass
 %* Creation   : 2021-01-04
+%* License    : MIT
 %*
 %* Reference  : Main programming parts are coming from attrv.sas macro from Roland Rashleigh-Berry who 
 %*              has published his code under the unlicence license in his utility package 

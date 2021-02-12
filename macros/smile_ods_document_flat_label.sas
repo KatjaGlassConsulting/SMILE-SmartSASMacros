@@ -21,6 +21,7 @@
 %*
 %* Author     : Katja Glass
 %* Creation   : 2021-01-18
+%* License    : MIT
 %*
 %* Reference  : A nice overview of ODS DOCUMENT can be found here: https://support.sas.com/resources/papers/proceedings12/273-2012.pdf
 %*
@@ -38,28 +39,6 @@ Examples:
 %*This will flatten the navigation and use no navigation label at all (no navigation link at all for these items);
 %smile_ods_document_flat_label(document=doc_report1, label=, bookmarklabel = NO);
 */
-%************************************************************************************************************************;
-
-
-%************************************************************************************************************************;
-%**                                                                                                                    **;
-%** License: MIT                                                                                                       **;
-%**                                                                                                                    **;
-%** Copyright (c) 2021 Katja Glass Consulting                                                                          **;
-%**                                                                                                                    **;
-%** Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated       **;
-%** documentation files (the "Software"), to deal in the Software without restriction, including without limitation    **;
-%** the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and   **;
-%** to permit persons to whom the Software is furnished to do so, subject to the following conditions:                 **;
-%**                                                                                                                    **;
-%** The above copyright notice and this permission notice shall be included in all copies or substantial portions of   **;
-%** the Software.                                                                                                      **;
-%**                                                                                                                    **;
-%** THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO   **;
-%** THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE     **;
-%** AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,**;
-%** TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE     **;
-%** SOFTWARE.                                                                                                          **;
 %************************************************************************************************************************;
 
 %MACRO smile_ods_document_flat_label(document=, label=, bookmarkLabel = yes);
@@ -190,3 +169,45 @@ Examples:
     RUN;
     
 %MEND smile_ods_document_flat_label;
+
+/**
+  @file
+  @brief Flat navigation and optionally re-label navigation for ODS DOCUMENT.
+  @details Flat navigation and optionally re-label navigation for ODS DOCUMENT. The navigation bookmark level is 
+  reduced to one level only. Optionally a label can be applied to all content items or the navigation label
+  can be removed completely.
+
+  The navigation in PDF documents can be one level only with this macro. CONTENTS="" must be applied to 
+  the PROC REPORT as option and additionally for a BREAK BEFORE PAGE option.
+
+  The table of contents created per default by SAS (ODS PDF option TOC) is not linking the pages correctly when
+  using BY groups and having one ODS DOCUMENT with multiple outputs, using single ODS DOCUMENTS (one per each output)
+  then this is working correctly. In such a case, do use not a TOC or create an own TOC, e.g. like described here:
+  https://www.mwsug.org/proceedings/2012/S1/MWSUG-2012-S125.pdf
+
+  @remark
+  A nice overview of ODS DOCUMENT can be found here: https://support.sas.com/resources/papers/proceedings12/273-2012.pdf
+
+  Example Program
+  
+        ../programs/test_smile_ods_document_flat_label.sas
+
+  Examples
+
+        %*This will flatten the navigation and use the labels originally set with ODS PROCLABEL;
+        %smile_ods_document_flat_label(document=doc_reports);
+
+        %*This will flatten the navigation and use the label "Table 1.1.1" applied to all items of this store;
+        %smile_ods_document_flat_label(document=doc_report1, label=Table 1.1.1);
+
+        %*This will flatten the navigation and use no navigation label at all (no navigation link at all for these items);
+        %smile_ods_document_flat_label(document=doc_report1, label=, bookmarklabel = NO);
+
+  @param document ODS Document itemstore
+  @param label One label to apply on first element, all other labels are removed (optional), if not provided, labels are just rearranged and additional BY-labels removed
+  @param bookmarklabel Indicator whether to use Bookmark Labels if none is specified (YES Default), if LABEL is missing and BOOKMARKLABEL = NO, all labels are removed
+
+  @version 9.4
+  @author Katja Glass
+
+**/

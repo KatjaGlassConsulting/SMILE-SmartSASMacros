@@ -10,6 +10,7 @@
 %*
 %* Author     : Katja Glass
 %* Creation   : 2021-01-04
+%* License    : MIT
 %*
 %* Reference  : Main programming parts are coming from attrc.sas macro from Roland Rashleigh-Berry who 
 %*              has published his code under the unlicence license in his utility package 
@@ -75,6 +76,9 @@ PROC SORT DATA=sashelp.class OUT=class; BY sex name; RUN;
     @li SORTLVL
     @li SORTSEQ
     @li TYPE
+
+  <h4> SAS Macros </h4> 
+  @li smile_attr_var.sas
 
   @remark
   Main programming parts are coming from attrv.sas macro from Roland Rashleigh-Berry who has published his code under the unlicence license in his utility package
