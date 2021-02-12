@@ -1,11 +1,12 @@
-%************************************************************************************************************************;
-%* Project    : SMILE – SAS Macros, Intuitive Library Extention 
-%* Purpose    : Example program to create a multiple ODS DOCUMENTS with one output in each - quite many outputs
-%* Author     : Katja Glass
-%* Creation	  : 2021-01-18
-%* SAS Version: SAS 9.4
-%* License    : MIT (see bottom)
-%************************************************************************************************************************;
+/**
+  @file
+  @brief Example program to create multiple ODS DOCUMENTS with many outputs
+  @details Example program to create a multiple ODS DOCUMENTS with one output in each - quite many outputs
+
+  @version 9.4
+  @author Katja Glass
+
+**/
 
 ******************************************************************************;
 * example;
@@ -15,11 +16,11 @@ DATA cars;
 	SET sashelp.cars;
 	const = 1;
 RUN;
-PROC SORT DATA=cars; BY const make; RUN;       
-       
+PROC SORT DATA=cars; BY const make; RUN;
+
 %MACRO _create_many_outputs();
 	%DO i = 1 %TO 100;
-		ODS DOCUMENT NAME=doc_res&i(WRITE); 
+		ODS DOCUMENT NAME=doc_res&i(WRITE);
 		ODS PROCLABEL "Table &i: Car Output (many identical)";
 		TITLE "Table &i: Car Output (many identical)";
 		PROC REPORT DATA=cars nowd headline spacing=2 CONTENTS="";
