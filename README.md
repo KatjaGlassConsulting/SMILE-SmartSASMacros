@@ -33,7 +33,7 @@ results | Outputs generated through programs
 
 # License
 
-The macros and programs are using the MIT-License. See [LICENSE](./LICENSE) for more information.
+The macros and programs are using the MIT-License. See [LICENSE](https://github.com/KatjaGlassConsulting/SMILE-SmartSASMacros/blob/main/LICENSE) for more information.
 
 # Contact
 

@@ -28,3 +28,7 @@ To contribute:
 3.  Commit the change, using the [conventional commit](https://www.conventionalcommits.org/en/v1.0.0) standard
 4.  Push and make a PR
 
+Create documentation:
+
+`sasjs doc`
+

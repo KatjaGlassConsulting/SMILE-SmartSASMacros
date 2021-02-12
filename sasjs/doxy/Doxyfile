@@ -1,5 +1,4 @@
 ALPHABETICAL_INDEX     = NO
-
 ENABLE_PREPROCESSING   = NO
 EXTENSION_MAPPING      = sas=Java ddl=Java
 EXTRACT_LOCAL_CLASSES  = NO
@@ -25,7 +24,7 @@ INPUT                  = $(DOXY_CONTENT)../../README.md \
 USE_MDFILE_AS_MAINPAGE = README.md
 LAYOUT_FILE            = $(DOXY_CONTENT)DoxygenLayout.xml
 MAX_INITIALIZER_LINES  = 0
-PROJECT_NAME           = SAS JS
+PROJECT_NAME           = SMILE - Smart SAS Macros
 PROJECT_LOGO           = $(DOXY_CONTENT)logo.png
 PROJECT_BRIEF          = "SMILE – SAS Macros, Intuitive Library Extension"
 RECURSIVE              = YES
