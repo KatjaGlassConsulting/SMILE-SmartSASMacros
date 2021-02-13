@@ -1,7 +1,7 @@
 # Overview
 
 The following macros are available in the SMILE - Smart SAS Macros - an Intuitive Library Extension.
-
+ 
 Macro | Description
 ---|---
 smile_attr_var |Function-style macro to return a variable attribute of a dataset. The following attributes are available: VARTYPE, VARLEN, VARLABEL, VARFMT and VARINFMT
@@ -13,9 +13,10 @@ smile_pdf_read_bookmarks |Read PDF Bookmarks into a SAS dataset with the variabl
 smile_url_check |Check existence of URL and store result in return code, information can optionally be printed to the log
 smile_url_download |Downloads a file from an URL and store it locally on OUTFILE. Additionally return code can be stored and information can optionally be printed to the log.
 
-# Macros
+## Macros
 
-## smile_attr_var
+
+### smile_attr_var
 
 Key | Description
 ---|---
@@ -25,6 +26,7 @@ SAS Version |SAS 9.4
 Author |Katja Glass
 Date |2021-01-04
 Reference |Main programming parts are coming from attrv.sas macro from Roland Rashleigh-Berry who has published his code under the unlicence license in his utility package (http://www.datasavantconsulting.com/roland/Spectre/download.html)
+
 ********************************************
 
 The following parameters are used:
@@ -38,7 +40,7 @@ ATTRIB |SAS variable attrig keyword (e.g. VARTYPE, VARLEN, VARLABEL, VARFMT and 
 <br/>
 
 
-## smile_attrc
+### smile_attrc
 
 Key | Description
 ---|---
@@ -48,6 +50,7 @@ SAS Version |SAS 9.4
 Author |Katja Glass
 Date |2021-01-04
 Reference |Main programming parts are coming from attrc.sas macro from Roland Rashleigh-Berry who has published his code under the unlicence license in his utility package (http://www.datasavantconsulting.com/roland/Spectre/download.html)
+
 ********************************************
 
 The following parameters are used:
@@ -60,7 +63,7 @@ ATTRIB |SAS ATTRC keyword (e.g. TYPE, LIB, LABEL, SORTEDBY, ...)
 <br/>
 
 
-## smile_attrn
+### smile_attrn
 
 Key | Description
 ---|---
@@ -70,6 +73,7 @@ SAS Version |SAS 9.4
 Author |Katja Glass
 Date |2021-01-04
 Reference |Main programming parts are coming from attrn.sas macro from Roland Rashleigh-Berry who has published his code under the unlicence license in his utility package (http://www.datasavantconsulting.com/roland/Spectre/download.html)
+
 ********************************************
 
 The following parameters are used:
@@ -82,7 +86,7 @@ ATTRIB |SAS ATTRN keyword (e.g. NOBS, CRDTE, ...)
 <br/>
 
 
-## smile_ods_document_flat_label
+### smile_ods_document_flat_label
 
 Key | Description
 ---|---
@@ -95,6 +99,7 @@ Author |Katja Glass
 Date |2021-01-18
 Example Program |../programs/test_smile_ods_document_flat_label.sas
 Reference |A nice overview of ODS DOCUMENT can be found here: https://support.sas.com/resources/papers/proceedings12/273-2012.pdf
+
 ********************************************
 
 The following parameters are used:
@@ -108,7 +113,7 @@ BOOKMARKLABEL |Indicator whether to use Bookmark Labels if none is specified (YE
 <br/>
 
 
-## smile_pdf_merge
+### smile_pdf_merge
 
 Key | Description
 ---|---
@@ -121,6 +126,7 @@ Author |Katja Glass
 Date |2021-01-29
 Example Program |../programs/test_smile_pdf_merge.sas
 Reference |A paper explaining how to use PDFBOX with PROC GROOVY also for TOC is available in the following paper (https://www.lexjansen.com/phuse/2019/ct/CT05.pdf)
+
 ********************************************
 
 The following parameters are used:
@@ -136,7 +142,7 @@ RUN_GROOVY |NO/YES indicator whether to run the final GROOVY code (default YES)
 <br/>
 
 
-## smile_pdf_read_bookmarks
+### smile_pdf_read_bookmarks
 
 Key | Description
 ---|---
@@ -149,6 +155,7 @@ Author |Katja Glass
 Date |2021-02-13
 Example Program |../programs/test_smile_pdf_read_bookmarks.sas
 Reference |PDFBox contains a lot of useful functionalities (https://pdfbox.apache.org)
+
 ********************************************
 
 The following parameters are used:
@@ -162,7 +169,7 @@ PDFBOX_JAR |path and jar file name for PDFBOX open source tool, e.g. &path/pdfbo
 <br/>
 
 
-## smile_url_check
+### smile_url_check
 
 Key | Description
 ---|---
@@ -173,6 +180,7 @@ SAS Version |SAS 9.4
 Author |Katja Glass
 Date |2021-01-04
 Reference |The idea from this macro is coming from a paper by Joseph Henry - The ABCs of PROC HTTP (https://www.sas.com/content/dam/SAS/support/en/sas-global-forum-proceedings/2019/3232-2019.pdf)
+
 ********************************************
 
 The following parameters are used:
@@ -186,7 +194,7 @@ INFO |NO/YES indicator to print information to the log
 <br/>
 
 
-## smile_url_download
+### smile_url_download
 
 Key | Description
 ---|---
@@ -197,6 +205,7 @@ SAS Version |SAS 9.4
 Author |Katja Glass
 Date |2021-01-04
 Reference |The idea from this macro is coming from a paper by Joseph Henry - The ABCs of PROC HTTP (https://www.sas.com/content/dam/SAS/support/en/sas-global-forum-proceedings/2019/3232-2019.pdf)
+
 ********************************************
 
 The following parameters are used:
@@ -207,3 +216,6 @@ URL |http(s) URL which should be checked in quotes
 OUTFILE |output file provided in quotes
 RETURN |return code variable (scope should be global)
 INFO |NO/YES indicator to print information to the log
+
+<br/>
+

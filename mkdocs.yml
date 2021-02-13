@@ -1,11 +1,25 @@
 site_name: SMILE - Smart SAS Macros
 
-theme: material
-theme:
-  features:
-    - navigation.tabs
+#theme: material
+#    features:
+#        - navigation.tabs
   #favicon: img/favicon.png
 
 nav:
   - Overview: index.md
 
+# Configuration
+theme:
+  name: material
+
+  features:
+    #- navigation.instant
+    - navigation.sections
+    #- navigation.tabs
+  favicon: img/favicon.png
+  icon:
+    logo: logo
+
+markdown_extensions:
+  - toc:
+      permalink: true
