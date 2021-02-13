@@ -1,0 +1,3 @@
+This is a placeholder to store external libraries. The following libraries has been included in the project:
+
+- pdfbox-app-2.0.22.jar
