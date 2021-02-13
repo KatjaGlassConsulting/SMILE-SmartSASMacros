@@ -1,5 +1,5 @@
 %************************************************************************************************************************;
-%* Project    : SMILE – SAS Macros, Intuitive Library Extention 
+%* Project    : SMILE - SAS Macros, Intuitive Library Extention 
 %* Macro      : smile_attr_var
 %* Parameters : DATA   - name of the SAS dataset
 %*              VAR    - name of variable
@@ -66,35 +66,3 @@ Examples:
         %LET rc=%SYSFUNC(CLOSE(&dsid));
     %END;
 %MEND smile_attr_var;
-
-/**
-  @file
-  @brief returns a variable attribute of a dataset
-  @details Function-style macro to return a variable attribute of a dataset.
-  The following attributes are available:
-
-    @li VARTYPE
-    @li VARLEN
-    @li VARLABE
-    @li VARFMT
-    @li VARINFMT
-
-  @remark
-  Main programming parts are coming from attrv.sas macro from Roland Rashleigh-Berry who has published his code under the unlicence license in his utility package
-  (http://www.datasavantconsulting.com/roland/Spectre/download.html)
-
-  Examples
-
-        %PUT VARTYPE for name:  %smile_attr_var(sashelp.class, name, vartype);
-        %PUT VARTYPE for age:   %smile_attr_var(sashelp.class, age, vartype);
-        %PUT VARLABEL for name: %smile_attr_var(sashelp.class, name, varlabel);
-        %PUT VARLEN for name:   %smile_attr_var(sashelp.class, name, varlen);
-
-  @param data name of the SAS dataset
-  @param var name of variable
-  @param attrib SAS variable attrig keyword (e.g. VARTYPE, VARLEN, VARLABEL, VARFMT and VARINFMT)
-
-  @version 9.4
-  @author Katja Glass
-
-**/

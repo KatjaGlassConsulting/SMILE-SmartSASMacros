@@ -55,28 +55,3 @@ Examples:
         %LET rc=%SYSFUNC(CLOSE(&dsid));        
     %END;
 %MEND smile_attrn;
-
-/**
-  @file
-  @brief return a numeric attribute of a dataset
-  @details Function-style macro to return a numeric attribute of a dataset. The following attributes are available:
-  ALTERPW, ANOBS, ANY, ARAND, ARWU, AUDIT, AUDIT_DATA, AUDIT_BEFORE, AUDIT_ERROR, CRDTE, ICONST, INDEX, 
-  ISINDEX, ISSUBSET, LRECL, LRID, MAXGEN, MAXRC, MODTE, NDEL, NEXTGEN, NLOBS, NLOBSF, NOBS, NVARS, PW, RADIX, 
-  READPW, REUSE, TAPE, WHSTMT, WRITEPW
-
-  @remark
-  Main programming parts are coming from attrn.sas macro from Roland Rashleigh-Berry who has published his code under the unlicence license in his utility package 
-  (http://www.datasavantconsulting.com/roland/Spectre/download.html)
-
-  Examples
-
-        %PUT Number of observations: %smile_attrn(sashelp.class, nobs);
-        %IF %smile_attrn(sashelp.class, nvars) > 0 %THEN %PUT Dataset has variables;
-
-  @param data name of the SAS dataset
-  @param attrib SAS ATTRN keyword (e.g. NOBS, CRDTE, ...)
-
-  @version 9.4
-  @author Katja Glass
-
-**/

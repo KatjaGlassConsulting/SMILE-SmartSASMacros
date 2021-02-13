@@ -1,12 +1,11 @@
-/**
-  @file
-  @brief Example program to create multiple ODS DOCUMENTS with many outputs
-  @details Example program to create a multiple ODS DOCUMENTS with one output in each - quite many outputs
-
-  @version 9.4
-  @author Katja Glass
-
-**/
+%************************************************************************************************************************;
+%* Project    : SMILE – SAS Macros, Intuitive Library Extention 
+%* Purpose    : Example program to create a multiple ODS DOCUMENTS with one output in each - quite many outputs
+%* Author     : Katja Glass
+%* Creation	  : 2021-01-18
+%* SAS Version: SAS 9.4
+%* License    : MIT 
+%************************************************************************************************************************;
 
 ******************************************************************************;
 * example;

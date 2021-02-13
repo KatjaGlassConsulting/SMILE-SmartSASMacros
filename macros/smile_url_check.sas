@@ -93,31 +93,3 @@ OPTIONS NONOTES;
     FILENAME hdrs;
 
 %MEND smile_url_check;
-
-/**
-  @file
-  @brief Check existence of URL
-  @details Check existence of URL and store result in return code, information can optionally be printed to the log
-
-  Return codes are 0 - url found, 999 - no url provided, 998 - url not provided in quotes, otherwise html-return code (e.g. 404 file not found)
-
-  @remark
-  The idea from this macro is coming from a paper by Joseph Henry - The ABCs of PROC HTTP (https://www.sas.com/content/dam/SAS/support/en/sas-global-forum-proceedings/2019/3232-2019.pdf)
-
-  Examples
-
-        OPTIONS NONOTES;
-        %GLOBAL rc;
-        %smile_url_check(url="https://github.com/phuse-org/phuse-scripts/blob/master/whitepapers/scriptathons/central/dummy.sas");
-        %PUT &rc;
-        %smile_url_check(url="https://github.com/phuse-org/phuse-scripts/blob/master/whitepapers/scriptathons/central/Box_Plot_Baseline.sas");
-        %PUT &rc;
-
-  @param url http(s) URL which should be checked in quotes
-  @param return return code variable (scope should be global)
-  @param info NO/YES indicator to print information to the log
-
-  @version 9.4
-  @author Katja Glass
-
-**/
