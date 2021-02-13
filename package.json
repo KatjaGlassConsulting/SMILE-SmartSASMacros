@@ -1,0 +1,35 @@
+{
+  "name": "smilesasmacros",
+  "description": "SMILE – SAS Macros, Intuitive Library Extension",
+  "license": "MIT",
+  "keywords": [
+    "SAS",
+    "SASjs"
+  ],
+  "author": "Katja Glass",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KatjaGlassConsulting/SMILE-SmartSASMacros.git"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/KatjaGlassConsulting/SMILE-SmartSASMacros/issues"
+  },
+  "homepage": "https://github.com/KatjaGlassConsulting/SMILE-SmartSASMacros#readme",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs": "./sasjs/utils/build.sh"
+  },
+  "devDependencies": {
+    "@sasjs/cli": "^2.6.2"
+  }
+}

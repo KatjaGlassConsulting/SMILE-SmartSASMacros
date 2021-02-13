@@ -1,0 +1,13 @@
+{
+  "$schema": "https://cli.sasjs.io/sasjsconfig-schema.json",
+  "macroFolders": [
+    "macros"
+  ],
+  "programFolders": [
+    "programs"
+  ],
+  "docConfig": {
+    "displayMacroCore": false,
+    "outDirectory": "sasjsbuild/docs"
+  }
+}
