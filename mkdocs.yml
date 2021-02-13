@@ -1,0 +1,11 @@
+site_name: SMILE - Smart SAS Macros
+
+theme: material
+theme:
+  features:
+    - navigation.tabs
+  #favicon: img/favicon.png
+
+nav:
+  - Overview: index.md
+
