@@ -1,14 +1,14 @@
 %************************************************************************************************************************;
-%* Project    : SMILE - SAS Macros, Intuitive Library Extention 
+%* Project    : SMILE - SAS Macros, Intuitive Library Extension
 %* Macro      : smile_pdf_read_bookmarks
 %* Parameters : PDFFILE    - name of PDF file with bookmarks
 %*              OUTDAT     - output dataset
 %*              PDFBOX_JAR - path and jar file name for PDFBOX open source tool, e.g. &path/pdfbox-app-2.0.22.jar
-%*              
+%*
 %* Purpose    : Read PDF Bookmarks into a SAS dataset with the variables level, title and page
 %* Comment    : Make sure to download PDFBOX, e.g. from here https://pdfbox.apache.org/download.html - the full "app" version
 %* Issues     : "unable to resolve class" messages mean the PDFBOX is not provided correctly.
-%*              "ERROR: PROCEDURE GROOVY cannot be used when SAS is in the lockdown state." means that your SAS environment 
+%*              "ERROR: PROCEDURE GROOVY cannot be used when SAS is in the lock down state." means that your SAS environment
 %*              does not support PROC GROOVY, for this the macro cannot run the groovy code.
 %*
 %* ExampleProg: ../programs/test_smile_pdf_read_bookmarks.sas

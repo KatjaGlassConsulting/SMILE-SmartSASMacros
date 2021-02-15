@@ -1,10 +1,10 @@
 %************************************************************************************************************************;
-%* Project    : SMILE - SAS Macros, Intuitive Library Extention 
+%* Project    : SMILE - SAS Macros, Intuitive Library Extension
 %* Macro      : smile_attr_var
 %* Parameters : DATA   - name of the SAS dataset
 %*              VAR    - name of variable
-%*              ATTRIB - SAS variable attrig keyword (e.g. VARTYPE, VARLEN, VARLABEL, VARFMT and VARINFMT)
-%*              
+%*              ATTRIB - SAS variable attrib keyword (e.g. VARTYPE, VARLEN, VARLABEL, VARFMT and VARINFMT)
+%*
 %* Purpose    : Function-style macro to return a variable attribute of a dataset. The following attributes are available:
 %*              VARTYPE, VARLEN, VARLABEL, VARFMT and VARINFMT
 %*
@@ -12,8 +12,8 @@
 %* Creation   : 2021-01-04
 %* License    : MIT
 %*
-%* Reference  : Main programming parts are coming from attrv.sas macro from Roland Rashleigh-Berry who 
-%*              has published his code under the unlicence license in his utility package 
+%* Reference  : Main programming parts are coming from attrv.sas macro from Roland Rashleigh-Berry who
+%*              has published his code under the unlicence license in his utility package
 %*              (http://www.datasavantconsulting.com/roland/Spectre/download.html)
 %*
 %* SAS Version: SAS 9.4
@@ -33,7 +33,7 @@ Examples:
 
     %LET macro = &sysmacroname;
 
-    %* check for valid options for ATTRIB;
+    %* check: ATTRIB must contain valid options;
     %IF %UPCASE(&attrib) NE VARTYPE AND
         %UPCASE(&attrib) NE VARLEN AND
         %UPCASE(&attrib) NE VARLABEL AND

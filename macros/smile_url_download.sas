@@ -1,11 +1,11 @@
 %************************************************************************************************************************;
-%* Project    : SMILE – SAS Macros, Intuitive Library Extention 
+%* Project    : SMILE - SAS Macros, Intuitive Library Extension
 %* Macro      : smile_url_download
 %* Parameters : URL     - http(s) URL which should be checked in quotes
 %*              OUTFILE - output file provided in quotes
 %*              RETURN  - return code variable (scope should be global)
 %*              INFO    - NO/YES indicator to print information to the log
-%*              
+%*
 %* Purpose    : Downloads a file from an URL and store it locally on OUTFILE. Additionally return code can be stored and
 %*              information can optionally be printed to the log.
 %* Comment    : Return codes are 0 - URL found, 999 - no URL or OUTFILE provided,
@@ -23,20 +23,20 @@
 %************************************************************************************************************************;
 /*
 Examples:
-%smile_url_download(url="http://sas.cswenson.com/downloads/macros/AddFormatLib.sas", 
-                    outfile="/folders/myshortcuts/git/sas-dev/packages/chris_sas_macros/AddFormatLib.sas", 
-                    info=NO, 
+%smile_url_download(url="http://sas.cswenson.com/downloads/macros/AddFormatLib.sas",
+                    outfile="/folders/myshortcuts/git/sas-dev/packages/chris_sas_macros/AddFormatLib.sas",
+                    info=NO,
                     return=);
 */
 %************************************************************************************************************************;
 
 %MACRO smile_url_download(url=, outfile=, info=NO, return=);
 
-    %LOCAL macro issue;    
+    %LOCAL macro issue;
     %LET macro = &sysmacroname;
     %LET issue = 0;
-    
-    %* check that URL and OUTFILE is provided;
+
+    %* check: URL and OUTFILE must be provided;
     %IF %LENGTH(&url) = 0 OR %LENGTH(&outfile)
     %THEN %DO;
         %PUT %STR(ERR)OR: &macro - URL and OUTFILE must be provided.;
@@ -44,8 +44,8 @@ Examples:
             %THEN %LET &return = 999;
         %RETURN;
     %END;
-    
-    %* check that URL and OUTFILE is provided in quotes;
+
+    %* check: URL and OUTFILE must be provided in quotes;
     DATA _NULL_;
         ATTRIB url FORMAT=$2000.;
         ATTRIB outfile FORMAT=$2000.;
@@ -83,11 +83,11 @@ Examples:
 
         %IF %LENGTH(&return) > 0
         %THEN %DO;
-            IF code=200 
+            IF code=200
                 THEN CALL SYMPUT("&return", "0");
                 ELSE CALL SYMPUT("&return", code);
         %END;
-        %IF %UPCASE(&info) NE NO 
+        %IF %UPCASE(&info) NE NO
         %THEN %DO;
             PUT "Return Code: " code;
             PUT "Return Message: " message;

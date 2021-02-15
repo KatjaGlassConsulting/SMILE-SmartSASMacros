@@ -1,10 +1,10 @@
 %************************************************************************************************************************;
-%* Project    : SMILE – SAS Macros, Intuitive Library Extention 
+%* Project    : SMILE - SAS Macros, Intuitive Library Extension
 %* Macro      : smile_url_check
 %* Parameters : URL    - http(s) URL which should be checked in quotes
 %*              RETURN - return code variable (scope should be global)
 %*              INFO   - NO/YES indicator to print information to the log
-%*              
+%*
 %* Purpose    : Check existence of URL and store result in return code, information can optionally be printed to the log
 %* Comment    : Return codes are 0 - url found, 999 - no url provided,
 %*              998 - url not provided in quotes, otherwise html-return code (e.g. 404 file not found)
@@ -32,11 +32,11 @@ OPTIONS NONOTES;
 
 %MACRO smile_url_check(url=, return=rc, info=NO);
 
-    %LOCAL macro issue;    
+    %LOCAL macro issue;
     %LET macro = &sysmacroname;
     %LET issue = 0;
-    
-    %* check that URL is provided;
+
+    %* check: URL must be provided;
     %IF %LENGTH(&url) = 0
     %THEN %DO;
         %PUT %STR(ERR)OR: &macro - URL must be provided.;
@@ -46,8 +46,8 @@ OPTIONS NONOTES;
         %END;
         %RETURN;
     %END;
-    
-    %* check that URL is provided in quotes;
+
+    %* check: URL must be provided in quotes;
     DATA _NULL_;
         ATTRIB url FORMAT=$2000.;
         url = SYMGET('url');
@@ -63,7 +63,7 @@ OPTIONS NONOTES;
     RUN;
     %IF &issue = 1
         %THEN %RETURN;
-    
+
     %* perform URL check;
     FILENAME out TEMP;
     FILENAME hdrs TEMP;
@@ -78,17 +78,17 @@ OPTIONS NONOTES;
 
         %IF %LENGTH(&return) > 0
         %THEN %DO;
-            IF code=200 
+            IF code=200
                 THEN CALL SYMPUT("&return", "0");
                 ELSE CALL SYMPUT("&return", code);
         %END;
-        %IF %UPCASE(&info) NE NO 
+        %IF %UPCASE(&info) NE NO
         %THEN %DO;
             PUT "Return Code: " code;
             PUT "Return Message: " message;
         %END;
     RUN;
-    
+
     FILENAME out;
     FILENAME hdrs;
 

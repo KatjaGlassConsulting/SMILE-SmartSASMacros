@@ -1,19 +1,19 @@
 %************************************************************************************************************************;
-%* Project    : SMILE – SAS Macros, Intuitive Library Extention 
+%* Project    : SMILE - SAS Macros, Intuitive Library Extension
 %* Macro      : smile_attrc
 %* Parameters : DATA   - name of the SAS dataset
 %*              ATTRIB - SAS ATTRC keyword (e.g. TYPE, LIB, LABEL, SORTEDBY, ...)
-%*              
-%* Purpose    : Function-style macro to return a character attribute of a dataset. The following attributes are available: 
-%*              CHARSET, COMPRESS, DATAREP, ENCODING, ENCRYPT, ENGINE, LABEL, LIB, MEM, MODE, MTYPE, SORTEDBY, SORTLVL, 
+%*
+%* Purpose    : Function-style macro to return a character attribute of a dataset. The following attributes are available:
+%*              CHARSET, COMPRESS, DATAREP, ENCODING, ENCRYPT, ENGINE, LABEL, LIB, MEM, MODE, MTYPE, SORTEDBY, SORTLVL,
 %*              SORTSEQ, TYPE
 %*
 %* Author     : Katja Glass
 %* Creation   : 2021-01-04
 %* License    : MIT
 %*
-%* Reference  : Main programming parts are coming from attrc.sas macro from Roland Rashleigh-Berry who 
-%*              has published his code under the unlicence license in his utility package 
+%* Reference  : Main programming parts are coming from attrc.sas macro from Roland Rashleigh-Berry who
+%*              has published his code under the unlicence license in his utility package
 %*              (http://www.datasavantconsulting.com/roland/Spectre/download.html)
 %*
 %* SAS Version: SAS 9.4
@@ -33,6 +33,7 @@ PROC SORT DATA=sashelp.class OUT=class; BY sex name; RUN;
 
     %LET macro = &sysmacroname;
 
+    %* check: ATTRIB must contain valid options;
     %IF NOT (%UPCASE(&attrib) IN (CHARSET,COMPRESS,DATAREP,ENCODING,ENCRYPT,ENGINE,LABEL,LIB,MEM,MODE,MTYPE,
                                   SORTEDBY,SORTLVL,SORTSEQ,TYPE))
     %THEN %DO;

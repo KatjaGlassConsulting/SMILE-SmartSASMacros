@@ -1,18 +1,18 @@
 %************************************************************************************************************************;
-%* Project    : SMILE – SAS Macros, Intuitive Library Extention 
+%* Project    : SMILE - SAS Macros, Intuitive Library Extension
 %* Macro      : smile_pdf_merge
-%* Parameters : DATA	        - Input dataset containing INFILE and BOOKMARK variable,
+%* Parameters : DATA            - Input dataset containing INFILE and BOOKMARK variable,
 %*                                INFILE containing single pdf files (one file per observation),
-%*                                BOOKMARK contaiing the corresponding bookmark label for this file
+%*                                BOOKMARK containing the corresponding bookmark label for this file
 %*              OUTFILE         - Output PDF file (not in quotes)
 %*              PDFBOX_JAR_PATH - Path and jar file name for PDFBOX open source tool, e.g. &path/pdfbox-app-2.0.22.jar
-%*              SOURCEFILE      - Optional sas program file where PROC GROOVY code is stored, default is TEMP (only temporary)
+%*              SOURCEFILE      - Optional SAS program file where PROC GROOVY code is stored, default is TEMP (only temporary)
 %*              RUN_GROOVY      - NO/YES indicator whether to run the final GROOVY code (default YES)
-%*              
+%*
 %* Purpose    : Merge multiple PDF files and create one bookmark entry per PDF file with PROC GROOVY and open-source Tool PDFBox
 %* Comment    : Make sure to download PDFBOX, e.g. from here https://pdfbox.apache.org/download.html - the full "app" version
 %* Issues     : "unable to resolve class" messages mean the PDFBOX is not provided correctly.
-%*              "ERROR: PROCEDURE GROOVY cannot be used when SAS is in the lockdown state." means that your SAS environment 
+%*              "ERROR: PROCEDURE GROOVY cannot be used when SAS is in the lock down state." means that your SAS environment
 %*              does not support PROC GROOVY, for this the macro cannot run the groovy code.
 %*              "WARNUNG: Removed /IDTree from /Names dictionary, doesn't belong there" - this message is coming from PDFBox.
 %*
@@ -22,7 +22,7 @@
 %* Creation   : 2021-01-29
 %* License    : MIT
 %*
-%* Reference  : A paper explaining how to use PDFBOX with PROC GROOVY also for TOC is available in the following paper 
+%* Reference  : A paper explaining how to use PDFBOX with PROC GROOVY also for TOC is available in the following paper
 %*              (https://www.lexjansen.com/phuse/2019/ct/CT05.pdf)
 %*
 %* SAS Version: SAS 9.4
@@ -159,8 +159,8 @@ RUN;
         END;
         IF INDEX(bookmark,'"') > 0 AND _smile_msg = 0
         THEN DO;
-        	PUT "%STR(WAR)NING: Double quotes are not supported for BOOKMARK texts and are removed.";
-        	_smile_msg = 1;
+            PUT "%STR(WAR)NING: Double quotes are not supported for BOOKMARK texts and are removed.";
+            _smile_msg = 1;
         END;
         bookmark = TRANWRD(bookmark,'"','');
     RUN;
