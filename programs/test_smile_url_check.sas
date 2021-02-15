@@ -1,8 +1,8 @@
 %************************************************************************************************************************;
-%* Project    : SMILE – SAS Macros, Intuitive Library Extention 
+%* Project    : SMILE - SAS Macros, Intuitive Library Extension
 %* Purpose    : Example program for macro calls of %smile_url_check
 %* Author     : Katja Glass
-%* Creation	  : 2021-01-18
+%* Creation   : 2021-01-18
 %* SAS Version: SAS 9.4
 %* License    : MIT
 %************************************************************************************************************************;

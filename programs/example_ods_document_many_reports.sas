@@ -1,10 +1,10 @@
 %************************************************************************************************************************;
-%* Project    : SMILE – SAS Macros, Intuitive Library Extention 
+%* Project    : SMILE - SAS Macros, Intuitive Library Extension
 %* Purpose    : Example program to create an ODS DOCUMENT with many outputs
 %* Author     : Katja Glass
-%* Creation	  : 2021-01-18
+%* Creation   : 2021-01-18
 %* SAS Version: SAS 9.4
-%* License    : MIT 
+%* License    : MIT
 %************************************************************************************************************************;
 
 ******************************************************************************;
@@ -13,8 +13,8 @@
 
 * prepare datasets;
 DATA class;
-	SET sashelp.class;
-	const = 1;
+    SET sashelp.class;
+    const = 1;
 RUN;
 PROC SORT DATA=class; BY const sex;RUN;
 
@@ -25,10 +25,11 @@ RUN;
 PROC SORT DATA=shoes; BY region product; RUN;
 
 DATA cars;
-	SET sashelp.cars;
-	const = 1;
+    SET sashelp.cars;
+    const = 1;
 RUN;
 
+ODS _ALL_ CLOSE;
 
 * start new ODS DOCUMENT;
 ODS DOCUMENT NAME=doc_results(WRITE);
@@ -53,14 +54,14 @@ RUN;
 
 
 %MACRO loopTroughMake(make,i);
-	TITLE "Table &i: Multiple outputs - Cars for make = &make";
-	ODS PROCLABEL "Table &i: Multiple outputs - Cars for make = &make";
-	PROC REPORT DATA=cars(WHERE=(make = "&make")) nowd headline spacing=2 CONTENTS="";
-		COLUMN const make model type msrp;
-		DEFINE const / GROUP NOPRINT;
-		BREAK BEFORE const / CONTENTS="" page;
-	RUN;
-	TITLE;
+    TITLE "Table &i: Multiple outputs - Cars for make = &make";
+    ODS PROCLABEL "Table &i: Multiple outputs - Cars for make = &make";
+    PROC REPORT DATA=cars(WHERE=(make = "&make")) nowd headline spacing=2 CONTENTS="";
+        COLUMN const make model type msrp;
+        DEFINE const / GROUP NOPRINT;
+        BREAK BEFORE const / CONTENTS="" page;
+    RUN;
+    TITLE;
 %MEND;
 
 %loopTroughMake(Acura,3);
@@ -77,30 +78,8 @@ RUN;
 
 ODS PROCLABEL="Figure 1: Class graphic";
 PROC SGPLOT DATA = sashelp.class;
- 	VBAR age / GROUP = sex;
- 	TITLE 'Figure 1: Class overview by sex and age';
+    VBAR age / GROUP = sex;
+    TITLE 'Figure 1: Class overview by sex and age';
 RUN;
-
 ODS DOCUMENT CLOSE;
 
-
-%************************************************************************************************************************;
-%**                                                                                                                    **;
-%** License: MIT                                                                                                       **;
-%**                                                                                                                    **;
-%** Copyright (c) 2021 Katja Glass Consulting                                                                          **;
-%**                                                                                                                    **;
-%** Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated       **;
-%** documentation files (the "Software"), to deal in the Software without restriction, including without limitation    **;
-%** the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and   **;
-%** to permit persons to whom the Software is furnished to do so, subject to the following conditions:                 **;
-%**                                                                                                                    **;
-%** The above copyright notice and this permission notice shall be included in all copies or substantial portions of   **;
-%** the Software.                                                                                                      **;
-%**                                                                                                                    **;
-%** THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO   **;
-%** THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE     **;
-%** AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,**;
-%** TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE     **;
-%** SOFTWARE.                                                                                                          **;
-%************************************************************************************************************************;

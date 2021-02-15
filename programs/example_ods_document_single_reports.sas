@@ -1,10 +1,10 @@
 %************************************************************************************************************************;
-%* Project    : SMILE – SAS Macros, Intuitive Library Extention 
+%* Project    : SMILE - SAS Macros, Intuitive Library Extension
 %* Purpose    : Example program to create a multiple ODS DOCUMENTS with one output in each
 %* Author     : Katja Glass
-%* Creation	  : 2021-01-18
+%* Creation   : 2021-01-18
 %* SAS Version: SAS 9.4
-%* License    : MIT 
+%* License    : MIT
 %************************************************************************************************************************;
 
 ******************************************************************************;
@@ -13,59 +13,59 @@
 
 * prepare datasets;
 DATA class;
-	SET sashelp.class;
-	const = 1;
+    SET sashelp.class;
+    const = 1;
 RUN;
 PROC SORT DATA=class; BY const sex;RUN;
 
-DATA shoes; 
+DATA shoes;
    SET sashelp.shoes;
-   WHERE region in ('Canada', 'Pacific'); 
-RUN; 
+   WHERE region in ('Canada', 'Pacific');
+RUN;
 PROC SORT DATA=shoes; BY region product; RUN;
 
 DATA cars;
-	SET sashelp.cars;
-	const = 1;
+    SET sashelp.cars;
+    const = 1;
 RUN;
-       
-       
+
+ODS _ALL_ CLOSE;
 * start new ODS DOCUMENT;
-ODS DOCUMENT NAME=doc_res1(WRITE);       
+ODS DOCUMENT NAME=doc_res1(WRITE);
 
 * create output;
 ODS PROCLABEL "Table 1: By Group Report about shoes";
 TITLE "Table 1: By Group Report about shoes";
-PROC REPORT DATA=shoes CONTENTS=""; 
+PROC REPORT DATA=shoes CONTENTS="";
    BY region;
-   COLUMN region product sales; 
-   DEFINE region / GROUP NOPRINT; 
-   BREAK BEFORE region / CONTENTS="" page; 
-RUN; 
+   COLUMN region product sales;
+   DEFINE region / GROUP NOPRINT;
+   BREAK BEFORE region / CONTENTS="" page;
+RUN;
 ODS DOCUMENT CLOSE;
 
-ODS DOCUMENT NAME=doc_res2(WRITE);       
+ODS DOCUMENT NAME=doc_res2(WRITE);
 ODS PROCLABEL "Table 2: Table Class Output";
 TITLE "Table 2: Table Class Output";
 PROC REPORT DATA=class CONTENTS="";
    COLUMN const name sex age height weight;
-   DEFINE const / GROUP NOPRINT; 
+   DEFINE const / GROUP NOPRINT;
    BREAK BEFORE const / CONTENTS="" page;
-RUN; 
+RUN;
 ODS DOCUMENT CLOSE;
 
 
 %MACRO loopTroughMake(make,i);
-	ODS DOCUMENT NAME=doc_res&i(WRITE); 
-	ODS PROCLABEL "Table &i: Multiple outputs - Cars for make = &make";
-	TITLE "Table &i: Multiple outputs - Cars for make = &make";
-	PROC REPORT DATA=cars(WHERE=(make = "&make")) nowd headline spacing=2 CONTENTS="";
-		COLUMN const make model type msrp;
-		DEFINE const / GROUP NOPRINT;
-		BREAK BEFORE const / CONTENTS="" page;
-	RUN;
-	TITLE;
-	ODS DOCUMENT CLOSE;
+    ODS DOCUMENT NAME=doc_res&i(WRITE);
+    ODS PROCLABEL "Table &i: Multiple outputs - Cars for make = &make";
+    TITLE "Table &i: Multiple outputs - Cars for make = &make";
+    PROC REPORT DATA=cars(WHERE=(make = "&make")) nowd headline spacing=2 CONTENTS="";
+        COLUMN const make model type msrp;
+        DEFINE const / GROUP NOPRINT;
+        BREAK BEFORE const / CONTENTS="" page;
+    RUN;
+    TITLE;
+    ODS DOCUMENT CLOSE;
 %MEND;
 
 %loopTroughMake(Acura,3);
@@ -77,17 +77,17 @@ ODS PROCLABEL "Table 6: Different label";
 TITLE "Table 6: Different title and label";
 PROC REPORT DATA=class CONTENTS="";
    COLUMN const name sex age height weight;
-   DEFINE const / GROUP NOPRINT; 
+   DEFINE const / GROUP NOPRINT;
    BREAK BEFORE const / CONTENTS="" page;
-RUN; 
+RUN;
 ODS DOCUMENT CLOSE;
 
 ODS DOCUMENT NAME=doc_res_f1(WRITE);
 ODS PROCLABEL "Figure 1: Class graphic";
 PROC SGPLOT DATA = sashelp.class;
- 	VBAR age / GROUP = sex;
- 	TITLE 'Figure 1: Class overview by sex and age';
-RUN; 
+    VBAR age / GROUP = sex;
+    TITLE 'Figure 1: Class overview by sex and age';
+RUN;
 ODS DOCUMENT CLOSE;
 
 %***********************************************************************************************;

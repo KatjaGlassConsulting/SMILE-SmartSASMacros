@@ -1,8 +1,8 @@
 %************************************************************************************************************************;
-%* Project    : SMILE – SAS Macros, Intuitive Library Extention 
+%* Project    : SMILE - SAS Macros, Intuitive Library Extension
 %* Purpose    : Example program for macro calls of %smile_pdf_merge
 %* Author     : Katja Glass
-%* Creation	  : 2021-02-08
+%* Creation   : 2021-02-08
 %* SAS Version: SAS 9.4
 %* License    : MIT
 %************************************************************************************************************************;

@@ -1,13 +1,13 @@
 %************************************************************************************************************************;
-%* Project    : SMILE – SAS Macros, Intuitive Library Extention 
+%* Project    : SMILE - SAS Macros, Intuitive Library Extension
 %* Purpose    : Example program for macro calls of %smile_pdf_read_bookmarks
 %* Author     : Katja Glass
-%* Creation	  : 2021-02-13
+%* Creation   : 2021-02-13
 %* SAS Version: SAS 9.4
 %* License    : MIT
 %************************************************************************************************************************;
 
-%LET root = /folders/myshortcuts/git/SMILE-SmartSASMacros; 
+%LET root = /folders/myshortcuts/git/SMILE-SmartSASMacros;
 OPTIONS SASAUTOS=(SASAUTOS, "&root/macros");
 
 %smile_pdf_read_bookmarks(pdfFile = &root/results/ods_document_flat1.pdf,
