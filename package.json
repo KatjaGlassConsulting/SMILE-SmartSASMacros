@@ -23,7 +23,7 @@
     "url": "https://github.com/KatjaGlassConsulting/SMILE-SmartSASMacros/issues"
   },
   "homepage": "https://github.com/KatjaGlassConsulting/SMILE-SmartSASMacros#readme",
-  "version": "1.0.0",
+  "version": "0.9.1",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -31,5 +31,9 @@
   },
   "devDependencies": {
     "@sasjs/cli": "^2.6.2"
+  },
+  "directories": {
+    "doc": "docs",
+    "lib": "lib"
   }
 }

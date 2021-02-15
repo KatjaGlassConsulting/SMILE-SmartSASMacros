@@ -7,6 +7,15 @@ site_name: SMILE - Smart SAS Macros
 
 nav:
   - Overview: index.md
+  - Example Programs:
+    - smile_attrc: test_smile_attrc.md
+    - smile_attrn: test_smile_attrn.md
+    - smile_attr_var: test_smile_attr_var.md
+    #- smile_ods_document_flat_label: test_smile_ods_document_flat_label.md
+
+# Repository
+repo_name: SMILE-SmartSASMacros
+repo_url: https://github.com/KatjaGlassConsulting/SMILE-SmartSASMacros
 
 # Configuration
 theme:
