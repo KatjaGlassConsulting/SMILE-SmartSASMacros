@@ -1,0 +1,627 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
+    
+    
+      
+        <title>TEST_SMILE_ODS_DOCUMENT_FLAT_LABEL - SMILE - Smart SAS Macros</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.cb6bc1d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.39b8e14a.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#test_smile_ods_document_flat_label" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="SMILE - Smart SAS Macros" class="md-header-nav__button md-logo" aria-label="SMILE - Smart SAS Macros">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89"><path d="M3.136 17.387v42.932l42.932 21.467L3.136 17.387z"/><path d="M21.91 8l42.933 64.398-18.775 9.388L3.136 17.387 21.91 8z" fill-opacity=".5"/><path d="M67.535 17.387L40.273 35.543l21.878 32.818 5.384 2.691V17.387z"/><path d="M67.535 17.387v53.666l18.774-9.388V8l-18.774 9.387z" fill-opacity=".25"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            SMILE - Smart SAS Macros
+          </span>
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            
+              TEST_SMILE_ODS_DOCUMENT_FLAT_LABEL
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/KatjaGlassConsulting/SMILE-SmartSASMacros/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    SMILE-SmartSASMacros
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SMILE - Smart SAS Macros" class="md-nav__button md-logo" aria-label="SMILE - Smart SAS Macros">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89"><path d="M3.136 17.387v42.932l42.932 21.467L3.136 17.387z"/><path d="M21.91 8l42.933 64.398-18.775 9.388L3.136 17.387 21.91 8z" fill-opacity=".5"/><path d="M67.535 17.387L40.273 35.543l21.878 32.818 5.384 2.691V17.387z"/><path d="M67.535 17.387v53.666l18.774-9.388V8l-18.774 9.387z" fill-opacity=".25"/></svg>
+
+    </a>
+    SMILE - Smart SAS Macros
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/KatjaGlassConsulting/SMILE-SmartSASMacros/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    SMILE-SmartSASMacros
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
+      
+      <label class="md-nav__link" for="nav-2">
+        Example Programs
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Example Programs" data-md-level="1">
+        <label class="md-nav__title" for="nav-2">
+          <span class="md-nav__icon md-icon"></span>
+          Example Programs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test_smile_attrc/" class="md-nav__link">
+        smile_attrc
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test_smile_attrn/" class="md-nav__link">
+        smile_attrn
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test_smile_attr_var/" class="md-nav__link">
+        smile_attr_var
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#example-1-empty-ods-document-warning-expected" class="md-nav__link">
+    Example 1 - empty ODS Document - warning expected
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-2-not-existing-ods-document-error-expected" class="md-nav__link">
+    Example 2 - not existing ODS Document - error expected
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-3-create-flat-navigation-pdf-using-one-ods-document" class="md-nav__link">
+    Example 3 - create flat navigation PDF using one ODS DOCUMENT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-4-create-flat-navigation-pdf-using-multiple-ods-document-with-re-labeling" class="md-nav__link">
+    Example 4 - create flat navigation PDF using multiple ODS DOCUMENT - with re-labeling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-5-create-flat-navigation-pdf-using-multiple-ods-document" class="md-nav__link">
+    Example 5 - create flat navigation PDF using multiple ODS DOCUMENT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-6-create-flat-navigation-pdf-using-multiple-ods-document-no-entry-for-some-items" class="md-nav__link">
+    Example 6 - create flat navigation PDF using multiple ODS DOCUMENT - no entry for some items
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-7-create-flat-navigation-pdf-using-multiple-ods-documents-with-custom-toc" class="md-nav__link">
+    Example 7 - create flat navigation PDF using multiple ODS DOCUMENTS with custom TOC
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-7-create-flat-navigation-pdf-using-multiple-ods-documents-many-outputs" class="md-nav__link">
+    Example 7 - create flat navigation PDF using multiple ODS DOCUMENTS - many outputs
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/KatjaGlassConsulting/SMILE-SmartSASMacros/edit/master/docs/test_smile_ods_document_flat_label.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="test_smile_ods_document_flat_label">TEST_SMILE_ODS_DOCUMENT_FLAT_LABEL<a class="headerlink" href="#test_smile_ods_document_flat_label" title="Permanent link">&para;</a></h1>
+<p>Example program for macro calls of %smile_ods_document_flat_label</p>
+<ul>
+<li>Author     : Katja Glass</li>
+<li>Creation   : 2021-01-18</li>
+<li>SAS Version: SAS 9.4</li>
+<li>License    : MIT</li>
+</ul>
+<p>initialize macros</p>
+<div class="highlight"><pre><span></span><code><span class="nb">%LET</span> root = /folders/myshortcuts/git/SMILE-SmartSASMacros;
+<span class="k">OPTIONS</span> SASAUTOS=(SASAUTOS, <span class="s">&quot;</span><span class="nv">&amp;root</span><span class="s">/macros&quot;</span>);
+</code></pre></div>
+<p>set options for nice layout</p>
+<div class="highlight"><pre><span></span><code><span class="k">OPTIONS</span> NODATE NONUMBER NOCENTER ORIENTATION=landscape;
+<span class="k">TITLE</span>;<span class="k">FOOTNOTE</span>;
+<span class="k">OPTIONS</span> PS=<span class="m">35</span>;
+</code></pre></div>
+<h2 id="example-1-empty-ods-document-warning-expected">Example 1 - empty ODS Document - warning expected<a class="headerlink" href="#example-1-empty-ods-document-warning-expected" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>ODS DOCUMENT NAME = work<span class="m">.</span>doc_empty (write);
+ODS DOCUMENT CLOSE;
+<span class="nf">%smile_ods_document_flat_label</span>(document=doc_empty);<span class="k"></span>
+<span class="k">%PUT </span><span class="err">The warning </span><span class="k">message</span><span class="err"> is expected;</span>
+</code></pre></div>
+<p><strong>Log Output:</strong></p>
+<div class="highlight"><pre><span></span><code>WARNING: SMILE_ODS_DOCUMENT_FLAT_LABEL - DOCUMENT (doc_empty) does not contain any observations - no action done
+The warning message is expected
+</code></pre></div>
+<h2 id="example-2-not-existing-ods-document-error-expected">Example 2 - not existing ODS Document - error expected<a class="headerlink" href="#example-2-not-existing-ods-document-error-expected" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="nf">%smile_ods_document_flat_label</span>(document=doc_notexist);<span class="k"></span>
+<span class="k">%PUT </span><span class="err">The </span><span class="k">error</span><span class="err"> </span><span class="k">message</span><span class="err"> is expected;</span>
+</code></pre></div>
+<p><strong>Log Output:</strong></p>
+<div class="highlight"><pre><span></span><code>ERROR: SMILE_ODS_DOCUMENT_FLAT_LABEL - DOCUMENT (doc_notexist) is no existing ODS DOCUMENT. Macro will abort
+The error message is expected
+</code></pre></div>
+<h2 id="example-3-create-flat-navigation-pdf-using-one-ods-document">Example 3 - create flat navigation PDF using one ODS DOCUMENT<a class="headerlink" href="#example-3-create-flat-navigation-pdf-using-one-ods-document" title="Permanent link">&para;</a></h2>
+<p>comment:
+- the SAS TOC would be created a buggy linking (e.g. click "table 2" on TOC)
+- this had been reported to SAS(R)- it seems to be depending on viewer and whether the PDF is maximized or not
+- I am expecting no fix from SAS(R)</p>
+<p>include program to create one ODS document containing many reports</p>
+<div class="highlight"><pre><span></span><code><span class="nf">%INCLUDE</span> <span class="s">&quot;</span><span class="nv">&amp;root</span><span class="s">/programs/example_ods_document_many_reports.sas&quot;</span>;
+</code></pre></div>
+<p>create direct output without any modifications</p>
+<div class="highlight"><pre><span></span><code>ODS PDF <span class="k">FILE</span>= <span class="s">&quot;</span><span class="nv">&amp;root</span><span class="s">/results/ods_document_noflat1.pdf&quot;</span> nocontents<span class="kr">;</span>
+<span class="kr">PROC DOCUMENT </span>name=doc_results; replay<span class="kr">; QUIT;</span>
+ODS PDF CLOSE;
+</code></pre></div>
+<p>Navigation contains two levels, e.g. BYLINE categories
+<img alt="Screenshot" src="./img/screen_ods_doc_flat1.jpg" /></p>
+<p>update the document to flatten labels</p>
+<div class="highlight"><pre><span></span><code><span class="nf">%smile_ods_document_flat_label</span>(document=doc_results);
+</code></pre></div>
+<p>ODS Document is arranged flat
+Create PDF out of modified ODS Document</p>
+<div class="highlight"><pre><span></span><code>ODS PDF <span class="k">FILE</span>= <span class="s">&quot;</span><span class="nv">&amp;root</span><span class="s">/results/ods_document_flat1.pdf&quot;</span> nocontents<span class="kr">;</span>
+<span class="kr">PROC DOCUMENT </span>name=doc_results; replay<span class="kr">; QUIT;</span>
+ODS PDF CLOSE;
+</code></pre></div>
+<p>Navigation contains one level
+<img alt="Screenshot" src="./img/screen_ods_doc_flat2.jpg" /></p>
+<p>The following source can be used to see the structure of the ODS DOCUMENT</p>
+<div class="highlight"><pre><span></span><code>ODS LISTING<span class="kr">;</span>
+<span class="kr">PROC DOCUMENT </span>NAME=doc_results(READ);
+<span class="k">LIST</span> / levels=all details<span class="kr">;</span>
+<span class="kr">RUN;</span>
+ODS <span class="kc">_ALL_</span> CLOSE;
+</code></pre></div>
+<h2 id="example-4-create-flat-navigation-pdf-using-multiple-ods-document-with-re-labeling">Example 4 - create flat navigation PDF using multiple ODS DOCUMENT - with re-labeling<a class="headerlink" href="#example-4-create-flat-navigation-pdf-using-multiple-ods-document-with-re-labeling" title="Permanent link">&para;</a></h2>
+<p>comment:
+- a looping macro might be feasible for generic use
+- the SAS TOC is created and linking correctly
+- ODS PROCLABEL is ignored as the label is coming through the re-labeling</p>
+<p>include program to create one multiple ODS documents - one per report</p>
+<div class="highlight"><pre><span></span><code><span class="nf">%INCLUDE</span> <span class="s">&quot;</span><span class="nv">&amp;root</span><span class="s">/programs/example_ods_document_single_reports.sas&quot;</span>;
+</code></pre></div>
+<p>flat ODS Document structure per document, apply a specific label</p>
+<div class="highlight"><pre><span></span><code><span class="nf">%smile_ods_document_flat_label</span>(document=doc_res1,<span class="k">label</span>=<span class="k">Table</span> <span class="m">1</span>);
+<span class="nf">%smile_ods_document_flat_label</span>(document=doc_res2,<span class="k">label</span>=<span class="k">Table</span> <span class="m">2</span>);
+<span class="nf">%smile_ods_document_flat_label</span>(document=doc_res3,<span class="k">label</span>=<span class="k">Table</span> <span class="m">3</span>);
+<span class="nf">%smile_ods_document_flat_label</span>(document=doc_res4,<span class="k">label</span>=<span class="k">Table</span> <span class="m">4</span>);
+<span class="nf">%smile_ods_document_flat_label</span>(document=doc_res5,<span class="k">label</span>=<span class="k">Table</span> <span class="m">5</span>);
+<span class="nf">%smile_ods_document_flat_label</span>(document=doc_res6,<span class="k">label</span>=<span class="k">Table</span> <span class="m">6</span>);
+<span class="nf">%smile_ods_document_flat_label</span>(document=doc_res_f1,<span class="k">label</span>=Figure <span class="m">1</span>);
+</code></pre></div>
+<p>ODS Documents are flat now using a short label</p>
+<p>Create final PDF file</p>
+<div class="highlight"><pre><span></span><code>ODS PDF <span class="k">FILE</span>= <span class="s">&quot;</span><span class="nv">&amp;root</span><span class="s">/results/ods_document_flat2.pdf&quot;</span> CONTENTS<span class="kr">;</span>
+<span class="kr">PROC DOCUMENT </span>name=doc_res1; replay<span class="kr">; QUIT;</span>
+<span class="kr">PROC DOCUMENT </span>name=doc_res2; replay<span class="kr">; QUIT;</span>
+<span class="kr">PROC DOCUMENT </span>name=doc_res3; replay<span class="kr">; QUIT;</span>
+<span class="kr">PROC DOCUMENT </span>name=doc_res4; replay<span class="kr">; QUIT;</span>
+<span class="kr">PROC DOCUMENT </span>name=doc_res5; replay<span class="kr">; QUIT;</span>
+<span class="kr">PROC DOCUMENT </span>name=doc_res6; replay<span class="kr">; QUIT;</span>
+<span class="kr">PROC DOCUMENT </span>name=doc_res_f1; replay<span class="kr">; QUIT;</span>
+ODS PDF CLOSE;
+</code></pre></div>
+<p>Navigation contains one level with short bookmark labels, TOC contains still original labels</p>
+<p>Bookmarks</p>
+<p><img alt="Screenshot" src="./img/screen_ods_doc_flat3.jpg" /></p>
+<p>Table of Contents</p>
+<p><img alt="Screenshot" src="./img/screen_ods_doc_flat4.jpg" /></p>
+<h2 id="example-5-create-flat-navigation-pdf-using-multiple-ods-document">Example 5 - create flat navigation PDF using multiple ODS DOCUMENT<a class="headerlink" href="#example-5-create-flat-navigation-pdf-using-multiple-ods-document" title="Permanent link">&para;</a></h2>
+<p>comment:
+- a looping macro might be feasible for generic use
+- the SAS TOC is created and linking correctly</p>
+<p>include program to create one multiple ODS documents - one per report</p>
+<div class="highlight"><pre><span></span><code><span class="nf">%INCLUDE</span> <span class="s">&quot;</span><span class="nv">&amp;root</span><span class="s">/programs/example_ods_document_single_reports.sas&quot;</span>;
+</code></pre></div>
+<p>flat ODS Document structure per document, apply a specific label</p>
+<div class="highlight"><pre><span></span><code><span class="nf">%smile_ods_document_flat_label</span>(document=doc_res1);
+<span class="nf">%smile_ods_document_flat_label</span>(document=doc_res2);
+<span class="nf">%smile_ods_document_flat_label</span>(document=doc_res3);
+<span class="nf">%smile_ods_document_flat_label</span>(document=doc_res4);
+<span class="nf">%smile_ods_document_flat_label</span>(document=doc_res5);
+<span class="nf">%smile_ods_document_flat_label</span>(document=doc_res6);
+<span class="nf">%smile_ods_document_flat_label</span>(document=doc_res_f1);
+</code></pre></div>
+<p>ODS Documents are flat now using the original TITLE label</p>
+<p>Create final PDF file</p>
+<div class="highlight"><pre><span></span><code>ODS PDF <span class="k">FILE</span>= <span class="s">&quot;</span><span class="nv">&amp;root</span><span class="s">/results/ods_document_flat3.pdf&quot;</span> CONTENTS<span class="kr">;</span>
+<span class="kr">PROC DOCUMENT </span>name=doc_res1; replay<span class="kr">; QUIT;</span>
+<span class="kr">PROC DOCUMENT </span>name=doc_res2; replay<span class="kr">; QUIT;</span>
+<span class="kr">PROC DOCUMENT </span>name=doc_res3; replay<span class="kr">; QUIT;</span>
+<span class="kr">PROC DOCUMENT </span>name=doc_res4; replay<span class="kr">; QUIT;</span>
+<span class="kr">PROC DOCUMENT </span>name=doc_res5; replay<span class="kr">; QUIT;</span>
+<span class="kr">PROC DOCUMENT </span>name=doc_res6; replay<span class="kr">; QUIT;</span>
+<span class="kr">PROC DOCUMENT </span>name=doc_res_f1; replay<span class="kr">; QUIT;</span>
+ODS PDF CLOSE;
+</code></pre></div>
+<p>Navigation contains one level with original TITLE bookmark labels
+<img alt="Screenshot" src="./img/screen_ods_doc_flat5.jpg" /></p>
+<h2 id="example-6-create-flat-navigation-pdf-using-multiple-ods-document-no-entry-for-some-items">Example 6 - create flat navigation PDF using multiple ODS DOCUMENT - no entry for some items<a class="headerlink" href="#example-6-create-flat-navigation-pdf-using-multiple-ods-document-no-entry-for-some-items" title="Permanent link">&para;</a></h2>
+<p>comment:
+- Table 1 and Table 3 have no label and no bookmark entry, but are included in the PDF
+- a looping macro might be feasible for generic use
+- the SAS TOC is created and linking correctly</p>
+<p>include program to create one multiple ODS documents - one per report</p>
+<div class="highlight"><pre><span></span><code><span class="nf">%INCLUDE</span> <span class="s">&quot;</span><span class="nv">&amp;root</span><span class="s">/programs/example_ods_document_single_reports.sas&quot;</span>;
+</code></pre></div>
+<p>flat ODS Document structure per document, some should not contain a label</p>
+<div class="highlight"><pre><span></span><code><span class="nf">%smile_ods_document_flat_label</span>(document=doc_res1,<span class="k">label</span>=,bookmarklabel=no);
+<span class="nf">%smile_ods_document_flat_label</span>(document=doc_res2);
+<span class="nf">%smile_ods_document_flat_label</span>(document=doc_res3,<span class="k">label</span>=,bookmarklabel=no);
+<span class="nf">%smile_ods_document_flat_label</span>(document=doc_res4);
+</code></pre></div>
+<p>ODS Documents are flat now, some using no label</p>
+<p>Create final PDF file</p>
+<div class="highlight"><pre><span></span><code>ODS PDF <span class="k">FILE</span>= <span class="s">&quot;</span><span class="nv">&amp;root</span><span class="s">/results/ods_document_flat4.pdf&quot;</span> CONTENTS<span class="kr">;</span>
+<span class="kr">PROC DOCUMENT </span>name=doc_res1; replay<span class="kr">; QUIT;</span>
+<span class="kr">PROC DOCUMENT </span>name=doc_res2; replay<span class="kr">; QUIT;</span>
+<span class="kr">PROC DOCUMENT </span>name=doc_res3; replay<span class="kr">; QUIT;</span>
+<span class="kr">PROC DOCUMENT </span>name=doc_res4; replay<span class="kr">; QUIT;</span>
+ODS PDF CLOSE;
+</code></pre></div>
+<p>Navigation and TOC for labeled entries, content of all is included in PDF</p>
+<p>Bookmarks and TOC</p>
+<p><img alt="Screenshot" src="./img/screen_ods_doc_flat6.jpg" /></p>
+<p>Table 1 still in PDF</p>
+<p><img alt="Screenshot" src="./img/screen_ods_doc_flat7.jpg" /></p>
+<h2 id="example-7-create-flat-navigation-pdf-using-multiple-ods-documents-with-custom-toc">Example 7 - create flat navigation PDF using multiple ODS DOCUMENTS with custom TOC<a class="headerlink" href="#example-7-create-flat-navigation-pdf-using-multiple-ods-documents-with-custom-toc" title="Permanent link">&para;</a></h2>
+<p>comment:
+- Table 1 and Table 3 have no label and no bookmark entry, but are included in the PDF
+- a looping macro might be feasible for generic use
+- the SAS TOC is created and linking correctly</p>
+<p>create ODS Documents and flat them</p>
+<div class="highlight"><pre><span></span><code><span class="nf">%INCLUDE</span> <span class="s">&quot;</span><span class="nv">&amp;root</span><span class="s">/programs/example_ods_document_single_reports.sas&quot;</span>;
+<span class="nf">%smile_ods_document_flat_label</span>(document=doc_res1);
+<span class="nf">%smile_ods_document_flat_label</span>(document=doc_res2);
+<span class="nf">%smile_ods_document_flat_label</span>(document=doc_res3);
+<span class="nf">%smile_ods_document_flat_label</span>(document=doc_res4);
+</code></pre></div>
+<p>store the final PDF document with REPLAY options</p>
+<div class="highlight"><pre><span></span><code>ODS PDF <span class="k">FILE</span>= <span class="s">&quot;</span><span class="nv">&amp;root</span><span class="s">/results/ods_document_flat5_custom_toc.pdf&quot;</span> NOCONTENTS BOOKMARKGEN;
+</code></pre></div>
+<p>include a custom TOC, but without an anchor</p>
+<div class="highlight"><pre><span></span><code><span class="kr">PROC DOCUMENT </span>name=doc_toc; replay<span class="kr">; QUIT;</span>
+</code></pre></div>
+<p>include tables with anchor</p>
+<div class="highlight"><pre><span></span><code>ODS PDF ANCHOR = <span class="s">&#39;table1_x1&#39;</span><span class="kr">;</span>
+<span class="kr">PROC DOCUMENT </span>name=doc_res1; replay<span class="kr">; QUIT;</span>
+ODS PDF ANCHOR = <span class="s">&#39;table2_x1&#39;</span><span class="kr">;</span>
+<span class="kr">PROC DOCUMENT </span>name=doc_res2; replay<span class="kr">; QUIT;</span>
+ODS PDF ANCHOR = <span class="s">&#39;table3_x1&#39;</span><span class="kr">;</span>
+<span class="kr">PROC DOCUMENT </span>name=doc_res3; replay<span class="kr">; QUIT;</span>
+ODS PDF ANCHOR = <span class="s">&#39;table4_x1&#39;</span><span class="kr">;</span>
+<span class="kr">PROC DOCUMENT </span>name=doc_res4; replay<span class="kr">; QUIT;</span>
+ODS PDF CLOSE;
+</code></pre></div>
+<p>Custom TOC and flat bookmarks are available
+<img alt="Screenshot" src="./img/screen_ods_doc_flat8.jpg" /></p>
+<h2 id="example-7-create-flat-navigation-pdf-using-multiple-ods-documents-many-outputs">Example 7 - create flat navigation PDF using multiple ODS DOCUMENTS - many outputs<a class="headerlink" href="#example-7-create-flat-navigation-pdf-using-multiple-ods-documents-many-outputs" title="Permanent link">&para;</a></h2>
+<p>create 100 ODS Documents, flat them and create the output in PDF</p>
+<div class="highlight"><pre><span></span><code><span class="nf">%INCLUDE</span> <span class="s">&quot;</span><span class="nv">&amp;root</span><span class="s">/programs/example_ods_document_single_reports_big.sas&quot;</span>;
+<span class="nb">%MACRO</span> do_it();
+<span class="nb">%LOCAL</span> i;
+<span class="nb">%DO</span> i = <span class="m">1</span> <span class="nb">%TO</span> <span class="m">100</span>;
+<span class="nf">%smile_ods_document_flat_label</span>(document=doc_res<span class="nv">&amp;i</span>);
+<span class="nb">%END</span>;
+ODS PDF <span class="k">FILE</span>= <span class="s">&quot;</span><span class="nv">&amp;root</span><span class="s">/results/ods_document_flat6_big.pdf&quot;</span> CONTENTS;
+<span class="nb">%DO</span> i = <span class="m">1</span> <span class="nb">%TO</span> <span class="m">100</span><span class="kr">;</span>
+<span class="kr">PROC DOCUMENT </span>name=doc_res<span class="nv">&amp;i</span>; replay<span class="kr">; QUIT;</span>
+<span class="nb">%END</span>;
+ODS PDF CLOSE;
+<span class="nb">%MEND</span>;
+<span class="nf">%do_it</span>();
+</code></pre></div>
+<p>Flat bookmarks are available
+<img alt="Screenshot" src="./img/screen_ods_doc_flat9.jpg" /></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.18f0862e.min.js"></script>
+      <script src="../assets/javascripts/bundle.994580cf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: ['navigation.sections'],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.9c0e82ba.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
