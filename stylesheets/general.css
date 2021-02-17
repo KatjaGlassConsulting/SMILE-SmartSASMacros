@@ -1,0 +1,8 @@
+img {
+    border: 1px solid;
+}
+
+.md-typeset hr {
+    margin: 1.5em 0;
+    border-bottom: .05rem solid hsl(0deg 0% 0% / 25%);
+}

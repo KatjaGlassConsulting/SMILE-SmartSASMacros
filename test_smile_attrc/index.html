@@ -36,6 +36,8 @@
     
     
     
+      <link rel="stylesheet" href="../stylesheets/general.css">
+    
     
       
     
@@ -313,6 +315,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test_smile_ods_document_flat_label/" class="md-nav__link">
+        smile_ods_document_flat_label
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -389,7 +403,7 @@
 <h2 id="example-1-simple-examples">Example 1 - simple examples<a class="headerlink" href="#example-1-simple-examples" title="Permanent link">&para;</a></h2>
 <p>Create test data</p>
 <div class="highlight"><pre><span></span><code><span class="kr">DATA </span>class(<span class="k">LABEL</span>=<span class="s">&quot;SASHELP Example Dataset&quot;</span>);
-<span class="k">SET</span> sashelp<span class="m">.</span>class<span class="kr">;</span>
+   <span class="k">SET</span> sashelp<span class="m">.</span>class<span class="kr">;</span>
 <span class="kr">RUN;</span>
 <span class="kr">PROC SORT </span>DATA=class; <span class="k">BY</span> sex<span class="kr">; RUN;</span>
 </code></pre></div>

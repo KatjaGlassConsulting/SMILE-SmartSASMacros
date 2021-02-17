@@ -14,7 +14,7 @@
     
     
       
-        <title>TEST_SMILE_ODS_DOCUMENT_FLAT_LABEL - SMILE - Smart SAS Macros</title>
+        <title>smile_ods_document_flat_label - SMILE - Smart SAS Macros</title>
       
     
     
@@ -35,6 +35,8 @@
       
     
     
+    
+      <link rel="stylesheet" href="../stylesheets/general.css">
     
     
       
@@ -90,7 +92,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              TEST_SMILE_ODS_DOCUMENT_FLAT_LABEL
+              smile_ods_document_flat_label
             
           </span>
         </div>
@@ -209,14 +211,16 @@
 
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
       
       <label class="md-nav__link" for="nav-2">
         Example Programs
@@ -262,6 +266,105 @@
       <a href="../test_smile_attr_var/" class="md-nav__link">
         smile_attr_var
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          smile_ods_document_flat_label
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        smile_ods_document_flat_label
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#example-1-empty-ods-document-warning-expected" class="md-nav__link">
+    Example 1 - empty ODS Document - warning expected
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-2-not-existing-ods-document-error-expected" class="md-nav__link">
+    Example 2 - not existing ODS Document - error expected
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-3-create-flat-navigation-pdf-using-one-ods-document" class="md-nav__link">
+    Example 3 - create flat navigation PDF using one ODS DOCUMENT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-4-create-flat-navigation-pdf-using-multiple-ods-document-with-re-labeling" class="md-nav__link">
+    Example 4 - create flat navigation PDF using multiple ODS DOCUMENT - with re-labeling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-5-create-flat-navigation-pdf-using-multiple-ods-document" class="md-nav__link">
+    Example 5 - create flat navigation PDF using multiple ODS DOCUMENT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-6-create-flat-navigation-pdf-using-multiple-ods-document-no-entry-for-some-items" class="md-nav__link">
+    Example 6 - create flat navigation PDF using multiple ODS DOCUMENT - no entry for some items
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-7-create-flat-navigation-pdf-using-multiple-ods-documents-with-custom-toc" class="md-nav__link">
+    Example 7 - create flat navigation PDF using multiple ODS DOCUMENTS with custom TOC
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-7-create-flat-navigation-pdf-using-multiple-ods-documents-many-outputs" class="md-nav__link">
+    Example 7 - create flat navigation PDF using multiple ODS DOCUMENTS - many outputs
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -417,8 +520,8 @@ The error message is expected
 <span class="kr">PROC DOCUMENT </span>name=doc_results; replay<span class="kr">; QUIT;</span>
 ODS PDF CLOSE;
 </code></pre></div>
-<p>Navigation contains two levels, e.g. BYLINE categories
-<img alt="Screenshot" src="./img/screen_ods_doc_flat1.jpg" /></p>
+<p><strong>Navigation contains two levels, e.g. BYLINE categories</strong>
+<img alt="Screenshot" src="../img/screen_ods_doc_flat1.jpg" /></p>
 <p>update the document to flatten labels</p>
 <div class="highlight"><pre><span></span><code><span class="nf">%smile_ods_document_flat_label</span>(document=doc_results);
 </code></pre></div>
@@ -428,12 +531,12 @@ Create PDF out of modified ODS Document</p>
 <span class="kr">PROC DOCUMENT </span>name=doc_results; replay<span class="kr">; QUIT;</span>
 ODS PDF CLOSE;
 </code></pre></div>
-<p>Navigation contains one level
-<img alt="Screenshot" src="./img/screen_ods_doc_flat2.jpg" /></p>
+<p><strong>Navigation contains one level</strong>
+<img alt="Screenshot" src="../img/screen_ods_doc_flat2.jpg" /></p>
 <p>The following source can be used to see the structure of the ODS DOCUMENT</p>
 <div class="highlight"><pre><span></span><code>ODS LISTING<span class="kr">;</span>
 <span class="kr">PROC DOCUMENT </span>NAME=doc_results(READ);
-<span class="k">LIST</span> / levels=all details<span class="kr">;</span>
+   <span class="k">LIST</span> / levels=all details<span class="kr">;</span>
 <span class="kr">RUN;</span>
 ODS <span class="kc">_ALL_</span> CLOSE;
 </code></pre></div>
@@ -466,11 +569,12 @@ ODS <span class="kc">_ALL_</span> CLOSE;
 <span class="kr">PROC DOCUMENT </span>name=doc_res_f1; replay<span class="kr">; QUIT;</span>
 ODS PDF CLOSE;
 </code></pre></div>
-<p>Navigation contains one level with short bookmark labels, TOC contains still original labels</p>
-<p>Bookmarks</p>
-<p><img alt="Screenshot" src="./img/screen_ods_doc_flat3.jpg" /></p>
-<p>Table of Contents</p>
-<p><img alt="Screenshot" src="./img/screen_ods_doc_flat4.jpg" /></p>
+<p>Navigation and TOC contains one level with short bookmark labels, tables contain still full label</p>
+<hr />
+<p><strong>Bookmarks and TOC</strong></p>
+<p><img alt="Screenshot" src="../img/screen_ods_doc_flat3.jpg" /></p>
+<p><strong>First Table</strong></p>
+<p><img alt="Screenshot" src="../img/screen_ods_doc_flat4.jpg" /></p>
 <h2 id="example-5-create-flat-navigation-pdf-using-multiple-ods-document">Example 5 - create flat navigation PDF using multiple ODS DOCUMENT<a class="headerlink" href="#example-5-create-flat-navigation-pdf-using-multiple-ods-document" title="Permanent link">&para;</a></h2>
 <p>comment:
 - a looping macro might be feasible for generic use
@@ -499,8 +603,8 @@ ODS PDF CLOSE;
 <span class="kr">PROC DOCUMENT </span>name=doc_res_f1; replay<span class="kr">; QUIT;</span>
 ODS PDF CLOSE;
 </code></pre></div>
-<p>Navigation contains one level with original TITLE bookmark labels
-<img alt="Screenshot" src="./img/screen_ods_doc_flat5.jpg" /></p>
+<p><strong>Navigation contains one level with original TITLE bookmark labels</strong>
+<img alt="Screenshot" src="../img/screen_ods_doc_flat5.jpg" /></p>
 <h2 id="example-6-create-flat-navigation-pdf-using-multiple-ods-document-no-entry-for-some-items">Example 6 - create flat navigation PDF using multiple ODS DOCUMENT - no entry for some items<a class="headerlink" href="#example-6-create-flat-navigation-pdf-using-multiple-ods-document-no-entry-for-some-items" title="Permanent link">&para;</a></h2>
 <p>comment:
 - Table 1 and Table 3 have no label and no bookmark entry, but are included in the PDF
@@ -525,10 +629,11 @@ ODS PDF CLOSE;
 ODS PDF CLOSE;
 </code></pre></div>
 <p>Navigation and TOC for labeled entries, content of all is included in PDF</p>
-<p>Bookmarks and TOC</p>
-<p><img alt="Screenshot" src="./img/screen_ods_doc_flat6.jpg" /></p>
-<p>Table 1 still in PDF</p>
-<p><img alt="Screenshot" src="./img/screen_ods_doc_flat7.jpg" /></p>
+<hr />
+<p><strong>Bookmarks and TOC</strong></p>
+<p><img alt="Screenshot" src="../img/screen_ods_doc_flat6.jpg" /></p>
+<p><strong>Table 1 still in PDF</strong></p>
+<p><img alt="Screenshot" src="../img/screen_ods_doc_flat7.jpg" /></p>
 <h2 id="example-7-create-flat-navigation-pdf-using-multiple-ods-documents-with-custom-toc">Example 7 - create flat navigation PDF using multiple ODS DOCUMENTS with custom TOC<a class="headerlink" href="#example-7-create-flat-navigation-pdf-using-multiple-ods-documents-with-custom-toc" title="Permanent link">&para;</a></h2>
 <p>comment:
 - Table 1 and Table 3 have no label and no bookmark entry, but are included in the PDF
@@ -558,26 +663,26 @@ ODS PDF ANCHOR = <span class="s">&#39;table4_x1&#39;</span><span class="kr">;</s
 <span class="kr">PROC DOCUMENT </span>name=doc_res4; replay<span class="kr">; QUIT;</span>
 ODS PDF CLOSE;
 </code></pre></div>
-<p>Custom TOC and flat bookmarks are available
-<img alt="Screenshot" src="./img/screen_ods_doc_flat8.jpg" /></p>
+<p><strong>Custom TOC and flat bookmarks are available</strong>
+<img alt="Screenshot" src="../img/screen_ods_doc_flat8.jpg" /></p>
 <h2 id="example-7-create-flat-navigation-pdf-using-multiple-ods-documents-many-outputs">Example 7 - create flat navigation PDF using multiple ODS DOCUMENTS - many outputs<a class="headerlink" href="#example-7-create-flat-navigation-pdf-using-multiple-ods-documents-many-outputs" title="Permanent link">&para;</a></h2>
 <p>create 100 ODS Documents, flat them and create the output in PDF</p>
 <div class="highlight"><pre><span></span><code><span class="nf">%INCLUDE</span> <span class="s">&quot;</span><span class="nv">&amp;root</span><span class="s">/programs/example_ods_document_single_reports_big.sas&quot;</span>;
 <span class="nb">%MACRO</span> do_it();
-<span class="nb">%LOCAL</span> i;
-<span class="nb">%DO</span> i = <span class="m">1</span> <span class="nb">%TO</span> <span class="m">100</span>;
-<span class="nf">%smile_ods_document_flat_label</span>(document=doc_res<span class="nv">&amp;i</span>);
-<span class="nb">%END</span>;
-ODS PDF <span class="k">FILE</span>= <span class="s">&quot;</span><span class="nv">&amp;root</span><span class="s">/results/ods_document_flat6_big.pdf&quot;</span> CONTENTS;
-<span class="nb">%DO</span> i = <span class="m">1</span> <span class="nb">%TO</span> <span class="m">100</span><span class="kr">;</span>
-<span class="kr">PROC DOCUMENT </span>name=doc_res<span class="nv">&amp;i</span>; replay<span class="kr">; QUIT;</span>
-<span class="nb">%END</span>;
-ODS PDF CLOSE;
+   <span class="nb">%LOCAL</span> i;
+   <span class="nb">%DO</span> i = <span class="m">1</span> <span class="nb">%TO</span> <span class="m">100</span>;
+       <span class="nf">%smile_ods_document_flat_label</span>(document=doc_res<span class="nv">&amp;i</span>);
+   <span class="nb">%END</span>;
+   ODS PDF <span class="k">FILE</span>= <span class="s">&quot;</span><span class="nv">&amp;root</span><span class="s">/results/ods_document_flat6_big.pdf&quot;</span> CONTENTS;
+   <span class="nb">%DO</span> i = <span class="m">1</span> <span class="nb">%TO</span> <span class="m">100</span><span class="kr">;</span>
+<span class="kr">       PROC DOCUMENT </span>name=doc_res<span class="nv">&amp;i</span>; replay<span class="kr">; QUIT;</span>
+   <span class="nb">%END</span>;
+   ODS PDF CLOSE;
 <span class="nb">%MEND</span>;
 <span class="nf">%do_it</span>();
 </code></pre></div>
-<p>Flat bookmarks are available
-<img alt="Screenshot" src="./img/screen_ods_doc_flat9.jpg" /></p>
+<p><strong>Flat bookmarks are available</strong>
+<img alt="Screenshot" src="../img/screen_ods_doc_flat9.jpg" /></p>
                 
               
               
@@ -592,6 +697,27 @@ ODS PDF CLOSE;
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../test_smile_attr_var/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                smile_attr_var
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
