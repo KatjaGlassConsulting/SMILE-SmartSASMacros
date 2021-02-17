@@ -11,7 +11,12 @@ nav:
     - smile_attrc: test_smile_attrc.md
     - smile_attrn: test_smile_attrn.md
     - smile_attr_var: test_smile_attr_var.md
+    - smile_ods_document_flat_label : test_smile_ods_document_flat_label.md
     #- smile_ods_document_flat_label: test_smile_ods_document_flat_label.md
+
+# Style Sheet
+extra_css:
+  - stylesheets/general.css
 
 # Repository
 repo_name: SMILE-SmartSASMacros
@@ -34,3 +39,5 @@ markdown_extensions:
       permalink: true
   - pymdownx.highlight
   - pymdownx.superfences
+  - pymdownx.snippets:
+      base_path: .

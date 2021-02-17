@@ -2,10 +2,10 @@
 
 Example program for macro calls of %smile_ods_document_flat_label
 
-- Author     : Katja Glass
-- Creation   : 2021-01-18
-- SAS Version: SAS 9.4
-- License    : MIT
+ - Author     : Katja Glass
+ - Creation   : 2021-01-18
+ - SAS Version: SAS 9.4
+ - License    : MIT
  
 
 initialize macros
@@ -91,7 +91,7 @@ PROC DOCUMENT name=doc_results; replay; QUIT;
 ODS PDF CLOSE;
 ```
 
-Navigation contains two levels, e.g. BYLINE categories
+**Navigation contains two levels, e.g. BYLINE categories**
 ![Screenshot](./img/screen_ods_doc_flat1.jpg)
  
 
@@ -110,7 +110,7 @@ PROC DOCUMENT name=doc_results; replay; QUIT;
 ODS PDF CLOSE;
 ```
 
-Navigation contains one level
+**Navigation contains one level**
 ![Screenshot](./img/screen_ods_doc_flat2.jpg)
  
 
@@ -119,7 +119,7 @@ The following source can be used to see the structure of the ODS DOCUMENT
 ```sas
 ODS LISTING;
 PROC DOCUMENT NAME=doc_results(READ);
-LIST / levels=all details;
+   LIST / levels=all details;
 RUN;
 ODS _ALL_ CLOSE;
 ```
@@ -172,14 +172,14 @@ PROC DOCUMENT name=doc_res_f1; replay; QUIT;
 ODS PDF CLOSE;
 ```
 
-Navigation contains one level with short bookmark labels, TOC contains still original labels
- 
+Navigation and TOC contains one level with short bookmark labels, tables contain still full label
+** **
 
-Bookmarks
+**Bookmarks and TOC**
 
 ![Screenshot](./img/screen_ods_doc_flat3.jpg)
 
-Table of Contents
+**First Table**
 
 ![Screenshot](./img/screen_ods_doc_flat4.jpg)
  
@@ -227,7 +227,7 @@ PROC DOCUMENT name=doc_res_f1; replay; QUIT;
 ODS PDF CLOSE;
 ```
 
-Navigation contains one level with original TITLE bookmark labels
+**Navigation contains one level with original TITLE bookmark labels**
 ![Screenshot](./img/screen_ods_doc_flat5.jpg)
  
 
@@ -270,13 +270,13 @@ ODS PDF CLOSE;
 ```
 
 Navigation and TOC for labeled entries, content of all is included in PDF
- 
+** **
 
-Bookmarks and TOC
+**Bookmarks and TOC**
 
 ![Screenshot](./img/screen_ods_doc_flat6.jpg)
 
-Table 1 still in PDF
+**Table 1 still in PDF**
 
 ![Screenshot](./img/screen_ods_doc_flat7.jpg)
  
@@ -334,7 +334,7 @@ ODS PDF CLOSE;
 
  
 
-Custom TOC and flat bookmarks are available
+**Custom TOC and flat bookmarks are available**
 ![Screenshot](./img/screen_ods_doc_flat8.jpg)
  
 
@@ -348,18 +348,18 @@ create 100 ODS Documents, flat them and create the output in PDF
 ```sas
 %INCLUDE "&root/programs/example_ods_document_single_reports_big.sas";
 %MACRO do_it();
-%LOCAL i;
-%DO i = 1 %TO 100;
-%smile_ods_document_flat_label(document=doc_res&i);
-%END;
-ODS PDF FILE= "&root/results/ods_document_flat6_big.pdf" CONTENTS;
-%DO i = 1 %TO 100;
-PROC DOCUMENT name=doc_res&i; replay; QUIT;
-%END;
-ODS PDF CLOSE;
+   %LOCAL i;
+   %DO i = 1 %TO 100;
+       %smile_ods_document_flat_label(document=doc_res&i);
+   %END;
+   ODS PDF FILE= "&root/results/ods_document_flat6_big.pdf" CONTENTS;
+   %DO i = 1 %TO 100;
+       PROC DOCUMENT name=doc_res&i; replay; QUIT;
+   %END;
+   ODS PDF CLOSE;
 %MEND;
 %do_it();
 ```
 
-Flat bookmarks are available
+**Flat bookmarks are available**
 ![Screenshot](./img/screen_ods_doc_flat9.jpg)

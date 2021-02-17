@@ -94,8 +94,8 @@ PROC DOCUMENT name=doc_res5; replay; QUIT;
 PROC DOCUMENT name=doc_res6; replay; QUIT;
 PROC DOCUMENT name=doc_res_f1; replay; QUIT;
 ODS PDF CLOSE;
-%* Navigation contains one level with short bookmark labels, TOC contains still original labels;
-%* (screenshot: screen_ods_doc_flat3.jpg (Bookmarks) # screen_ods_doc_flat4.jpg (Table of Contents));
+%* Navigation and TOC contains one level with short bookmark labels, tables contain still full label;
+%* (screenshot: screen_ods_doc_flat3.jpg (Bookmarks and TOC) # screen_ods_doc_flat4.jpg (First Table));
 
 *************************************************************************;
 * Example 5 - create flat navigation PDF using multiple ODS DOCUMENT;
