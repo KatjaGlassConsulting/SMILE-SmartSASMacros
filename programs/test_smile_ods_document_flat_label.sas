@@ -2,12 +2,12 @@
 %* Project    : SMILE - SAS Macros, Intuitive Library Extension
 %* Purpose    : Example program for macro calls of %smile_ods_document_flat_label
 %* Author     : Katja Glass
-%* Creation   : 2021-01-18
+%* Creation   : 2021-02-18
 %* SAS Version: SAS 9.4
 %* License    : MIT
 %************************************************************************************************************************;
 
-%* initialize macros;
+%* Initialize macros;
 %LET root = /folders/myshortcuts/git/SMILE-SmartSASMacros;
 OPTIONS SASAUTOS=(SASAUTOS, "&root/macros");
 
@@ -32,7 +32,8 @@ ODS DOCUMENT CLOSE;
 
 *************************************************************************;
 * Example 3 - create flat navigation PDF using one ODS DOCUMENT;
-* comment:
+* Comment:
+*
 *   - the SAS TOC would be created a buggy linking (e.g. click "table 2" on TOC)
 *   - this had been reported to SAS(R)- it seems to be depending on viewer and whether the PDF is maximized or not
 *   - I am expecting no fix from SAS(R)
@@ -41,7 +42,7 @@ ODS DOCUMENT CLOSE;
 
 %* include program to create one ODS document containing many reports;
 %INCLUDE "&root/programs/example_ods_document_many_reports.sas";
-%* create direct output without any modifications (list-document: doc_results);
+%* Create direct output without any modifications - ODS Structure for DOC_RESULTS contains several levels (list-document: doc_results);
 ODS PDF FILE= "&root/results/ods_document_noflat1.pdf" nocontents;
 PROC DOCUMENT name=doc_results; replay; QUIT;
 ODS PDF CLOSE;
@@ -49,7 +50,7 @@ ODS PDF CLOSE;
 
 %* update the document to flatten labels;
 %smile_ods_document_flat_label(document=doc_results);
-%* ODS Document is arranged flat (list-document: doc_result);
+%* ODS Document structure is arranged flat by macro (list-document: doc_results);
 %* Create PDF out of modified ODS Document;
 ODS PDF FILE= "&root/results/ods_document_flat1.pdf" nocontents;
 PROC DOCUMENT name=doc_results; replay; QUIT;
@@ -66,7 +67,8 @@ ODS _ALL_ CLOSE;
 
 *************************************************************************;
 * Example 4 - create flat navigation PDF using multiple ODS DOCUMENT - with re-labeling;
-* comment:
+* Comment:
+*
 *    - a looping macro might be feasible for generic use
 *    - the SAS TOC is created and linking correctly
 *    - ODS PROCLABEL is ignored as the label is coming through the re-labeling
@@ -99,7 +101,8 @@ ODS PDF CLOSE;
 
 *************************************************************************;
 * Example 5 - create flat navigation PDF using multiple ODS DOCUMENT;
-* comment:
+* Comment:
+*
 *    - a looping macro might be feasible for generic use
 *    - the SAS TOC is created and linking correctly
 *************************************************************************;
@@ -130,7 +133,8 @@ ODS PDF CLOSE;
 
 *************************************************************************;
 * Example 6 - create flat navigation PDF using multiple ODS DOCUMENT - no entry for some items;
-* comment:
+* Comment:
+*
 *    - Table 1 and Table 3 have no label and no bookmark entry, but are included in the PDF
 *    - a looping macro might be feasible for generic use
 *    - the SAS TOC is created and linking correctly
@@ -157,7 +161,8 @@ ODS PDF CLOSE;
 
 *************************************************************************;
 * Example 7 - create flat navigation PDF using multiple ODS DOCUMENTS with custom TOC;
-* comment:
+* Comment:
+*
 *    - Table 1 and Table 3 have no label and no bookmark entry, but are included in the PDF
 *    - a looping macro might be feasible for generic use
 *    - the SAS TOC is created and linking correctly
@@ -190,7 +195,7 @@ ODS PDF CLOSE;
 %* Custom TOC and flat bookmarks are available (screenshot: screen_ods_doc_flat8.jpg);
 
 *************************************************************************;
-* Example 7 - create flat navigation PDF using multiple ODS DOCUMENTS - many outputs;
+* Example 8 - create flat navigation PDF using multiple ODS DOCUMENTS - many outputs;
 *************************************************************************;
 
 %* create 100 ODS Documents, flat them and create the output in PDF;

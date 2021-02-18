@@ -2,7 +2,7 @@
 %* Project    : SMILE - SAS Macros, Intuitive Library Extension
 %* Purpose    : Example program to create a multiple ODS DOCUMENTS with one output in each - quite many outputs
 %* Author     : Katja Glass
-%* Creation   : 2021-01-18
+%* Creation   : 2021-02-18
 %* SAS Version: SAS 9.4
 %* License    : MIT
 %************************************************************************************************************************;
@@ -24,7 +24,7 @@ PROC SORT DATA=cars; BY const make; RUN;
         TITLE "Table &i: Car Output (many identical)";
         PROC REPORT DATA=cars nowd headline spacing=2 CONTENTS="";
             COLUMN const make model type msrp;
-            DEFINE const / GROUP NOPRINT;
+            DEFINE const / ORDER NOPRINT;
             BREAK BEFORE const / CONTENTS="" page;
         RUN;
         ODS DOCUMENT CLOSE;

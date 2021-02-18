@@ -2,7 +2,7 @@
 %* Project    : SMILE - SAS Macros, Intuitive Library Extension
 %* Purpose    : Example program to create a single PDF output per table
 %* Author     : Katja Glass
-%* Creation   : 2021-01-29
+%* Creation   : 2021-02-18
 %* SAS Version: SAS 9.4
 %* License    : MIT
 %************************************************************************************************************************;
@@ -16,7 +16,7 @@ TITLE "Table 1: By Group Report about shoes";
 PROC REPORT DATA=sashelp.shoes(WHERE=(region IN ('Canada', 'Pacific'))) CONTENTS="";
    BY region;
    COLUMN region product sales;
-   DEFINE region / GROUP NOPRINT;
+   DEFINE region / ORDER NOPRINT;
 RUN;
 ODS PDF CLOSE;
 

@@ -11,8 +11,10 @@ nav:
     - smile_attrc: test_smile_attrc.md
     - smile_attrn: test_smile_attrn.md
     - smile_attr_var: test_smile_attr_var.md
-    - smile_ods_document_flat_label : test_smile_ods_document_flat_label.md
-    #- smile_ods_document_flat_label: test_smile_ods_document_flat_label.md
+    - smile_ods_document_flat_label: test_smile_ods_document_flat_label.md
+    - smile_pdf_merge: test_smile_pdf_merge.md
+    - smile_pdf_read_bookmarks: test_smile_pdf_read_bookmarks.md
+    - smile_url_check: test_smile_url_check.md
 
 # Style Sheet
 extra_css:

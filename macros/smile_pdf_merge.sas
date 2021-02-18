@@ -259,6 +259,8 @@ RUN;
 
     %IF %UPCASE(&run_groovy) = YES
     %THEN %DO;
+        %PUT &macro: Run Groovy Program;
+        %PUT &macro: The following warning might come from PDFBox: %STR(WAR)NING: Removed /IDTree from /Names dictionary ...;
         %INCLUDE cmd;
     %END;
 
