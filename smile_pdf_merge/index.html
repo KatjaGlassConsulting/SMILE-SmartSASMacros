@@ -1,0 +1,1296 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
+    
+    
+      
+        <title>smile_pdf_merge - SMILE - Smart SAS Macros</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.cb6bc1d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.39b8e14a.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../stylesheets/general.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#macro-smile_pdf_merge" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="SMILE - Smart SAS Macros" class="md-header-nav__button md-logo" aria-label="SMILE - Smart SAS Macros">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89"><path d="M3.136 17.387v42.932l42.932 21.467L3.136 17.387z"/><path d="M21.91 8l42.933 64.398-18.775 9.388L3.136 17.387 21.91 8z" fill-opacity=".5"/><path d="M67.535 17.387L40.273 35.543l21.878 32.818 5.384 2.691V17.387z"/><path d="M67.535 17.387v53.666l18.774-9.388V8l-18.774 9.387z" fill-opacity=".25"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            SMILE - Smart SAS Macros
+          </span>
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            
+              smile_pdf_merge
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/KatjaGlassConsulting/SMILE-SmartSASMacros/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    SMILE-SmartSASMacros
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SMILE - Smart SAS Macros" class="md-nav__button md-logo" aria-label="SMILE - Smart SAS Macros">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89"><path d="M3.136 17.387v42.932l42.932 21.467L3.136 17.387z"/><path d="M21.91 8l42.933 64.398-18.775 9.388L3.136 17.387 21.91 8z" fill-opacity=".5"/><path d="M67.535 17.387L40.273 35.543l21.878 32.818 5.384 2.691V17.387z"/><path d="M67.535 17.387v53.666l18.774-9.388V8l-18.774 9.387z" fill-opacity=".25"/></svg>
+
+    </a>
+    SMILE - Smart SAS Macros
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/KatjaGlassConsulting/SMILE-SmartSASMacros/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    SMILE-SmartSASMacros
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+      
+      <label class="md-nav__link" for="nav-2">
+        Macros
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Macros" data-md-level="1">
+        <label class="md-nav__title" for="nav-2">
+          <span class="md-nav__icon md-icon"></span>
+          Macros
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../smile_attrc/" class="md-nav__link">
+        smile_attrc
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../smile_attrn/" class="md-nav__link">
+        smile_attrn
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../smile_attr_var/" class="md-nav__link">
+        smile_attr_var
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../smile_ods_document_flat_label/" class="md-nav__link">
+        smile_ods_document_flat_label
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          smile_pdf_merge
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        smile_pdf_merge
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checks" class="md-nav__link">
+    Checks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#macro" class="md-nav__link">
+    Macro
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../smile_pdf_read_bookmarks/" class="md-nav__link">
+        smile_pdf_read_bookmarks
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../smile_url_check/" class="md-nav__link">
+        smile_url_check
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../smile_url_download/" class="md-nav__link">
+        smile_url_download
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+      
+      <label class="md-nav__link" for="nav-3">
+        Example Programs
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Example Programs" data-md-level="1">
+        <label class="md-nav__title" for="nav-3">
+          <span class="md-nav__icon md-icon"></span>
+          Example Programs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test_smile_attrc/" class="md-nav__link">
+        smile_attrc
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test_smile_attrn/" class="md-nav__link">
+        smile_attrn
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test_smile_attr_var/" class="md-nav__link">
+        smile_attr_var
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test_smile_ods_document_flat_label/" class="md-nav__link">
+        smile_ods_document_flat_label
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test_smile_pdf_merge/" class="md-nav__link">
+        smile_pdf_merge
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test_smile_pdf_read_bookmarks/" class="md-nav__link">
+        smile_pdf_read_bookmarks
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test_smile_url_check/" class="md-nav__link">
+        smile_url_check
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checks" class="md-nav__link">
+    Checks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#macro" class="md-nav__link">
+    Macro
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/KatjaGlassConsulting/SMILE-SmartSASMacros/edit/master/docs/smile_pdf_merge.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="macro-smile_pdf_merge">Macro SMILE_PDF_MERGE<a class="headerlink" href="#macro-smile_pdf_merge" title="Permanent link">&para;</a></h1>
+<p>Merge multiple PDF files and create one bookmark entry per PDF file with PROC GROOVY and open-source Tool PDFBox</p>
+<ul>
+<li>Author: Katja Glass</li>
+<li>Date: 2021-01-29</li>
+<li>SAS Version: SAS 9.4</li>
+<li>License: MIT</li>
+<li>Comment: Make sure to download PDFBOX, e.g. from here https://pdfbox.apache.org/download.html - the full "app" version</li>
+<li>Issues: "unable to resolve class" messages mean the PDFBOX is not provided correctly. "ERROR: PROCEDURE GROOVY cannot be used when SAS is in the lock down state." means that your SAS environment does not support PROC GROOVY, for this the macro cannot run the groovy code. "WARNUNG: Removed /IDTree from /Names dictionary, doesn't belong there" - this message is coming from PDFBox.</li>
+<li>Reference: A paper explaining how to use PDFBOX with PROC GROOVY also for TOC is available in the following paper (https://www.lexjansen.com/phuse/2019/ct/CT05.pdf)</li>
+<li>Example Program: <a href="../test_smile_pdf_merge/">test_smile_pdf_merge</a></li>
+</ul>
+<h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DATA</td>
+<td>Input dataset containing INFILE and BOOKMARK variable, INFILE containing single pdf files (one file per observation), BOOKMARK containing the corresponding bookmark label for this file</td>
+</tr>
+<tr>
+<td>OUTFILE</td>
+<td>Output PDF file (not in quotes)</td>
+</tr>
+<tr>
+<td>PDFBOX_JAR_PATH</td>
+<td>Path and jar file name for PDFBOX open source tool, e.g. &amp;path/pdfbox-app-2.0.22.jar</td>
+</tr>
+<tr>
+<td>SOURCEFILE</td>
+<td>Optional SAS program file where PROC GROOVY code is stored, default is TEMP (only temporary)</td>
+</tr>
+<tr>
+<td>RUN_GROOVY</td>
+<td>NO/YES indicator whether to run the final GROOVY code (default YES)</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>DATA content;
+   ATTRIB inFile     FORMAT=$255.;
+   ATTRIB bookmark FORMAT=$255.;
+   inFile = &quot;&amp;inPath/output_1.pdf&quot;;  bookmark = &quot;Table 1&quot;;    OUTPUT;
+   inFile = &quot;&amp;inPath/output_2.pdf&quot;;  bookmark = &quot;Table 2&quot;;    OUTPUT;
+   inFile = &quot;&amp;inPath/output_3.pdf&quot;;  bookmark = &quot;Table 3&quot;;    OUTPUT;
+RUN;
+%smile_pdf_merge(
+   data            = content
+ , outfile         = &amp;outPath/merged_output.pdf
+ , pdfbox_jar_path = &amp;libPath/pdfbox-app-2.0.22.jar
+ , sourcefile      = &amp;progPath/groovy_call.sas
+ , run_groovy      = YES
+);
+</code></pre></div>
+<h2 id="checks">Checks<a class="headerlink" href="#checks" title="Permanent link">&para;</a></h2>
+<ul>
+<li>existence of required parameters (DATA, OUTFILE, PDFBOX_JAR_PATH), abort;</li>
+<li>existence of parameter SOURCEFILE, if not use TEMP;</li>
+<li>RUN_GROOVY must be NO or YES, abort;</li>
+<li>PDFBOX_JAR_PATH must exist and must be a ".jar" file;</li>
+<li>existence of data, contains observations, contains variables infile and bookmark;</li>
+<li>files in variable "infile" must exist;</li>
+</ul>
+<h2 id="macro">Macro<a class="headerlink" href="#macro" title="Permanent link">&para;</a></h2>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>%************************************************************************************************************************;
+%* Project    : SMILE - SAS Macros, Intuitive Library Extension
+%* Macro      : smile_pdf_merge
+%* Parameters : DATA            - <span class="k">Input</span> dataset containing <span class="k">INFILE</span> <span class="k">and</span> BOOKMARK variable,
+%*                                <span class="k">INFILE</span> containing single pdf files (one <span class="k">file</span> per observation),
+%*                                BOOKMARK containing the corresponding bookmark <span class="k">label</span> for this <span class="k">file</span>
+%*              OUTFILE         - <span class="k">Output</span> PDF <span class="k">file</span> (<span class="k">not</span> <span class="k">in</span> quotes)
+%*              PDFBOX_JAR_PATH - Path <span class="k">and</span> jar <span class="k">file</span> name for PDFBOX open source tool, e<span class="m">.</span>g. <span class="nv">&amp;path</span>/pdfbox-app<span class="m">-2.0.22.</span>jar
+%*              SOURCEFILE      - Optional SAS program <span class="k">file</span> <span class="k">where</span> PROC GROOVY code is stored, default is TEMP (only temporary)
+%*              RUN_GROOVY      - NO/YES indicator whether to run the final GROOVY code (default YES)
+%*
+%* Purpose    : <span class="k">Merge</span> multiple PDF files <span class="k">and</span> <span class="k">create</span> one bookmark entry per PDF <span class="k">file</span> with PROC GROOVY <span class="k">and</span> open-source Tool PDFBox
+%* Comment    : Make sure to download PDFBOX, e<span class="m">.</span>g. <span class="k">from</span> here https://pdfbox<span class="m">.</span>apache<span class="m">.</span>org/download<span class="m">.</span>html - the full <span class="s">&quot;app&quot;</span> version
+%* Issues     : <span class="s">&quot;unable to resolve class&quot;</span> messages mean the PDFBOX is <span class="k">not</span> provided correctly.
+%*              <span class="s">&quot;ERROR: PROCEDURE GROOVY cannot be used when SAS is in the lock down state.&quot;</span> means that your SAS environment
+%*              does <span class="k">not</span> support PROC GROOVY, for this the macro cannot run the groovy code.
+%*              <span class="s">&quot;WARNUNG: Removed /IDTree from /Names dictionary, doesn&#39;t belong there&quot;</span> - this <span class="k">message</span> is coming <span class="k">from</span> PDFBox.
+%*
+%* ExampleProg: ../programs/test_smile_pdf_merge<span class="m">.</span>sas
+%*
+%* Author     : Katja Glass
+%* Creation   : <span class="m">2021-01-29</span>
+%* License    : MIT
+%*
+%* Reference  : A paper explaining how to use PDFBOX with PROC GROOVY also for TOC is available <span class="k">in</span> the following paper
+%*              (https://www<span class="m">.</span>lexjansen<span class="m">.</span>com/phuse/<span class="m">2019</span>/ct/CT05<span class="m">.</span>pdf)
+%*
+%* SAS Version: SAS <span class="m">9.4</span>
+%*
+%************************************************************************************************************************;
+<span class="cm">/*</span>
+<span class="cm">Examples:</span>
+<span class="cm">DATA content;</span>
+<span class="cm">   ATTRIB inFile     FORMAT=$255.;</span>
+<span class="cm">   ATTRIB bookmark FORMAT=$255.;</span>
+<span class="cm">   inFile = &quot;&amp;inPath/output_1.pdf&quot;;  bookmark = &quot;Table 1&quot;;    OUTPUT;</span>
+<span class="cm">   inFile = &quot;&amp;inPath/output_2.pdf&quot;;  bookmark = &quot;Table 2&quot;;    OUTPUT;</span>
+<span class="cm">   inFile = &quot;&amp;inPath/output_3.pdf&quot;;  bookmark = &quot;Table 3&quot;;    OUTPUT;</span>
+<span class="cm">RUN;</span>
+<span class="cm">%smile_pdf_merge(</span>
+<span class="cm">   data            = content</span>
+<span class="cm"> , outfile         = &amp;outPath/merged_output.pdf</span>
+<span class="cm"> , pdfbox_jar_path = &amp;libPath/pdfbox-app-2.0.22.jar</span>
+<span class="cm"> , sourcefile      = &amp;progPath/groovy_call.sas</span>
+<span class="cm"> , run_groovy      = YES</span>
+<span class="cm">);</span>
+<span class="cm">*/</span>
+%************************************************************************************************************************;
+
+<span class="nb">%MACRO</span> smile_pdf_merge(data = , outfile = , pdfbox_jar_path = , sourcefile = TEMP, run_groovy = YES);
+
+   <span class="nb">%LOCAL</span> macro;
+   <span class="nb">%LET</span> macro = <span class="nv">&amp;sysmacroname</span>;
+
+%*;
+%* <span class="k">Error</span> handling I - parameter checks;
+%*;
+
+   %* <span class="k">check</span>: existence of required parameters (DATA, OUTFILE, PDFBOX_JAR_PATH), <span class="k">abort</span>;
+   %* <span class="k">check</span>: existence of parameter SOURCEFILE, <span class="k">if</span> <span class="k">not</span> use TEMP;
+   %* <span class="k">check</span>: RUN_GROOVY must be NO <span class="k">or</span> YES, <span class="k">abort</span>;
+
+   <span class="nb">%IF</span> <span class="nb">%LENGTH</span>(<span class="nv">&amp;data</span>) = <span class="m">0</span>
+   <span class="nb">%THEN</span> <span class="nb">%DO</span>;<span class="k"></span>
+<span class="k">       %PUT </span><span class="nb">%STR</span><span class="err">(ERR)</span><span class="k">OR</span><span class="err">: </span><span class="nv">&amp;macro</span><span class="err"> - DATA parameter is requried. Macro will </span><span class="k">abort</span><span class="err">.;</span>
+       <span class="nf">%RETURN</span>;
+   <span class="nb">%END</span>;
+
+   <span class="nb">%IF</span> <span class="nb">%LENGTH</span>(<span class="nv">&amp;outfile</span>) = <span class="m">0</span>
+   <span class="nb">%THEN</span> <span class="nb">%DO</span>;<span class="k"></span>
+<span class="k">       %PUT </span><span class="nb">%STR</span><span class="err">(ERR)</span><span class="k">OR</span><span class="err">: </span><span class="nv">&amp;macro</span><span class="err"> - OUTFILE parameter is requried. Macro will </span><span class="k">abort</span><span class="err">.;</span>
+       <span class="nf">%RETURN</span>;
+   <span class="nb">%END</span>;
+
+   <span class="nb">%IF</span> <span class="nb">%LENGTH</span>(<span class="nv">&amp;pdfbox_jar_path</span>) = <span class="m">0</span>
+   <span class="nb">%THEN</span> <span class="nb">%DO</span>;<span class="k"></span>
+<span class="k">       %PUT </span><span class="nb">%STR</span><span class="err">(ERR)</span><span class="k">OR</span><span class="err">: </span><span class="nv">&amp;macro</span><span class="err"> - PDFBOX_JAR_PATH parameter is requried. Macro will </span><span class="k">abort</span><span class="err">.;</span>
+       <span class="nf">%RETURN</span>;
+   <span class="nb">%END</span>;
+
+   <span class="nb">%IF</span> <span class="nb">%LENGTH</span>(<span class="nv">&amp;sourcefile</span>) = <span class="m">0</span>
+   <span class="nb">%THEN</span> <span class="nb">%DO</span>;<span class="k"></span>
+<span class="k">       %PUT </span><span class="nb">%STR</span><span class="err">(WAR)NING: </span><span class="nv">&amp;macro</span><span class="err"> - SOURCEFILE parameter is needed - TEMP will be used.;</span>
+       <span class="nb">%LET</span> sourcefile = TEMP;
+   <span class="nb">%END</span>;
+
+   <span class="nb">%IF</span> <span class="nb">%UPCASE</span>(<span class="nv">&amp;run_groovy</span>) NE YES <span class="k">AND</span> <span class="nb">%UPCASE</span>(<span class="nv">&amp;run_groovy</span>) NE NO
+   <span class="nb">%THEN</span> <span class="nb">%DO</span>;<span class="k"></span>
+<span class="k">       %PUT </span><span class="nb">%STR</span><span class="err">(ERR)</span><span class="k">OR</span><span class="err">: </span><span class="nv">&amp;macro</span><span class="err"> - RUN_GROOVY parameter must be NO </span><span class="k">or</span><span class="err"> YES. Macro will </span><span class="k">abort</span><span class="err">.;</span>
+       <span class="nf">%RETURN</span>;
+   <span class="nb">%END</span>;
+
+   %* <span class="k">check</span>: PDFBOX_JAR_PATH must exist <span class="k">and</span> must be a <span class="s">&quot;.jar&quot;</span> <span class="k">file</span>;
+   <span class="nb">%IF</span> <span class="nb">%SYSFUNC</span>(<span class="nb">FILEEXIST(</span><span class="nv">&amp;pdfbox_jar_path</span>)) = <span class="m">0</span>
+   <span class="nb">%THEN</span> <span class="nb">%DO</span>;<span class="k"></span>
+<span class="k">       %PUT </span><span class="nb">%STR</span><span class="err">(ERR)</span><span class="k">OR</span><span class="err">: </span><span class="nv">&amp;macro</span><span class="err"> - PDFBOX_JAR_PATH </span><span class="k">file</span><span class="err"> does </span><span class="k">not</span><span class="err"> exist. Macro will </span><span class="k">abort</span><span class="err">.;</span>
+       <span class="nf">%RETURN</span>;
+   <span class="nb">%END</span>;
+   <span class="nb">%IF</span> <span class="nb">%UPCASE</span>(<span class="nb">%SCAN</span>(<span class="nv">&amp;pdfbox_jar_path</span>,-<span class="m">1</span>,.)) NE JAR
+   <span class="nb">%THEN</span> <span class="nb">%DO</span>;<span class="k"></span>
+<span class="k">       %PUT </span><span class="nb">%STR</span><span class="err">(ERR)</span><span class="k">OR</span><span class="err">: </span><span class="nv">&amp;macro</span><span class="err"> - PDFBOX_JAR_PATH must be a </span><span class="s">&quot;.jar&quot;</span><span class="err"> </span><span class="k">file</span><span class="err">. Macro will </span><span class="k">abort</span><span class="err">.;</span>
+       <span class="nf">%RETURN</span>;
+   <span class="nb">%END</span>;
+
+%*;
+%* Preparations;
+%*;
+
+   %* include quotes around sourcefile <span class="k">if</span> <span class="k">not</span> available<span class="kr">;</span>
+<span class="kr">   DATA </span><span class="kc">_NULL_</span>;
+       <span class="k">ATTRIB</span> path <span class="k">FORMAT</span>=$<span class="m">500</span>.;
+       path = <span class="nb">SYMGET(</span><span class="s">&#39;sourcefile&#39;</span>);
+       <span class="k">IF</span> <span class="nb">UPCASE(</span>STRIP(path)) NE <span class="s">&quot;TEMP&quot;</span>
+       <span class="k">THEN</span> <span class="k">DO</span>;
+           <span class="k">IF</span> <span class="nb">SUBSTR(</span>sourcefile,<span class="m">1</span>,<span class="m">1</span>) NE <span class="s">&#39;&quot;&#39;</span> <span class="k">AND</span> <span class="nb">SUBSTR(</span>sourcefile,<span class="m">1</span>,<span class="m">1</span>) NE <span class="s">&quot;&#39;&quot;</span>
+           <span class="k">THEN</span> <span class="k">DO</span>;
+               <span class="k">CALL</span> SYMPUT(<span class="s">&#39;sourcefile&#39;</span>,<span class="s">&#39;&quot;&#39;</span> || STRIP(path) || <span class="s">&#39;&quot;&#39;</span>);
+           <span class="k">END</span>;
+       <span class="k">END</span><span class="kr">;</span>
+<span class="kr">   RUN;</span>
+
+%*;
+%* <span class="k">Error</span> handling II - data checks;
+%*;
+
+   <span class="nb">%LOCAL</span> dsid rc <span class="k">error</span>;
+   <span class="nb">%LET</span> <span class="k">error</span> = <span class="m">0</span>;
+
+   %* <span class="k">check</span>: existence of data, contains observations, contains variables <span class="k">infile</span> <span class="k">and</span> bookmark;
+   <span class="nb">%LET</span> dsid=<span class="nb">%SYSFUNC</span>(<span class="nb">OPEN(</span><span class="nv">&amp;data</span>,is));
+   <span class="nb">%IF</span> <span class="nv">&amp;dsid</span> EQ <span class="m">0</span>
+   <span class="nb">%THEN</span> <span class="nb">%DO</span>;<span class="k"></span>
+<span class="k">       %PUT </span><span class="nb">%STR</span><span class="err">(ERR)</span><span class="k">OR</span><span class="err">: </span><span class="nv">&amp;macro</span><span class="err"> - DATA (</span><span class="nv">&amp;data</span><span class="err">) does </span><span class="k">not</span><span class="err"> exist. Macro will </span><span class="k">abort</span><span class="err">.;</span>
+       <span class="nf">%RETURN</span>;
+   <span class="nb">%END</span>;
+   <span class="nb">%ELSE</span> <span class="nb">%IF</span> <span class="nb">%SYSFUNC</span>(<span class="nb">ATTRN(</span><span class="nv">&amp;dsid</span>,NLOBS)) = <span class="m">0</span>
+   <span class="nb">%THEN</span> <span class="nb">%DO</span>;<span class="k"></span>
+<span class="k">       %PUT </span><span class="nb">%STR</span><span class="err">(ERR)</span><span class="k">OR</span><span class="err">: </span><span class="nv">&amp;macro</span><span class="err"> - DATA (</span><span class="nv">&amp;data</span><span class="err">) does </span><span class="k">not</span><span class="err"> contain any observations. Macro will </span><span class="k">abort</span><span class="err">.;</span>
+       <span class="nb">%LET</span> rc=<span class="nb">%SYSFUNC</span>(<span class="nb">CLOSE(</span><span class="nv">&amp;dsid</span>));
+       <span class="nf">%RETURN</span>;
+   <span class="nb">%END</span>;
+   <span class="nb">%ELSE</span> <span class="nb">%IF</span> <span class="nb">%SYSFUNC</span>(<span class="nb">VARNUM(</span><span class="nv">&amp;dsid</span>,<span class="k">infile</span>)) = <span class="m">0</span> <span class="k">OR</span> <span class="nb">%SYSFUNC</span>(<span class="nb">VARNUM(</span><span class="nv">&amp;dsid</span>,bookmark)) = <span class="m">0</span>
+   <span class="nb">%THEN</span> <span class="nb">%DO</span>;<span class="k"></span>
+<span class="k">       %PUT </span><span class="nb">%STR</span><span class="err">(ERR)</span><span class="k">OR</span><span class="err">: </span><span class="nv">&amp;macro</span><span class="err"> - DATA (</span><span class="nv">&amp;data</span><span class="err">) does </span><span class="k">not</span><span class="err"> contain required variables (</span><span class="k">infile</span><span class="err"> </span><span class="k">and</span><span class="err"> bookmark). Macro will </span><span class="k">abort</span><span class="err">.;</span>
+       <span class="nb">%LET</span> rc=<span class="nb">%SYSFUNC</span>(<span class="nb">CLOSE(</span><span class="nv">&amp;dsid</span>));
+       <span class="nf">%RETURN</span>;
+   <span class="nb">%END</span>;
+   <span class="nb">%LET</span> rc=<span class="nb">%SYSFUNC</span>(<span class="nb">CLOSE(</span><span class="nv">&amp;dsid</span>));
+
+   %* <span class="k">check</span>: files <span class="k">in</span> variable <span class="s">&quot;infile&quot;</span> must exist;
+   %* <span class="k">update</span> BOOKMARK labels, <span class="k">replace</span> double quotes<span class="kr">;</span>
+<span class="kr">   DATA </span>_smile_indat;
+       <span class="k">SET</span> <span class="nv">&amp;data</span>;
+       <span class="k">RETAIN</span> _smile_msg <span class="m">0</span>;
+       <span class="k">IF</span> <span class="nb">FILEEXIST(</span><span class="k">infile</span>) = <span class="m">0</span>
+       <span class="k">THEN</span> <span class="k">DO</span>;<span class="k"></span>
+<span class="k">           PUT </span><span class="s">&quot;%STR(ERR)OR: INFILE does not exist: &quot;</span><span class="err"> </span><span class="k">infile</span><span class="err"> </span><span class="s">&quot; - Macro will abort.&quot;</span><span class="err">;</span>
+           <span class="k">CALL</span> SYMPUT(<span class="s">&#39;error&#39;</span>,<span class="s">&#39;1&#39;</span>);
+       <span class="k">END</span>;
+       <span class="k">IF</span> <span class="k">INDEX</span>(bookmark,<span class="s">&#39;&quot;&#39;</span>) &gt; <span class="m">0</span> <span class="k">AND</span> _smile_msg = <span class="m">0</span>
+       <span class="k">THEN</span> <span class="k">DO</span>;<span class="k"></span>
+<span class="k">           PUT </span><span class="s">&quot;%STR(WAR)NING: Double quotes are not supported for BOOKMARK texts and are removed.&quot;</span><span class="err">;</span>
+           _smile_msg = <span class="m">1</span>;
+       <span class="k">END</span>;
+       bookmark = <span class="nb">TRANWRD(</span>bookmark,<span class="s">&#39;&quot;&#39;</span>,<span class="s">&#39;&#39;</span>)<span class="kr">;</span>
+<span class="kr">   RUN;</span>
+
+   <span class="nb">%IF</span> <span class="nv">&amp;error</span> NE <span class="m">0</span>
+   <span class="nb">%THEN</span> <span class="nb">%DO</span>;
+       <span class="nb">%GOTO</span> end_macro;
+   <span class="nb">%END</span>;
+
+%*;
+%* <span class="k">Create</span> PROC GROOVY program <span class="k">file</span>;
+%*;
+
+   <span class="k">FILENAME</span> cmd <span class="nv">&amp;sourcefile</span><span class="kr">;</span>
+
+<span class="kr">   DATA </span><span class="kc">_NULL_</span>;
+       <span class="k">FILE</span> cmd LRECL=<span class="m">5000</span>;
+       <span class="k">SET</span> _smile_indat <span class="k">END</span>=_eof;
+       <span class="k">IF</span> <span class="kc">_N_</span> = <span class="m">1</span>
+       <span class="k">THEN</span> <span class="k">DO</span>;<span class="k"></span>
+<span class="k">           PUT </span><span class="s">&quot;PROC GROOVY;&quot;</span><span class="err">;</span>
+<span class="k">           PUT </span><span class="s">&quot;    ADD CLASSPATH = &quot;&quot;</span><span class="nv">&amp;pdfbox_jar_path</span><span class="s">&quot;&quot;;&quot;</span><span class="err">;</span>
+<span class="k">           PUT </span><span class="s">&quot;    SUBMIT;&quot;</span><span class="err">;</span>
+<span class="k">           PUT </span><span class="err">;</span>
+<span class="k">           PUT </span><span class="s">&quot;import org.apache.pdfbox.multipdf.PDFMergerUtility;&quot;</span><span class="err">;</span>
+<span class="k">           PUT </span><span class="s">&quot;import org.apache.pdfbox.pdmodel.PDDocument;&quot;</span><span class="err">;</span>
+<span class="k">           PUT </span><span class="s">&quot;import org.apache.pdfbox.pdmodel.interactive.documentnavigation.destination.PDPageDestination;&quot;</span><span class="err">;</span>
+<span class="k">           PUT </span><span class="s">&quot;import org.apache.pdfbox.pdmodel.interactive.documentnavigation.destination.PDPageFitWidthDestination;&quot;</span><span class="err">;</span>
+<span class="k">           PUT </span><span class="s">&quot;import org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDDocumentOutline;&quot;</span><span class="err">;</span>
+<span class="k">           PUT </span><span class="s">&quot;import org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem;&quot;</span><span class="err">;</span>
+<span class="k">           PUT </span><span class="s">&quot;import java.io.File;&quot;</span><span class="err">;</span>
+<span class="k">           PUT </span><span class="err">;</span>
+<span class="k">           PUT </span><span class="s">&quot;public class PDFMerge2 {&quot;</span><span class="err">;</span>
+<span class="k">           PUT </span><span class="s">&quot;    public static void main(String[] args) {&quot;</span><span class="err">;</span>
+           <span class="k">PUT</span>;<span class="k"></span>
+<span class="k">           PUT </span><span class="err">@</span><span class="m">8</span><span class="err"> </span><span class="s">&quot;//Instantiating PDFMergerUtility class&quot;</span><span class="err">;</span>
+<span class="k">           PUT </span><span class="err">@</span><span class="m">8</span><span class="err"> </span><span class="s">&quot;PDFMergerUtility PDFmerger = new PDFMergerUtility();&quot;</span><span class="err">;</span>
+<span class="k">           PUT </span><span class="err">;</span>
+<span class="k">           PUT </span><span class="err">@</span><span class="m">8</span><span class="err"> </span><span class="s">&quot;//Setting the destination file&quot;</span><span class="err">;</span>
+<span class="k">           PUT </span><span class="err">@</span><span class="m">8</span><span class="err"> </span><span class="s">&quot;PDFmerger.setDestinationFileName(&quot;&quot;</span><span class="nv">&amp;outfile</span><span class="s">&quot;&quot;);&quot;</span><span class="err">;</span>
+<span class="k">           PUT </span><span class="err">;</span>
+<span class="k">           PUT </span><span class="err">@</span><span class="m">8</span><span class="err"> </span><span class="s">&quot;//adding the source files&quot;</span><span class="err">;</span>
+       <span class="k">END</span>;<span class="k"></span>
+<span class="k">       PUT </span><span class="err">@</span><span class="m">8</span><span class="err"> </span><span class="s">&quot;PDFmerger.addSource(new File(&quot;&quot;&quot;</span><span class="err"> </span><span class="k">inFile</span><span class="err"> +(-</span><span class="m">1</span><span class="err">) </span><span class="s">&quot;&quot;&quot;));&quot;</span><span class="err">;</span>
+       <span class="k">IF</span> _eof
+       <span class="k">THEN</span> <span class="k">DO</span>;<span class="k"></span>
+<span class="k">           PUT </span><span class="err">@</span><span class="m">8</span><span class="err"> </span><span class="s">&quot;PDFmerger.mergeDocuments(null);&quot;</span><span class="err">;</span>
+       <span class="k">END</span><span class="kr">;</span>
+<span class="kr">   RUN;</span>
+
+<span class="kr">   DATA </span><span class="kc">_NULL_</span>;
+       <span class="k">FILE</span> cmd LRECL=<span class="m">5000</span> MOD;
+       <span class="k">ATTRIB</span> _temp <span class="k">FORMAT</span>=$<span class="m">200</span>.;
+       <span class="k">SET</span> _smile_indat <span class="k">END</span>=_eof;
+       <span class="k">IF</span> <span class="kc">_N_</span> = <span class="m">1</span>
+       <span class="k">THEN</span> <span class="k">DO</span>;<span class="k"></span>
+<span class="k">           PUT </span><span class="err">@</span><span class="m">8</span><span class="err"> </span><span class="s">&quot;//Open created document&quot;</span><span class="err">;</span>
+<span class="k">           PUT </span><span class="err">@</span><span class="m">8</span><span class="err"> </span><span class="s">&quot;PDDocument document;&quot;</span><span class="err">;</span>
+<span class="k">           PUT </span><span class="err">@</span><span class="m">8</span><span class="err"> </span><span class="s">&quot;PDPageDestination pageDestination;&quot;</span><span class="err">;</span>
+<span class="k">           PUT </span><span class="err">@</span><span class="m">8</span><span class="err"> </span><span class="s">&quot;PDOutlineItem bookmark;&quot;</span><span class="err">;</span>
+<span class="k">           PUT </span><span class="err">@</span><span class="m">8</span><span class="err"> </span><span class="s">&quot;document = PDDocument.load(new File(&quot;&quot;</span><span class="nv">&amp;outfile</span><span class="s">&quot;&quot;));&quot;</span><span class="err">;</span>
+<span class="k">           PUT </span><span class="err">;</span>
+<span class="k">           PUT </span><span class="err">@</span><span class="m">8</span><span class="err"> </span><span class="s">&quot;//Create a bookmark outline&quot;</span><span class="err">;</span>
+<span class="k">           PUT </span><span class="err">@</span><span class="m">8</span><span class="err"> </span><span class="s">&quot;PDDocumentOutline documentOutline = new PDDocumentOutline();&quot;</span><span class="err">;</span>
+<span class="k">           PUT </span><span class="err">@</span><span class="m">8</span><span class="err"> </span><span class="s">&quot;document.getDocumentCatalog().setDocumentOutline(documentOutline);&quot;</span><span class="err">;</span>
+<span class="k">           PUT </span><span class="err">@</span><span class="m">8</span><span class="err"> ;</span>
+<span class="k">           PUT </span><span class="err">@</span><span class="m">8</span><span class="err"> </span><span class="s">&quot;int currentPage = 0;&quot;</span><span class="err">;</span>
+       <span class="k">END</span>;
+
+       _temp = <span class="nb">SCAN(</span><span class="k">inFile</span>,-<span class="m">1</span>,<span class="s">&quot;/</span><span class="se">\&quot;</span><span class="s">);</span>
+<span class="s">       PUT @8 &quot;</span>//Include <span class="k">file</span> <span class="s">&quot; _temp;</span>
+<span class="s">       PUT @8 &quot;</span>pageDestination = new PDPageFitWidthDestination();<span class="s">&quot;;</span>
+<span class="s">       PUT @8 &quot;</span>pageDestination<span class="m">.</span>setPage(document<span class="m">.</span>getPage(currentPage));<span class="s">&quot;;</span>
+<span class="s">       PUT @8 &quot;</span>bookmark = new PDOutlineItem();<span class="s">&quot;;</span>
+<span class="s">       PUT @8 &quot;</span>bookmark<span class="m">.</span>setDestination(pageDestination);<span class="s">&quot;;</span>
+<span class="s">       PUT @8 &quot;</span>bookmark<span class="m">.</span>setTitle(<span class="s">&quot;&quot;&quot; bookmark +(-1) &quot;&quot;&quot;</span>);<span class="s">&quot;;</span>
+<span class="s">       PUT @8 &quot;</span>documentOutline<span class="m">.</span>addLast(bookmark);<span class="s">&quot;;</span>
+<span class="s">       PUT ;</span>
+<span class="s">       PUT @8 &quot;</span>//Change currentPage number<span class="s">&quot;;</span>
+<span class="s">       PUT @8 &quot;</span>currentPage += PDDocument<span class="m">.</span>load(new <span class="k">File</span>(<span class="s">&quot;&quot;&quot; inFile +(-1) &quot;&quot;&quot;</span>)).getNumberOfPages();<span class="s">&quot;;</span>
+<span class="s">       PUT ;</span>
+<span class="s">       IF _eof</span>
+<span class="s">       THEN DO;</span>
+<span class="s">           PUT @8 &quot;</span>//save document<span class="s">&quot;;</span>
+<span class="s">           PUT @8 &quot;</span>document<span class="m">.</span>save(<span class="s">&quot;&quot;</span><span class="nv">&amp;outfile</span><span class="s">&quot;&quot;</span>);<span class="s">&quot;;</span>
+<span class="s">           PUT ;</span>
+<span class="s">           PUT &quot;</span>}}<span class="s">&quot;;</span>
+<span class="s">           PUT &quot;</span>endsubmit;<span class="s">&quot;;</span>
+<span class="s">           PUT &quot;</span>quit;<span class="s">&quot;;</span>
+<span class="s">       END;</span>
+<span class="s">   RUN;</span>
+
+<span class="s">%*;</span>
+<span class="s">%* Optionally execute PROC GROOVY code;</span>
+<span class="s">%*;</span>
+
+<span class="s">   %IF %UPCASE(</span><span class="nv">&amp;run_groovy</span><span class="s">) = YES</span>
+<span class="s">   %THEN %DO;</span>
+<span class="s">       %PUT </span><span class="nv">&amp;macro</span><span class="s">: Run Groovy Program;</span>
+<span class="s">       %PUT </span><span class="nv">&amp;macro</span><span class="s">: The following warning might come from PDFBox: %STR(WAR)NING: Removed /IDTree from /Names dictionary ...;</span>
+<span class="s">       %INCLUDE cmd;</span>
+<span class="s">   %END;</span>
+
+<span class="s">%end_macro:</span>
+
+<span class="s">%*;</span>
+<span class="s">%* cleanup;</span>
+<span class="s">%*;</span>
+
+<span class="s">   FILENAME cmd;</span>
+
+<span class="s">   PROC DATASETS LIB=WORK NOWARN NOLIST;</span>
+<span class="s">       DELETE _smile_indat;</span>
+<span class="s">   RUN;</span>
+
+
+<span class="s">%MEND;</span>
+</code></pre></div>
+</td></tr></table>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../smile_ods_document_flat_label/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                smile_ods_document_flat_label
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../smile_pdf_read_bookmarks/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                smile_pdf_read_bookmarks
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.18f0862e.min.js"></script>
+      <script src="../assets/javascripts/bundle.994580cf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: ['navigation.sections'],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.9c0e82ba.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

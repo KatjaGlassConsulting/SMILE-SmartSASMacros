@@ -1,0 +1,1069 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
+    
+    
+      
+        <title>smile_ods_document_flat_label - SMILE - Smart SAS Macros</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.cb6bc1d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.39b8e14a.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../stylesheets/general.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#macro-smile_ods_document_flat_label" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="SMILE - Smart SAS Macros" class="md-header-nav__button md-logo" aria-label="SMILE - Smart SAS Macros">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89"><path d="M3.136 17.387v42.932l42.932 21.467L3.136 17.387z"/><path d="M21.91 8l42.933 64.398-18.775 9.388L3.136 17.387 21.91 8z" fill-opacity=".5"/><path d="M67.535 17.387L40.273 35.543l21.878 32.818 5.384 2.691V17.387z"/><path d="M67.535 17.387v53.666l18.774-9.388V8l-18.774 9.387z" fill-opacity=".25"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            SMILE - Smart SAS Macros
+          </span>
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            
+              smile_ods_document_flat_label
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/KatjaGlassConsulting/SMILE-SmartSASMacros/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    SMILE-SmartSASMacros
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="SMILE - Smart SAS Macros" class="md-nav__button md-logo" aria-label="SMILE - Smart SAS Macros">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89"><path d="M3.136 17.387v42.932l42.932 21.467L3.136 17.387z"/><path d="M21.91 8l42.933 64.398-18.775 9.388L3.136 17.387 21.91 8z" fill-opacity=".5"/><path d="M67.535 17.387L40.273 35.543l21.878 32.818 5.384 2.691V17.387z"/><path d="M67.535 17.387v53.666l18.774-9.388V8l-18.774 9.387z" fill-opacity=".25"/></svg>
+
+    </a>
+    SMILE - Smart SAS Macros
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/KatjaGlassConsulting/SMILE-SmartSASMacros/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    SMILE-SmartSASMacros
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+      
+      <label class="md-nav__link" for="nav-2">
+        Macros
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Macros" data-md-level="1">
+        <label class="md-nav__title" for="nav-2">
+          <span class="md-nav__icon md-icon"></span>
+          Macros
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../smile_attrc/" class="md-nav__link">
+        smile_attrc
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../smile_attrn/" class="md-nav__link">
+        smile_attrn
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../smile_attr_var/" class="md-nav__link">
+        smile_attr_var
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          smile_ods_document_flat_label
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        smile_ods_document_flat_label
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checks" class="md-nav__link">
+    Checks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#macro" class="md-nav__link">
+    Macro
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../smile_pdf_merge/" class="md-nav__link">
+        smile_pdf_merge
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../smile_pdf_read_bookmarks/" class="md-nav__link">
+        smile_pdf_read_bookmarks
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../smile_url_check/" class="md-nav__link">
+        smile_url_check
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../smile_url_download/" class="md-nav__link">
+        smile_url_download
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+      
+      <label class="md-nav__link" for="nav-3">
+        Example Programs
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Example Programs" data-md-level="1">
+        <label class="md-nav__title" for="nav-3">
+          <span class="md-nav__icon md-icon"></span>
+          Example Programs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test_smile_attrc/" class="md-nav__link">
+        smile_attrc
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test_smile_attrn/" class="md-nav__link">
+        smile_attrn
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test_smile_attr_var/" class="md-nav__link">
+        smile_attr_var
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test_smile_ods_document_flat_label/" class="md-nav__link">
+        smile_ods_document_flat_label
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test_smile_pdf_merge/" class="md-nav__link">
+        smile_pdf_merge
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test_smile_pdf_read_bookmarks/" class="md-nav__link">
+        smile_pdf_read_bookmarks
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test_smile_url_check/" class="md-nav__link">
+        smile_url_check
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checks" class="md-nav__link">
+    Checks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#macro" class="md-nav__link">
+    Macro
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/KatjaGlassConsulting/SMILE-SmartSASMacros/edit/master/docs/smile_ods_document_flat_label.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="macro-smile_ods_document_flat_label">Macro SMILE_ODS_DOCUMENT_FLAT_LABEL<a class="headerlink" href="#macro-smile_ods_document_flat_label" title="Permanent link">&para;</a></h1>
+<p>Flat navigation and optionally re-label navigation for ODS DOCUMENT. The navigation bookmark level is reduced to one level only. Optionally a label can be applied to all content items or the navigation label can be removed completely.</p>
+<ul>
+<li>Author: Katja Glass</li>
+<li>Date: 2021-02-15</li>
+<li>SAS Version: SAS 9.4</li>
+<li>License: MIT</li>
+<li>Comment: The navigation in PDF documents can be one level only with this macro. CONTENTS="" must be applied to the PROC REPORT as option and additionally for a BREAK BEFORE PAGE option.</li>
+<li>Issues: The table of contents created per default by SAS (ODS PDF option TOC) is not linking the pages correctly when using BY groups and having one ODS DOCUMENT with multiple outputs, using single ODS DOCUMENTS (one per each output) then this is working correctly. In such a case, do use not a TOC or create an own TOC, e.g. like described here: https://www.mwsug.org/proceedings/2012/S1/MWSUG-2012-S125.pdf</li>
+<li>Reference: A nice overview of ODS DOCUMENT can be found here: https://support.sas.com/resources/papers/proceedings12/273-2012.pdf</li>
+<li>Example Program: <a href="../test_smile_ods_document_flat_label/">test_smile_ods_document_flat_label</a></li>
+</ul>
+<h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DOCUMENT</td>
+<td>ODS Document item store</td>
+</tr>
+<tr>
+<td>LABEL</td>
+<td>One label to apply on first element, all other labels are removed (optional), if not provided, labels are just rearranged and additional BY-labels removed</td>
+</tr>
+<tr>
+<td>BOOKMARKLABEL</td>
+<td>Indicator whether to use Bookmark Labels if none is specified (YES Default), if LABEL is missing and BOOKMARKLABEL = NO, all labels are removed</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>%*This will flatten the navigation and use the labels originally set with ODS PROCLABEL;
+%smile_ods_document_flat_label(document=doc_reports);
+
+%*This will flatten the navigation and use the label &quot;Table 1.1.1&quot; applied to all items of this store;
+%smile_ods_document_flat_label(document=doc_report1, label=Table 1.1.1);
+
+%*This will flatten the navigation and use no navigation label at all (no navigation link at all for these items);
+%smile_ods_document_flat_label(document=doc_report1, label=, bookmarklabel = NO);
+</code></pre></div>
+<h2 id="checks">Checks<a class="headerlink" href="#checks" title="Permanent link">&para;</a></h2>
+<ul>
+<li>DOCUMENT must be specified;</li>
+<li>BOOKMARKLABEL must be YES or NO;</li>
+<li>DOCUMENT must contain content;</li>
+</ul>
+<h2 id="macro">Macro<a class="headerlink" href="#macro" title="Permanent link">&para;</a></h2>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>%************************************************************************************************************************;
+%* Project    : SMILE - SAS Macros, Intuitive Library Extension
+%* Macro      : smile_ods_document_flat_label
+%* Parameters : DOCUMENT      - ODS Document item store
+%*              <span class="k">LABEL</span>         - One <span class="k">label</span> to apply <span class="k">on</span> first element, all other labels are removed (optional),
+%*                              <span class="k">if</span> <span class="k">not</span> provided, labels are just rearranged <span class="k">and</span> additional <span class="k">BY</span>-labels removed
+%*              BOOKMARKLABEL - Indicator whether to use Bookmark Labels <span class="k">if</span> none is specified (YES Default),
+%*                              <span class="k">if</span> <span class="k">LABEL</span> is <span class="k">missing</span> <span class="k">and</span> BOOKMARKLABEL = NO, all labels are removed
+%*
+%* Purpose    : Flat navigation <span class="k">and</span> optionally re-<span class="k">label</span> navigation for ODS DOCUMENT. The navigation bookmark level is
+%*              reduced to one level only. Optionally a <span class="k">label</span> can be applied to all content items <span class="k">or</span> the navigation <span class="k">label</span>
+%*              can be removed completely.
+%* Comment    : The navigation <span class="k">in</span> PDF documents can be one level only with this macro. CONTENTS=<span class="s">&quot;&quot;</span> must be applied to
+%*              the PROC REPORT <span class="k">as</span> option <span class="k">and</span> additionally for a BREAK BEFORE <span class="k">PAGE</span> option.
+%* Issues     : The <span class="k">table</span> of contents created per default <span class="k">by</span> SAS (ODS PDF option TOC) is <span class="k">not</span> linking the pages correctly when
+%*              using <span class="k">BY</span> groups <span class="k">and</span> <span class="k">having</span> one ODS DOCUMENT with multiple outputs, using single ODS DOCUMENTS (one per each <span class="k">output</span>)
+%*              <span class="k">then</span> this is working correctly. <span class="k">In</span> such a case, <span class="k">do</span> use <span class="k">not</span> a TOC <span class="k">or</span> <span class="k">create</span> an own TOC, e<span class="m">.</span>g. <span class="k">like</span> described here:
+%*              https://www<span class="m">.</span>mwsug<span class="m">.</span>org/proceedings/<span class="m">2012</span>/S1/MWSUG<span class="m">-2012</span>-S125<span class="m">.</span>pdf
+%*
+%* ExampleProg: ../programs/test_smile_ods_document_flat_label<span class="m">.</span>sas
+%*
+%* Author     : Katja Glass
+%* Creation   : <span class="m">2021-02-15</span>
+%* License    : MIT
+%*
+%* Reference  : A nice overview of ODS DOCUMENT can be found here: https://support<span class="m">.</span>sas<span class="m">.</span>com/resources/papers/proceedings12/<span class="m">273-2012.</span>pdf
+%*
+%* SAS Version: SAS <span class="m">9.4</span>
+%*
+%************************************************************************************************************************;
+<span class="cm">/*</span>
+<span class="cm">Examples:</span>
+<span class="cm">%*This will flatten the navigation and use the labels originally set with ODS PROCLABEL;</span>
+<span class="cm">%smile_ods_document_flat_label(document=doc_reports);</span>
+
+<span class="cm">%*This will flatten the navigation and use the label &quot;Table 1.1.1&quot; applied to all items of this store;</span>
+<span class="cm">%smile_ods_document_flat_label(document=doc_report1, label=Table 1.1.1);</span>
+
+<span class="cm">%*This will flatten the navigation and use no navigation label at all (no navigation link at all for these items);</span>
+<span class="cm">%smile_ods_document_flat_label(document=doc_report1, label=, bookmarklabel = NO);</span>
+<span class="cm">*/</span>
+%************************************************************************************************************************;
+
+<span class="nb">%MACRO</span> smile_ods_document_flat_label(document=, <span class="k">label</span>=, bookmarkLabel = yes);
+
+   <span class="nb">%LOCAL</span> macro _temp;
+   <span class="nb">%LET</span> macro = <span class="nv">&amp;sysmacroname</span>;
+   <span class="nb">%LET</span> _temp = -<span class="m">1</span>;
+
+%*;
+%* <span class="k">Error</span> handling I;
+%*;
+
+   %* <span class="k">check</span>: DOCUMENT must be specified;
+   <span class="nb">%IF</span> <span class="nb">%LENGTH</span>(<span class="nv">&amp;document</span>) = <span class="m">0</span>
+   <span class="nb">%THEN</span> <span class="nb">%DO</span>;<span class="k"></span>
+<span class="k">       %PUT </span><span class="nb">%STR</span><span class="err">(ERR)</span><span class="k">OR</span><span class="err">: </span><span class="nv">&amp;macro</span><span class="err"> - DOCUMENT parameter is required. Macro will </span><span class="k">abort</span><span class="err">;</span>
+       <span class="nf">%RETURN</span>;
+   <span class="nb">%END</span>;
+
+   %* <span class="k">check</span>: BOOKMARKLABEL must be YES <span class="k">or</span> NO;
+   <span class="nb">%IF</span> <span class="nb">%UPCASE</span>(<span class="nv">&amp;bookmarkLabel</span>) NE YES <span class="k">AND</span> <span class="nb">%UPCASE</span>(<span class="nv">&amp;bookmarkLabel</span>) NE NO
+   <span class="nb">%THEN</span> <span class="nb">%DO</span>;<span class="k"></span>
+<span class="k">       %PUT </span><span class="nb">%STR</span><span class="err">(ERR)</span><span class="k">OR</span><span class="err">: </span><span class="nv">&amp;macro</span><span class="err"> - BOOKMARKLABEL parameter must either be NO </span><span class="k">or</span><span class="err"> YES. Macro will </span><span class="k">abort</span><span class="err">;</span>
+       <span class="nf">%RETURN</span>;
+   <span class="nb">%END</span>;
+
+   %* <span class="k">check</span> - DOCUMENT must be an existing item store <span class="k">in</span> WORK<span class="kr">;</span>
+<span class="kr">   PROC SQL </span>NOPRINT;
+       <span class="k">SELECT</span> <span class="m">1</span> <span class="k">INTO</span> :_temp <span class="k">FROM</span> SASHELP<span class="m">.</span>VMEMBER
+           <span class="k">WHERE</span> <span class="k">libname</span>=<span class="s">&quot;WORK&quot;</span> <span class="k">AND</span> memname=<span class="s">&quot;%UPCASE(</span><span class="nv">&amp;document</span><span class="s">)&quot;</span> <span class="k">AND</span> memtype = <span class="s">&quot;ITEMSTOR&quot;</span><span class="kr">;</span>
+<span class="kr">   RUN;</span>QUIT;
+   <span class="nb">%IF</span> <span class="nv">&amp;_temp</span> NE <span class="m">1</span>
+   <span class="nb">%THEN</span> <span class="nb">%DO</span>;<span class="k"></span>
+<span class="k">       %PUT </span><span class="nb">%STR</span><span class="err">(ERR)</span><span class="k">OR</span><span class="err">: </span><span class="nv">&amp;macro</span><span class="err"> - DOCUMENT (</span><span class="nv">&amp;document</span><span class="err">) is no existing ODS DOCUMENT. Macro will </span><span class="k">abort</span><span class="err">;</span>
+       <span class="nf">%RETURN</span>;
+   <span class="nb">%END</span>;
+
+%*;
+%* Read information;
+%*;
+
+   ODS <span class="k">SELECT</span> NONE<span class="kr">;</span>
+<span class="kr">   PROC DOCUMENT </span>NAME = <span class="nv">&amp;document</span>;
+       <span class="k">LIST</span> / DETAILS LEVELS=all;
+       ODS <span class="k">OUTPUT</span> PROPERTIES = _props<span class="kr">;</span>
+<span class="kr">   RUN;</span>QUIT;
+   ODS <span class="k">SELECT</span> ALL;
+
+%*;
+%* <span class="k">Error</span> handling II;
+%*;
+
+   %* <span class="k">check</span>: DOCUMENT must contain content;
+   <span class="nb">%LET</span> _temp = -<span class="m">1</span><span class="kr">;</span>
+<span class="kr">   PROC SQL </span>NOPRINT;
+       <span class="k">SELECT</span> nobs <span class="k">INTO</span> :_temp <span class="k">FROM</span> SASHELP<span class="m">.</span>VTABLE <span class="k">WHERE</span> <span class="k">libname</span>=<span class="s">&quot;WORK&quot;</span> <span class="k">AND</span> memname=<span class="s">&quot;_PROPS&quot;</span><span class="kr">;</span>
+<span class="kr">   RUN;</span>QUIT;
+   <span class="nb">%IF</span> <span class="nv">&amp;_temp</span> = <span class="m">0</span>
+   <span class="nb">%THEN</span> <span class="nb">%DO</span>;<span class="k"></span>
+<span class="k">       %PUT </span><span class="nb">%STR</span><span class="err">(WAR)NING: </span><span class="nv">&amp;macro</span><span class="err"> - DOCUMENT (</span><span class="nv">&amp;document</span><span class="err">) does </span><span class="k">not</span><span class="err"> contain any observations - no action done;</span>
+       <span class="nf">%RETURN</span>;
+   <span class="nb">%END</span>;
+
+%*;
+%* Processing;
+%*;
+
+   %* <span class="k">create</span> a generic processing for PROC DOCUMENT;
+   %* Step <span class="m">1</span>: move all reports to /all <span class="k">and</span> apply <span class="k">label</span><span class="kr">;</span>
+<span class="kr">   DATA </span><span class="kc">_NULL_</span>;
+       <span class="k">SET</span> _props <span class="k">END</span>=_eof;
+       <span class="k">ATTRIB</span> coreLabel <span class="k">FORMAT</span>=$<span class="m">200</span>.;
+       <span class="k">RETAIN</span> coreLabel;
+       <span class="k">RETAIN</span> _count <span class="m">1</span> _first <span class="m">0</span> _core <span class="m">0</span>;
+
+       <span class="k">IF</span> <span class="kc">_N_</span> = <span class="m">1</span>
+       <span class="k">THEN</span> <span class="k">DO</span>;
+           <span class="k">CALL</span> EXECUTE(<span class="s">&quot;PROC DOCUMENT NAME=</span><span class="nv">&amp;document</span><span class="s">;&quot;</span>);
+       <span class="k">END</span>;
+
+       <span class="k">IF</span> COUNT(path,<span class="s">&quot;</span><span class="se">\&quot;</span><span class="s">) = 1 AND type = &quot;</span>Dir<span class="s">&quot;</span>
+<span class="s">       THEN DO;</span>
+<span class="s">           _core = 1;</span>
+<span class="s">           %IF %UPCASE(</span><span class="nv">&amp;bookmarkLabel</span><span class="s">) NE YES</span>
+<span class="s">           %THEN %DO;</span>
+<span class="s">               CALL MISSING(coreLabel);</span>
+<span class="s">               PUT &quot;</span>updateOdsDocument - No <span class="k">label</span> is used<span class="s">&quot;;</span>
+<span class="s">           %END;</span>
+<span class="s">           %ELSE %IF %LENGTH(&quot;</span><span class="nv">&amp;label</span><span class="s">&quot;) &gt; 2</span>
+<span class="s">           %THEN %DO;</span>
+<span class="s">               coreLabel = &quot;</span><span class="nv">&amp;label</span><span class="s">&quot;;</span>
+<span class="s">           %END;</span>
+<span class="s">           %ELSE %DO;</span>
+<span class="s">               coreLabel = label;</span>
+<span class="s">               _first = 0;</span>
+
+<span class="s">           %END;</span>
+<span class="s">       END;</span>
+
+<span class="s">       IF type NE &quot;</span>Dir<span class="s">&quot; AND _core</span>
+<span class="s">       THEN DO;</span>
+<span class="s">           CALL EXECUTE(&#39;MOVE &#39; || STRIP(path) || &#39; to \all;&#39;);</span>
+<span class="s">           IF _first = 0</span>
+<span class="s">               THEN CALL EXECUTE(&#39;SETLABEL \all#&#39; || STRIP(PUT(_count,BEST.)) || &quot;</span> <span class="s">&#39;&quot; || STRIP(coreLabel) || &quot;&#39;</span>;<span class="s">&quot;);</span>
+<span class="s">           _first = 1;</span>
+<span class="s">           _count = _count + 1;</span>
+<span class="s">       END;</span>
+
+<span class="s">       IF _eof</span>
+<span class="s">       THEN DO;</span>
+<span class="s">           CALL EXECUTE(&#39;RUN;QUIT;&#39;);</span>
+<span class="s">       END;</span>
+<span class="s">   RUN;</span>
+
+<span class="s">   %* Step 2: remove all old hierarchies;</span>
+<span class="s">   DATA _NULL_;</span>
+<span class="s">       SET _props END=_eof;</span>
+<span class="s">       IF _N_ = 1</span>
+<span class="s">           THEN CALL EXECUTE(&quot;</span>PROC DOCUMENT NAME=<span class="nv">&amp;document</span>;<span class="s">&quot;);</span>
+<span class="s">       IF COUNT(path,&quot;</span>\<span class="s">&quot;) = 1 AND type = &quot;</span>Dir<span class="s">&quot;</span>
+<span class="s">           THEN CALL EXECUTE(&#39;DELETE &#39; || STRIP(path) || &quot;</span>;<span class="s">&quot;);</span>
+<span class="s">       IF _eof</span>
+<span class="s">           THEN CALL EXECUTE(&#39;RUN;QUIT;&#39;);</span>
+<span class="s">   RUN;</span>
+
+<span class="s">%*;</span>
+<span class="s">%* Cleanup;</span>
+<span class="s">%*;</span>
+
+<span class="s">   PROC DATASETS LIB=WORK;</span>
+<span class="s">       DELETE _props;</span>
+<span class="s">   RUN;</span>
+
+<span class="s">%MEND smile_ods_document_flat_label;</span>
+</code></pre></div>
+</td></tr></table>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../smile_attr_var/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                smile_attr_var
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../smile_pdf_merge/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                smile_pdf_merge
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.18f0862e.min.js"></script>
+      <script src="../assets/javascripts/bundle.994580cf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: ['navigation.sections'],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.9c0e82ba.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

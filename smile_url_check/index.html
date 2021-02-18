@@ -14,7 +14,7 @@
     
     
       
-        <title>smile_attrn - SMILE - Smart SAS Macros</title>
+        <title>smile_url_check - SMILE - Smart SAS Macros</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#test_smile_attrn" class="md-skip">
+        <a href="#macro-smile_url_check" class="md-skip">
           Skip to content
         </a>
       
@@ -92,7 +92,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              smile_attrn
+              smile_url_check
             
           </span>
         </div>
@@ -211,14 +211,16 @@
 
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
       
       <label class="md-nav__link" for="nav-2">
         Macros
@@ -307,11 +309,70 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../smile_url_check/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          smile_url_check
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         smile_url_check
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checks" class="md-nav__link">
+    Checks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#macro" class="md-nav__link">
+    Macro
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -340,16 +401,14 @@
 
   
   
-    
-  
   
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
       
       <label class="md-nav__link" for="nav-3">
         Example Programs
@@ -378,56 +437,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          smile_attrn
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../test_smile_attrn/" class="md-nav__link">
         smile_attrn
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#example-1-simple-examples" class="md-nav__link">
-    Example 1 - simple examples
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-2-error-case-examples" class="md-nav__link">
-    Example 2 - error case examples
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -523,15 +537,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#example-1-simple-examples" class="md-nav__link">
-    Example 1 - simple examples
+  <a href="#parameters" class="md-nav__link">
+    Parameters
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-2-error-case-examples" class="md-nav__link">
-    Example 2 - error case examples
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checks" class="md-nav__link">
+    Checks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#macro" class="md-nav__link">
+    Macro
   </a>
   
 </li>
@@ -548,51 +576,251 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/KatjaGlassConsulting/SMILE-SmartSASMacros/edit/master/docs/test_smile_attrn.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/KatjaGlassConsulting/SMILE-SmartSASMacros/edit/master/docs/smile_url_check.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="test_smile_attrn">TEST_SMILE_ATTRN<a class="headerlink" href="#test_smile_attrn" title="Permanent link">&para;</a></h1>
-<p>Example program for macro calls of %smile_attrn</p>
+                <h1 id="macro-smile_url_check">Macro SMILE_URL_CHECK<a class="headerlink" href="#macro-smile_url_check" title="Permanent link">&para;</a></h1>
+<p>Check existence of URL and store result in return code, information can optionally be printed to the log</p>
 <ul>
-<li>Author     : Katja Glass</li>
-<li>Creation   : 2021-02-15</li>
+<li>Author: Katja Glass</li>
+<li>Date: 2021-01-04</li>
 <li>SAS Version: SAS 9.4</li>
-<li>License    : MIT</li>
+<li>License: MIT</li>
+<li>Comment: Return codes are 0 - url found, 999 - no url provided, 998 - url not provided in quotes, otherwise html-return code (e.g. 404 file not found)</li>
+<li>Reference: The idea from this macro is coming from a paper by Joseph Henry - The ABCs of PROC HTTP (https://www.sas.com/content/dam/SAS/support/en/sas-global-forum-proceedings/2019/3232-2019.pdf)</li>
+<li>Example Program: <a href="../test_smile_url_check/">test_smile_url_check</a></li>
 </ul>
-<p>initialize macros</p>
-<div class="highlight"><pre><span></span><code><span class="nb">%LET</span> root = /folders/myshortcuts/git/SMILE-SmartSASMacros;
-<span class="k">OPTIONS</span> SASAUTOS=(SASAUTOS, <span class="s">&quot;</span><span class="nv">&amp;root</span><span class="s">/macros&quot;</span>);
+<h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>URL</td>
+<td>http(s) URL which should be checked in quotes</td>
+</tr>
+<tr>
+<td>RETURN</td>
+<td>return code variable (scope should be global)</td>
+</tr>
+<tr>
+<td>INFO</td>
+<td>NO/YES indicator to print information to the log</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>OPTIONS NONOTES;
+%GLOBAL rc;
+%smile_url_check(url=&quot;https://github.com/phuse-org/phuse-scripts/blob/master/whitepapers/scriptathons/central/dummy.sas&quot;);
+%PUT &amp;rc;
+%smile_url_check(url=&quot;https://github.com/phuse-org/phuse-scripts/blob/master/whitepapers/scriptathons/central/Box_Plot_Baseline.sas&quot;);
+%PUT &amp;rc;
 </code></pre></div>
-<h2 id="example-1-simple-examples">Example 1 - simple examples<a class="headerlink" href="#example-1-simple-examples" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="k">%PUT </span><span class="err">Class NOBS(</span><span class="m">1</span><span class="err">):  </span><span class="nf">%smile_attrn</span><span class="err">(sashelp</span><span class="m">.</span><span class="err">class, nobs);</span>
-<span class="k">%PUT </span><span class="err">Class NOBS(</span><span class="m">2</span><span class="err">):  </span><span class="nf">%smile_attrn</span><span class="err">(sashelp</span><span class="m">.</span><span class="err">class(</span><span class="k">WHERE</span><span class="err">=(age=</span><span class="m">16</span><span class="err">)), nobs);</span>
-<span class="k">%PUT </span><span class="err">Class NLOBS:    </span><span class="nf">%smile_attrn</span><span class="err">(sashelp</span><span class="m">.</span><span class="err">class(</span><span class="k">WHERE</span><span class="err">=(age=</span><span class="m">16</span><span class="err">)), nlobs);</span>
-<span class="k">%PUT </span><span class="err">Class NLOBSF:   </span><span class="nf">%smile_attrn</span><span class="err">(sashelp</span><span class="m">.</span><span class="err">class(</span><span class="k">WHERE</span><span class="err">=(age=</span><span class="m">16</span><span class="err">)), nlobsf);</span>
-<span class="k">%PUT </span><span class="err">Class ANOBS(</span><span class="m">1</span><span class="err">): </span><span class="nf">%smile_attrn</span><span class="err">(sashelp</span><span class="m">.</span><span class="err">class, ANOBS);</span>
-<span class="k">%PUT </span><span class="err">Class ANOBS(</span><span class="m">2</span><span class="err">): </span><span class="nf">%smile_attrn</span><span class="err">(sashelp</span><span class="m">.</span><span class="err">class(</span><span class="k">WHERE</span><span class="err">=(age=</span><span class="m">1</span><span class="err">)), ANOBS);</span>
-<span class="k">%PUT </span><span class="err">Class NVARS:    </span><span class="nf">%smile_attrn</span><span class="err">(sashelp</span><span class="m">.</span><span class="err">class, NVARS);</span>
+<h2 id="checks">Checks<a class="headerlink" href="#checks" title="Permanent link">&para;</a></h2>
+<ul>
+<li>URL must be provided;</li>
+<li>URL must be provided in quotes;</li>
+</ul>
+<h2 id="macro">Macro<a class="headerlink" href="#macro" title="Permanent link">&para;</a></h2>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>%************************************************************************************************************************;
+%* Project    : SMILE - SAS Macros, Intuitive Library Extension
+%* Macro      : smile_url_check
+%* Parameters : URL    - http(s) URL which should be checked <span class="k">in</span> quotes
+%*              <span class="k">RETURN</span> - <span class="k">return</span> code variable (scope should be global)
+%*              INFO   - NO/YES indicator to print information to the log
+%*
+%* Purpose    : <span class="k">Check</span> existence of URL <span class="k">and</span> store result <span class="k">in</span> <span class="k">return</span> code, information can optionally be printed to the log
+%* Comment    : <span class="k">Return</span> codes are <span class="m">0</span> - url found, <span class="m">999</span> - no url provided,
+%*              <span class="m">998</span> - url <span class="k">not</span> provided <span class="k">in</span> quotes, otherwise html-<span class="k">return</span> code (e<span class="m">.</span>g. <span class="m">404</span> <span class="k">file</span> <span class="k">not</span> found)
+%*
+%* Author     : Katja Glass
+%* Creation   : <span class="m">2021-01-04</span>
+%* License    : MIT
+%*
+%* Reference  : The idea <span class="k">from</span> this macro is coming <span class="k">from</span> a paper <span class="k">by</span> Joseph Henry - The ABCs of PROC HTTP
+%*              (https://www<span class="m">.</span>sas<span class="m">.</span>com/content/dam/SAS/support/en/sas-global-forum-proceedings/<span class="m">2019</span>/<span class="m">3232-2019.</span>pdf)
+%*
+%* SAS Version: SAS <span class="m">9.4</span>
+%*
+%************************************************************************************************************************;
+<span class="cm">/*</span>
+<span class="cm">Examples:</span>
+<span class="cm">OPTIONS NONOTES;</span>
+<span class="cm">%GLOBAL rc;</span>
+<span class="cm">%smile_url_check(url=&quot;https://github.com/phuse-org/phuse-scripts/blob/master/whitepapers/scriptathons/central/dummy.sas&quot;);</span>
+<span class="cm">%PUT &amp;rc;</span>
+<span class="cm">%smile_url_check(url=&quot;https://github.com/phuse-org/phuse-scripts/blob/master/whitepapers/scriptathons/central/Box_Plot_Baseline.sas&quot;);</span>
+<span class="cm">%PUT &amp;rc;</span>
+<span class="cm">*/</span>
+%************************************************************************************************************************;
+
+<span class="nb">%MACRO</span> smile_url_check(url=, <span class="k">return</span>=rc, info=NO);
+
+   <span class="nb">%LOCAL</span> macro issue;
+   <span class="nb">%LET</span> macro = <span class="nv">&amp;sysmacroname</span>;
+   <span class="nb">%LET</span> issue = <span class="m">0</span>;
+
+   %* <span class="k">check</span>: URL must be provided;
+   <span class="nb">%IF</span> <span class="nb">%LENGTH</span>(<span class="nv">&amp;url</span>) = <span class="m">0</span>
+   <span class="nb">%THEN</span> <span class="nb">%DO</span>;<span class="k"></span>
+<span class="k">       %PUT </span><span class="nb">%STR</span><span class="err">(ERR)</span><span class="k">OR</span><span class="err">: </span><span class="nv">&amp;macro</span><span class="err"> - URL must be provided.;</span>
+       <span class="nb">%IF</span> <span class="nb">%LENGTH</span>(<span class="nv">&amp;return</span>) &gt; <span class="m">0</span>
+       <span class="nb">%THEN</span> <span class="nb">%DO</span>;
+           <span class="nb">%LET</span> <span class="nv">&amp;return</span> = <span class="m">999</span>;
+       <span class="nb">%END</span>;
+       <span class="nf">%RETURN</span>;
+   <span class="nb">%END</span>;
+
+   %* <span class="k">check</span>: URL must be provided <span class="k">in</span> quotes<span class="kr">;</span>
+<span class="kr">   DATA </span><span class="kc">_NULL_</span>;
+       <span class="k">ATTRIB</span> url <span class="k">FORMAT</span>=$<span class="m">2000</span>.;
+       url = <span class="nb">SYMGET(</span><span class="s">&#39;url&#39;</span>);
+       <span class="k">IF</span> <span class="k">NOT</span> (<span class="nb">SUBSTR(</span>url,<span class="m">1</span>,<span class="m">1</span>) <span class="k">IN</span> (<span class="s">&quot;&#39;&quot;</span>,<span class="s">&#39;&quot;&#39;</span>) <span class="k">AND</span> <span class="nb">SUBSTR(</span>url,<span class="k">LENGTH</span>(url))  <span class="k">IN</span> (<span class="s">&quot;&#39;&quot;</span>,<span class="s">&#39;&quot;&#39;</span>))
+       <span class="k">THEN</span> <span class="k">DO</span>;<span class="k"></span>
+<span class="k">           PUT </span><span class="s">&quot;ERR&quot;</span><span class="err"> </span><span class="s">&quot;OR: </span><span class="nv">&amp;macro</span><span class="s"> - URL must be provided in quotes.&quot;</span><span class="err">;</span>
+           <span class="nb">%IF</span> <span class="nb">%LENGTH</span>(<span class="nv">&amp;return</span>) &gt; <span class="m">0</span>
+           <span class="nb">%THEN</span> <span class="nb">%DO</span>;
+               <span class="k">CALL</span> SYMPUT(<span class="s">&quot;</span><span class="nv">&amp;return</span><span class="s">&quot;</span>, <span class="s">&quot;998&quot;</span>);
+           <span class="nb">%END</span>;
+           <span class="k">CALL</span> SYMPUT(<span class="s">&quot;issue&quot;</span>, <span class="s">&quot;1&quot;</span>);
+       <span class="k">END</span><span class="kr">;</span>
+<span class="kr">   RUN;</span>
+   <span class="nb">%IF</span> <span class="nv">&amp;issue</span> = <span class="m">1</span>
+       <span class="nb">%THEN</span> <span class="nf">%RETURN</span>;
+
+   %* perform URL <span class="k">check</span>;
+   <span class="k">FILENAME</span> <span class="k">out</span> TEMP;
+   <span class="k">FILENAME</span> hdrs TEMP<span class="kr">;</span>
+
+<span class="kr">   PROC HTTP </span>URL=<span class="nv">&amp;url</span>
+       HEADEROUT=hdrs<span class="kr">;</span>
+<span class="kr">   RUN;</span>
+
+<span class="kr">   DATA </span><span class="kc">_NULL_</span>;
+       <span class="k">INFILE</span> hdrs SCANOVER TRUNCOVER;
+       <span class="k">INPUT</span> @<span class="s">&#39;HTTP/1.1&#39;</span> code <span class="m">4</span>. <span class="k">message</span> $<span class="m">255</span>.;
+
+       <span class="nb">%IF</span> <span class="nb">%LENGTH</span>(<span class="nv">&amp;return</span>) &gt; <span class="m">0</span>
+       <span class="nb">%THEN</span> <span class="nb">%DO</span>;
+           <span class="k">IF</span> code=<span class="m">200</span>
+               <span class="k">THEN</span> <span class="k">CALL</span> SYMPUT(<span class="s">&quot;</span><span class="nv">&amp;return</span><span class="s">&quot;</span>, <span class="s">&quot;0&quot;</span>);
+               <span class="k">ELSE</span> <span class="k">CALL</span> SYMPUT(<span class="s">&quot;</span><span class="nv">&amp;return</span><span class="s">&quot;</span>, code);
+       <span class="nb">%END</span>;
+       <span class="nb">%IF</span> <span class="nb">%UPCASE</span>(<span class="nv">&amp;info</span>) NE NO
+       <span class="nb">%THEN</span> <span class="nb">%DO</span>;<span class="k"></span>
+<span class="k">           PUT </span><span class="s">&quot;Return Code: &quot;</span><span class="err"> code;</span>
+<span class="k">           PUT </span><span class="s">&quot;Return Message: &quot;</span><span class="err"> </span><span class="k">message</span><span class="err">;</span>
+       <span class="nb">%END</span><span class="kr">;</span>
+<span class="kr">   RUN;</span>
+
+   <span class="k">FILENAME</span> <span class="k">out</span>;
+   <span class="k">FILENAME</span> hdrs;
+
+<span class="nb">%MEND</span> smile_url_check;
 </code></pre></div>
-<p><strong>Log Output:</strong></p>
-<div class="highlight"><pre><span></span><code>Class NOBS(1):  19
-Class NOBS(2):  19
-Class NLOBS:    19
-Class NLOBSF:   -1
-Class ANOBS(1): 1
-Class ANOBS(2): 1
-Class NVARS:    5
-</code></pre></div>
-<h2 id="example-2-error-case-examples">Example 2 - error case examples<a class="headerlink" href="#example-2-error-case-examples" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="k">%PUT </span><span class="err">invalid data:      </span><span class="nf">%smile_attrn</span><span class="err">(sashelp</span><span class="m">.</span><span class="err">class2, nobs);</span>
-<span class="k">%PUT </span><span class="err">invalid attribute: </span><span class="nf">%smile_attrn</span><span class="err">(sashelp</span><span class="m">.</span><span class="err">class, dummy);</span>
-</code></pre></div>
-<p><strong>Log Output:</strong></p>
-<div class="highlight"><pre><span></span><code>ERROR: SMILE_ATTRN - DATA (sashelp.class2) does not exist.
-invalid data:      -1
-ERROR: SMILE_ATTRN - Invalid value for ATTRIB (dummy).
-invalid attribute: -1
-</code></pre></div>
+</td></tr></table>
                 
               
               
@@ -611,7 +839,7 @@ invalid attribute: -1
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../test_smile_attrc/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../smile_pdf_read_bookmarks/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -620,19 +848,19 @@ invalid attribute: -1
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                smile_attrc
+                smile_pdf_read_bookmarks
               </div>
             </div>
           </a>
         
         
-          <a href="../test_smile_attr_var/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../smile_url_download/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                smile_attr_var
+                smile_url_download
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
