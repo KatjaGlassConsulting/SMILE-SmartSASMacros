@@ -355,8 +355,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-7-create-flat-navigation-pdf-using-multiple-ods-documents-many-outputs" class="md-nav__link">
-    Example 7 - create flat navigation PDF using multiple ODS DOCUMENTS - many outputs
+  <a href="#example-8-create-flat-navigation-pdf-using-multiple-ods-documents-many-outputs" class="md-nav__link">
+    Example 8 - create flat navigation PDF using multiple ODS DOCUMENTS - many outputs
   </a>
   
 </li>
@@ -365,6 +365,42 @@
   
 </nav>
       
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test_smile_pdf_merge/" class="md-nav__link">
+        smile_pdf_merge
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test_smile_pdf_read_bookmarks/" class="md-nav__link">
+        smile_pdf_read_bookmarks
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test_smile_url_check/" class="md-nav__link">
+        smile_url_check
+      </a>
     </li>
   
 
@@ -449,8 +485,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-7-create-flat-navigation-pdf-using-multiple-ods-documents-many-outputs" class="md-nav__link">
-    Example 7 - create flat navigation PDF using multiple ODS DOCUMENTS - many outputs
+  <a href="#example-8-create-flat-navigation-pdf-using-multiple-ods-documents-many-outputs" class="md-nav__link">
+    Example 8 - create flat navigation PDF using multiple ODS DOCUMENTS - many outputs
   </a>
   
 </li>
@@ -476,12 +512,12 @@
 <p>Example program for macro calls of %smile_ods_document_flat_label</p>
 <ul>
 <li>Author     : Katja Glass</li>
-<li>Creation   : 2021-01-18</li>
+<li>Creation   : 2021-02-18</li>
 <li>SAS Version: SAS 9.4</li>
 <li>License    : MIT</li>
 </ul>
-<p>initialize macros</p>
-<div class="highlight"><pre><span></span><code><span class="nb">%LET</span> root = /folders/myshortcuts/git/SMILE-SmartSASMacros;
+<p>Initialize macros</p>
+<div class="highlight"><pre><span></span><code><span class="nb">%LET</span> root = &lt;path&gt;;
 <span class="k">OPTIONS</span> SASAUTOS=(SASAUTOS, <span class="s">&quot;</span><span class="nv">&amp;root</span><span class="s">/macros&quot;</span>);
 </code></pre></div>
 <p>set options for nice layout</p>
@@ -508,14 +544,112 @@ The warning message is expected
 The error message is expected
 </code></pre></div>
 <h2 id="example-3-create-flat-navigation-pdf-using-one-ods-document">Example 3 - create flat navigation PDF using one ODS DOCUMENT<a class="headerlink" href="#example-3-create-flat-navigation-pdf-using-one-ods-document" title="Permanent link">&para;</a></h2>
-<p>comment:
-- the SAS TOC would be created a buggy linking (e.g. click "table 2" on TOC)
-- this had been reported to SAS(R)- it seems to be depending on viewer and whether the PDF is maximized or not
-- I am expecting no fix from SAS(R)</p>
+<p>Comment:</p>
+<ul>
+<li>the SAS TOC would be created a buggy linking (e.g. click "table 2" on TOC)</li>
+<li>this had been reported to SAS(R)- it seems to be depending on viewer and whether the PDF is maximized or not</li>
+<li>I am expecting no fix from SAS(R)</li>
+</ul>
 <p>include program to create one ODS document containing many reports</p>
 <div class="highlight"><pre><span></span><code><span class="nf">%INCLUDE</span> <span class="s">&quot;</span><span class="nv">&amp;root</span><span class="s">/programs/example_ods_document_many_reports.sas&quot;</span>;
 </code></pre></div>
-<p>create direct output without any modifications</p>
+<p>Create direct output without any modifications - ODS Structure for DOC_RESULTS contains several levels</p>
+<table>
+<thead>
+<tr>
+<th>ODS Path</th>
+<th>ODS Type</th>
+<th>Item Label</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\Report#1</td>
+<td>Dir</td>
+<td>Table 1: By Group Report about shoes</td>
+</tr>
+<tr>
+<td>\Report#1\ByGroup1#1</td>
+<td>Dir</td>
+<td>Region=Canada</td>
+</tr>
+<tr>
+<td>\Report#1\ByGroup1#1\Report#1</td>
+<td>Table</td>
+<td></td>
+</tr>
+<tr>
+<td>\Report#1\ByGroup2#1</td>
+<td>Dir</td>
+<td>Region=Pacific</td>
+</tr>
+<tr>
+<td>\Report#1\ByGroup2#1\Report#1</td>
+<td>Table</td>
+<td></td>
+</tr>
+<tr>
+<td>\Report#2</td>
+<td>Dir</td>
+<td>Table 2: Table Class Output</td>
+</tr>
+<tr>
+<td>\Report#2\Report#1</td>
+<td>Table</td>
+<td></td>
+</tr>
+<tr>
+<td>\Report#3</td>
+<td>Dir</td>
+<td>Table 3: Multiple outputs - Cars for make = Acura</td>
+</tr>
+<tr>
+<td>\Report#3\Report#1</td>
+<td>Table</td>
+<td></td>
+</tr>
+<tr>
+<td>\Report#4</td>
+<td>Dir</td>
+<td>Table 4: Multiple outputs - Cars for make = Audi</td>
+</tr>
+<tr>
+<td>\Report#4\Report#1</td>
+<td>Table</td>
+<td></td>
+</tr>
+<tr>
+<td>\Report#5</td>
+<td>Dir</td>
+<td>Table 5: Multiple outputs - Cars for make = BMW</td>
+</tr>
+<tr>
+<td>\Report#5\Report#1</td>
+<td>Table</td>
+<td></td>
+</tr>
+<tr>
+<td>\Report#6</td>
+<td>Dir</td>
+<td>Table 6: Different label</td>
+</tr>
+<tr>
+<td>\Report#6\Report#1</td>
+<td>Table</td>
+<td></td>
+</tr>
+<tr>
+<td>\SGPlot#1</td>
+<td>Dir</td>
+<td>Figure 1: Class graphic</td>
+</tr>
+<tr>
+<td>\SGPlot#1\SGPlot#1</td>
+<td>Graph</td>
+<td>The SGPlot Procedure</td>
+</tr>
+</tbody>
+</table>
 <div class="highlight"><pre><span></span><code>ODS PDF <span class="k">FILE</span>= <span class="s">&quot;</span><span class="nv">&amp;root</span><span class="s">/results/ods_document_noflat1.pdf&quot;</span> nocontents<span class="kr">;</span>
 <span class="kr">PROC DOCUMENT </span>name=doc_results; replay<span class="kr">; QUIT;</span>
 ODS PDF CLOSE;
@@ -525,8 +659,59 @@ ODS PDF CLOSE;
 <p>update the document to flatten labels</p>
 <div class="highlight"><pre><span></span><code><span class="nf">%smile_ods_document_flat_label</span>(document=doc_results);
 </code></pre></div>
-<p>ODS Document is arranged flat
-Create PDF out of modified ODS Document</p>
+<p>ODS Document structure is arranged flat by macro</p>
+<table>
+<thead>
+<tr>
+<th>ODS Path</th>
+<th>ODS Type</th>
+<th>Item Label</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\all#1</td>
+<td>Table</td>
+<td>Table 1: By Group Report about shoes</td>
+</tr>
+<tr>
+<td>\all#2</td>
+<td>Table</td>
+<td></td>
+</tr>
+<tr>
+<td>\all#3</td>
+<td>Table</td>
+<td>Table 2: Table Class Output</td>
+</tr>
+<tr>
+<td>\all#4</td>
+<td>Table</td>
+<td>Table 3: Multiple outputs - Cars for make = Acura</td>
+</tr>
+<tr>
+<td>\all#5</td>
+<td>Table</td>
+<td>Table 4: Multiple outputs - Cars for make = Audi</td>
+</tr>
+<tr>
+<td>\all#6</td>
+<td>Table</td>
+<td>Table 5: Multiple outputs - Cars for make = BMW</td>
+</tr>
+<tr>
+<td>\all#7</td>
+<td>Table</td>
+<td>Table 6: Different label</td>
+</tr>
+<tr>
+<td>\all#8</td>
+<td>Graph</td>
+<td>Figure 1: Class graphic</td>
+</tr>
+</tbody>
+</table>
+<p>Create PDF out of modified ODS Document</p>
 <div class="highlight"><pre><span></span><code>ODS PDF <span class="k">FILE</span>= <span class="s">&quot;</span><span class="nv">&amp;root</span><span class="s">/results/ods_document_flat1.pdf&quot;</span> nocontents<span class="kr">;</span>
 <span class="kr">PROC DOCUMENT </span>name=doc_results; replay<span class="kr">; QUIT;</span>
 ODS PDF CLOSE;
@@ -541,14 +726,52 @@ ODS PDF CLOSE;
 ODS <span class="kc">_ALL_</span> CLOSE;
 </code></pre></div>
 <h2 id="example-4-create-flat-navigation-pdf-using-multiple-ods-document-with-re-labeling">Example 4 - create flat navigation PDF using multiple ODS DOCUMENT - with re-labeling<a class="headerlink" href="#example-4-create-flat-navigation-pdf-using-multiple-ods-document-with-re-labeling" title="Permanent link">&para;</a></h2>
-<p>comment:
-- a looping macro might be feasible for generic use
-- the SAS TOC is created and linking correctly
-- ODS PROCLABEL is ignored as the label is coming through the re-labeling</p>
+<p>Comment:</p>
+<ul>
+<li>a looping macro might be feasible for generic use</li>
+<li>the SAS TOC is created and linking correctly</li>
+<li>ODS PROCLABEL is ignored as the label is coming through the re-labeling</li>
+</ul>
 <p>include program to create one multiple ODS documents - one per report</p>
 <div class="highlight"><pre><span></span><code><span class="nf">%INCLUDE</span> <span class="s">&quot;</span><span class="nv">&amp;root</span><span class="s">/programs/example_ods_document_single_reports.sas&quot;</span>;
 </code></pre></div>
 <p>flat ODS Document structure per document, apply a specific label</p>
+<table>
+<thead>
+<tr>
+<th>ODS Path</th>
+<th>ODS Type</th>
+<th>Item Label</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\Report#1</td>
+<td>Dir</td>
+<td>Table 1: By Group Report about shoes</td>
+</tr>
+<tr>
+<td>\Report#1\ByGroup1#1</td>
+<td>Dir</td>
+<td>Region=Canada</td>
+</tr>
+<tr>
+<td>\Report#1\ByGroup1#1\Report#1</td>
+<td>Table</td>
+<td></td>
+</tr>
+<tr>
+<td>\Report#1\ByGroup2#1</td>
+<td>Dir</td>
+<td>Region=Pacific</td>
+</tr>
+<tr>
+<td>\Report#1\ByGroup2#1\Report#1</td>
+<td>Table</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight"><pre><span></span><code><span class="nf">%smile_ods_document_flat_label</span>(document=doc_res1,<span class="k">label</span>=<span class="k">Table</span> <span class="m">1</span>);
 <span class="nf">%smile_ods_document_flat_label</span>(document=doc_res2,<span class="k">label</span>=<span class="k">Table</span> <span class="m">2</span>);
 <span class="nf">%smile_ods_document_flat_label</span>(document=doc_res3,<span class="k">label</span>=<span class="k">Table</span> <span class="m">3</span>);
@@ -558,6 +781,27 @@ ODS <span class="kc">_ALL_</span> CLOSE;
 <span class="nf">%smile_ods_document_flat_label</span>(document=doc_res_f1,<span class="k">label</span>=Figure <span class="m">1</span>);
 </code></pre></div>
 <p>ODS Documents are flat now using a short label</p>
+<table>
+<thead>
+<tr>
+<th>ODS Path</th>
+<th>ODS Type</th>
+<th>Item Label</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\all#1</td>
+<td>Table</td>
+<td>Table 1</td>
+</tr>
+<tr>
+<td>\all#2</td>
+<td>Table</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <p>Create final PDF file</p>
 <div class="highlight"><pre><span></span><code>ODS PDF <span class="k">FILE</span>= <span class="s">&quot;</span><span class="nv">&amp;root</span><span class="s">/results/ods_document_flat2.pdf&quot;</span> CONTENTS<span class="kr">;</span>
 <span class="kr">PROC DOCUMENT </span>name=doc_res1; replay<span class="kr">; QUIT;</span>
@@ -576,13 +820,51 @@ ODS PDF CLOSE;
 <p><strong>First Table</strong></p>
 <p><img alt="Screenshot" src="../img/screen_ods_doc_flat4.jpg" /></p>
 <h2 id="example-5-create-flat-navigation-pdf-using-multiple-ods-document">Example 5 - create flat navigation PDF using multiple ODS DOCUMENT<a class="headerlink" href="#example-5-create-flat-navigation-pdf-using-multiple-ods-document" title="Permanent link">&para;</a></h2>
-<p>comment:
-- a looping macro might be feasible for generic use
-- the SAS TOC is created and linking correctly</p>
+<p>Comment:</p>
+<ul>
+<li>a looping macro might be feasible for generic use</li>
+<li>the SAS TOC is created and linking correctly</li>
+</ul>
 <p>include program to create one multiple ODS documents - one per report</p>
 <div class="highlight"><pre><span></span><code><span class="nf">%INCLUDE</span> <span class="s">&quot;</span><span class="nv">&amp;root</span><span class="s">/programs/example_ods_document_single_reports.sas&quot;</span>;
 </code></pre></div>
 <p>flat ODS Document structure per document, apply a specific label</p>
+<table>
+<thead>
+<tr>
+<th>ODS Path</th>
+<th>ODS Type</th>
+<th>Item Label</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\Report#1</td>
+<td>Dir</td>
+<td>Table 1: By Group Report about shoes</td>
+</tr>
+<tr>
+<td>\Report#1\ByGroup1#1</td>
+<td>Dir</td>
+<td>Region=Canada</td>
+</tr>
+<tr>
+<td>\Report#1\ByGroup1#1\Report#1</td>
+<td>Table</td>
+<td></td>
+</tr>
+<tr>
+<td>\Report#1\ByGroup2#1</td>
+<td>Dir</td>
+<td>Region=Pacific</td>
+</tr>
+<tr>
+<td>\Report#1\ByGroup2#1\Report#1</td>
+<td>Table</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight"><pre><span></span><code><span class="nf">%smile_ods_document_flat_label</span>(document=doc_res1);
 <span class="nf">%smile_ods_document_flat_label</span>(document=doc_res2);
 <span class="nf">%smile_ods_document_flat_label</span>(document=doc_res3);
@@ -592,6 +874,27 @@ ODS PDF CLOSE;
 <span class="nf">%smile_ods_document_flat_label</span>(document=doc_res_f1);
 </code></pre></div>
 <p>ODS Documents are flat now using the original TITLE label</p>
+<table>
+<thead>
+<tr>
+<th>ODS Path</th>
+<th>ODS Type</th>
+<th>Item Label</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\all#1</td>
+<td>Table</td>
+<td>Table 1: By Group Report about shoes</td>
+</tr>
+<tr>
+<td>\all#2</td>
+<td>Table</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <p>Create final PDF file</p>
 <div class="highlight"><pre><span></span><code>ODS PDF <span class="k">FILE</span>= <span class="s">&quot;</span><span class="nv">&amp;root</span><span class="s">/results/ods_document_flat3.pdf&quot;</span> CONTENTS<span class="kr">;</span>
 <span class="kr">PROC DOCUMENT </span>name=doc_res1; replay<span class="kr">; QUIT;</span>
@@ -606,20 +909,79 @@ ODS PDF CLOSE;
 <p><strong>Navigation contains one level with original TITLE bookmark labels</strong>
 <img alt="Screenshot" src="../img/screen_ods_doc_flat5.jpg" /></p>
 <h2 id="example-6-create-flat-navigation-pdf-using-multiple-ods-document-no-entry-for-some-items">Example 6 - create flat navigation PDF using multiple ODS DOCUMENT - no entry for some items<a class="headerlink" href="#example-6-create-flat-navigation-pdf-using-multiple-ods-document-no-entry-for-some-items" title="Permanent link">&para;</a></h2>
-<p>comment:
-- Table 1 and Table 3 have no label and no bookmark entry, but are included in the PDF
-- a looping macro might be feasible for generic use
-- the SAS TOC is created and linking correctly</p>
+<p>Comment:</p>
+<ul>
+<li>Table 1 and Table 3 have no label and no bookmark entry, but are included in the PDF</li>
+<li>a looping macro might be feasible for generic use</li>
+<li>the SAS TOC is created and linking correctly</li>
+</ul>
 <p>include program to create one multiple ODS documents - one per report</p>
 <div class="highlight"><pre><span></span><code><span class="nf">%INCLUDE</span> <span class="s">&quot;</span><span class="nv">&amp;root</span><span class="s">/programs/example_ods_document_single_reports.sas&quot;</span>;
 </code></pre></div>
 <p>flat ODS Document structure per document, some should not contain a label</p>
+<table>
+<thead>
+<tr>
+<th>ODS Path</th>
+<th>ODS Type</th>
+<th>Item Label</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\Report#1</td>
+<td>Dir</td>
+<td>Table 1: By Group Report about shoes</td>
+</tr>
+<tr>
+<td>\Report#1\ByGroup1#1</td>
+<td>Dir</td>
+<td>Region=Canada</td>
+</tr>
+<tr>
+<td>\Report#1\ByGroup1#1\Report#1</td>
+<td>Table</td>
+<td></td>
+</tr>
+<tr>
+<td>\Report#1\ByGroup2#1</td>
+<td>Dir</td>
+<td>Region=Pacific</td>
+</tr>
+<tr>
+<td>\Report#1\ByGroup2#1\Report#1</td>
+<td>Table</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight"><pre><span></span><code><span class="nf">%smile_ods_document_flat_label</span>(document=doc_res1,<span class="k">label</span>=,bookmarklabel=no);
 <span class="nf">%smile_ods_document_flat_label</span>(document=doc_res2);
 <span class="nf">%smile_ods_document_flat_label</span>(document=doc_res3,<span class="k">label</span>=,bookmarklabel=no);
 <span class="nf">%smile_ods_document_flat_label</span>(document=doc_res4);
 </code></pre></div>
 <p>ODS Documents are flat now, some using no label</p>
+<table>
+<thead>
+<tr>
+<th>ODS Path</th>
+<th>ODS Type</th>
+<th>Item Label</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\all#1</td>
+<td>Table</td>
+<td></td>
+</tr>
+<tr>
+<td>\all#2</td>
+<td>Table</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <p>Create final PDF file</p>
 <div class="highlight"><pre><span></span><code>ODS PDF <span class="k">FILE</span>= <span class="s">&quot;</span><span class="nv">&amp;root</span><span class="s">/results/ods_document_flat4.pdf&quot;</span> CONTENTS<span class="kr">;</span>
 <span class="kr">PROC DOCUMENT </span>name=doc_res1; replay<span class="kr">; QUIT;</span>
@@ -635,10 +997,12 @@ ODS PDF CLOSE;
 <p><strong>Table 1 still in PDF</strong></p>
 <p><img alt="Screenshot" src="../img/screen_ods_doc_flat7.jpg" /></p>
 <h2 id="example-7-create-flat-navigation-pdf-using-multiple-ods-documents-with-custom-toc">Example 7 - create flat navigation PDF using multiple ODS DOCUMENTS with custom TOC<a class="headerlink" href="#example-7-create-flat-navigation-pdf-using-multiple-ods-documents-with-custom-toc" title="Permanent link">&para;</a></h2>
-<p>comment:
-- Table 1 and Table 3 have no label and no bookmark entry, but are included in the PDF
-- a looping macro might be feasible for generic use
-- the SAS TOC is created and linking correctly</p>
+<p>Comment:</p>
+<ul>
+<li>Table 1 and Table 3 have no label and no bookmark entry, but are included in the PDF</li>
+<li>a looping macro might be feasible for generic use</li>
+<li>the SAS TOC is created and linking correctly</li>
+</ul>
 <p>create ODS Documents and flat them</p>
 <div class="highlight"><pre><span></span><code><span class="nf">%INCLUDE</span> <span class="s">&quot;</span><span class="nv">&amp;root</span><span class="s">/programs/example_ods_document_single_reports.sas&quot;</span>;
 <span class="nf">%smile_ods_document_flat_label</span>(document=doc_res1);
@@ -665,7 +1029,7 @@ ODS PDF CLOSE;
 </code></pre></div>
 <p><strong>Custom TOC and flat bookmarks are available</strong>
 <img alt="Screenshot" src="../img/screen_ods_doc_flat8.jpg" /></p>
-<h2 id="example-7-create-flat-navigation-pdf-using-multiple-ods-documents-many-outputs">Example 7 - create flat navigation PDF using multiple ODS DOCUMENTS - many outputs<a class="headerlink" href="#example-7-create-flat-navigation-pdf-using-multiple-ods-documents-many-outputs" title="Permanent link">&para;</a></h2>
+<h2 id="example-8-create-flat-navigation-pdf-using-multiple-ods-documents-many-outputs">Example 8 - create flat navigation PDF using multiple ODS DOCUMENTS - many outputs<a class="headerlink" href="#example-8-create-flat-navigation-pdf-using-multiple-ods-documents-many-outputs" title="Permanent link">&para;</a></h2>
 <p>create 100 ODS Documents, flat them and create the output in PDF</p>
 <div class="highlight"><pre><span></span><code><span class="nf">%INCLUDE</span> <span class="s">&quot;</span><span class="nv">&amp;root</span><span class="s">/programs/example_ods_document_single_reports_big.sas&quot;</span>;
 <span class="nb">%MACRO</span> do_it();
@@ -715,6 +1079,20 @@ ODS PDF CLOSE;
             </div>
           </a>
         
+        
+          <a href="../test_smile_pdf_merge/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                smile_pdf_merge
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
         
       </nav>
     </div>
