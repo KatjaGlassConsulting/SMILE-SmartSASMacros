@@ -7,6 +7,15 @@ site_name: SMILE - Smart SAS Macros
 
 nav:
   - Overview: index.md
+  - Macros:
+    - smile_attrc: smile_attrc.md
+    - smile_attrn: smile_attrn.md
+    - smile_attr_var: smile_attr_var.md
+    - smile_ods_document_flat_label: smile_ods_document_flat_label.md
+    - smile_pdf_merge: smile_pdf_merge.md
+    - smile_pdf_read_bookmarks: smile_pdf_read_bookmarks.md
+    - smile_url_check: smile_url_check.md
+    - smile_url_download: smile_url_download.md
   - Example Programs:
     - smile_attrc: test_smile_attrc.md
     - smile_attrn: test_smile_attrn.md

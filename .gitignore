@@ -7,3 +7,4 @@ site
 docgen/testprog_to_markdown.sas
 docgen/dev.sas
 docgen/github_get.md
+docgen/macro_to_markdown.sas

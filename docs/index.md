@@ -35,7 +35,7 @@ Parameter | Description
 ---|---
 DATA |name of the SAS dataset
 VAR |name of variable
-ATTRIB |SAS variable attrig keyword (e.g. VARTYPE, VARLEN, VARLABEL, VARFMT and VARINFMT)
+ATTRIB |SAS variable attrib keyword (e.g. VARTYPE, VARLEN, VARLABEL, VARFMT and VARINFMT)
 
 <br/>
 
@@ -96,7 +96,7 @@ Comment |The navigation in PDF documents can be one level only with this macro. 
 Issues |The table of contents created per default by SAS (ODS PDF option TOC) is not linking the pages correctly when using BY groups and having one ODS DOCUMENT with multiple outputs, using single ODS DOCUMENTS (one per each output) then this is working correctly. In such a case, do use not a TOC or create an own TOC, e.g. like described here: https://www.mwsug.org/proceedings/2012/S1/MWSUG-2012-S125.pdf
 SAS Version |SAS 9.4
 Author |Katja Glass
-Date |2021-01-18
+Date |2021-02-15
 Example Program |../programs/test_smile_ods_document_flat_label.sas
 Reference |A nice overview of ODS DOCUMENT can be found here: https://support.sas.com/resources/papers/proceedings12/273-2012.pdf
 
@@ -106,7 +106,7 @@ The following parameters are used:
 
 Parameter | Description
 ---|---
-DOCUMENT |ODS Document itemstore
+DOCUMENT |ODS Document item store
 LABEL |One label to apply on first element, all other labels are removed (optional), if not provided, labels are just rearranged and additional BY-labels removed
 BOOKMARKLABEL |Indicator whether to use Bookmark Labels if none is specified (YES Default), if LABEL is missing and BOOKMARKLABEL = NO, all labels are removed
 
@@ -120,7 +120,7 @@ Key | Description
 Name |smile_pdf_merge
 Purpose |Merge multiple PDF files and create one bookmark entry per PDF file with PROC GROOVY and open-source Tool PDFBox
 Comment |Make sure to download PDFBOX, e.g. from here https://pdfbox.apache.org/download.html - the full "app" version
-Issues |"unable to resolve class" messages mean the PDFBOX is not provided correctly. "ERROR: PROCEDURE GROOVY cannot be used when SAS is in the lockdown state." means that your SAS environment does not support PROC GROOVY, for this the macro cannot run the groovy code. "WARNUNG: Removed /IDTree from /Names dictionary, doesn't belong there" - this message is coming from PDFBox.
+Issues |"unable to resolve class" messages mean the PDFBOX is not provided correctly. "ERROR: PROCEDURE GROOVY cannot be used when SAS is in the lock down state." means that your SAS environment does not support PROC GROOVY, for this the macro cannot run the groovy code. "WARNUNG: Removed /IDTree from /Names dictionary, doesn't belong there" - this message is coming from PDFBox.
 SAS Version |SAS 9.4
 Author |Katja Glass
 Date |2021-01-29
@@ -133,10 +133,10 @@ The following parameters are used:
 
 Parameter | Description
 ---|---
-DATA	 |Input dataset containing INFILE and BOOKMARK variable, INFILE containing single pdf files (one file per observation), BOOKMARK contaiing the corresponding bookmark label for this file
+DATA |Input dataset containing INFILE and BOOKMARK variable, INFILE containing single pdf files (one file per observation), BOOKMARK containing the corresponding bookmark label for this file
 OUTFILE |Output PDF file (not in quotes)
 PDFBOX_JAR_PATH |Path and jar file name for PDFBOX open source tool, e.g. &path/pdfbox-app-2.0.22.jar
-SOURCEFILE |Optional sas program file where PROC GROOVY code is stored, default is TEMP (only temporary)
+SOURCEFILE |Optional SAS program file where PROC GROOVY code is stored, default is TEMP (only temporary)
 RUN_GROOVY |NO/YES indicator whether to run the final GROOVY code (default YES)
 
 <br/>
@@ -149,7 +149,7 @@ Key | Description
 Name |smile_pdf_read_bookmarks
 Purpose |Read PDF Bookmarks into a SAS dataset with the variables level, title and page
 Comment |Make sure to download PDFBOX, e.g. from here https://pdfbox.apache.org/download.html - the full "app" version
-Issues |"unable to resolve class" messages mean the PDFBOX is not provided correctly. "ERROR: PROCEDURE GROOVY cannot be used when SAS is in the lockdown state." means that your SAS environment does not support PROC GROOVY, for this the macro cannot run the groovy code.
+Issues |"unable to resolve class" messages mean the PDFBOX is not provided correctly. "ERROR: PROCEDURE GROOVY cannot be used when SAS is in the lock down state." means that your SAS environment does not support PROC GROOVY, for this the macro cannot run the groovy code.
 SAS Version |SAS 9.4
 Author |Katja Glass
 Date |2021-02-13
