@@ -585,7 +585,7 @@
 <p>Check existence of URL and store result in return code, information can optionally be printed to the log</p>
 <ul>
 <li>Author: Katja Glass</li>
-<li>Date: 2021-01-04</li>
+<li>Date: 2021-02-19</li>
 <li>SAS Version: SAS 9.4</li>
 <li>License: MIT</li>
 <li>Comment: Return codes are 0 - url found, 999 - no url provided, 998 - url not provided in quotes, otherwise html-return code (e.g. 404 file not found)</li>
@@ -724,7 +724,9 @@
 92
 93
 94
-95</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>%************************************************************************************************************************;
+95
+96
+97</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>%************************************************************************************************************************;
 %* Project    : SMILE - SAS Macros, Intuitive Library Extension
 %* Macro      : smile_url_check
 %* Parameters : URL    - http(s) URL which should be checked <span class="k">in</span> quotes
@@ -735,8 +737,10 @@
 %* Comment    : <span class="k">Return</span> codes are <span class="m">0</span> - url found, <span class="m">999</span> - no url provided,
 %*              <span class="m">998</span> - url <span class="k">not</span> provided <span class="k">in</span> quotes, otherwise html-<span class="k">return</span> code (e<span class="m">.</span>g. <span class="m">404</span> <span class="k">file</span> <span class="k">not</span> found)
 %*
+%* ExampleProg: ../programs/test_smile_url_check<span class="m">.</span>sas
+%*
 %* Author     : Katja Glass
-%* Creation   : <span class="m">2021-01-04</span>
+%* Creation   : <span class="m">2021-02-19</span>
 %* License    : MIT
 %*
 %* Reference  : The idea <span class="k">from</span> this macro is coming <span class="k">from</span> a paper <span class="k">by</span> Joseph Henry - The ABCs of PROC HTTP
