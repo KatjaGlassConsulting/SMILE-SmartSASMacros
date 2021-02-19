@@ -3,7 +3,7 @@
 Function-style macro to return a character attribute of a dataset. The following attributes are available: CHARSET, COMPRESS, DATAREP, ENCODING, ENCRYPT, ENGINE, LABEL, LIB, MEM, MODE, MTYPE, SORTEDBY, SORTLVL, SORTSEQ, TYPE
 
 - Author: Katja Glass
-- Date: 2021-01-04
+- Date: 2021-02-19
 - SAS Version: SAS 9.4
 - License: MIT
 - Reference: Main programming parts are coming from attrc.sas macro from Roland Rashleigh-Berry who has published his code under the unlicence license in his utility package (http://www.datasavantconsulting.com/roland/Spectre/download.html)
@@ -45,8 +45,10 @@ PROC SORT DATA=sashelp.class OUT=class; BY sex name; RUN;
 %*              CHARSET, COMPRESS, DATAREP, ENCODING, ENCRYPT, ENGINE, LABEL, LIB, MEM, MODE, MTYPE, SORTEDBY, SORTLVL,
 %*              SORTSEQ, TYPE
 %*
+%* ExampleProg: ../programs/test_smile_attrc.sas
+%*
 %* Author     : Katja Glass
-%* Creation   : 2021-01-04
+%* Creation   : 2021-02-19
 %* License    : MIT
 %*
 %* Reference  : Main programming parts are coming from attrc.sas macro from Roland Rashleigh-Berry who

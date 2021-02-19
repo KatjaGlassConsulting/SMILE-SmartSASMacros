@@ -3,7 +3,7 @@
 Function-style macro to return a variable attribute of a dataset. The following attributes are available: VARTYPE, VARLEN, VARLABEL, VARFMT and VARINFMT
 
 - Author: Katja Glass
-- Date: 2021-01-04
+- Date: 2021-02-19
 - SAS Version: SAS 9.4
 - License: MIT
 - Reference: Main programming parts are coming from attrv.sas macro from Roland Rashleigh-Berry who has published his code under the unlicence license in his utility package (http://www.datasavantconsulting.com/roland/Spectre/download.html)
@@ -46,8 +46,10 @@ ATTRIB |SAS variable attrib keyword (e.g. VARTYPE, VARLEN, VARLABEL, VARFMT and 
 %* Purpose    : Function-style macro to return a variable attribute of a dataset. The following attributes are available:
 %*              VARTYPE, VARLEN, VARLABEL, VARFMT and VARINFMT
 %*
+%* ExampleProg: ../programs/test_smile_attr_var.sas
+%*
 %* Author     : Katja Glass
-%* Creation   : 2021-01-04
+%* Creation   : 2021-02-19
 %* License    : MIT
 %*
 %* Reference  : Main programming parts are coming from attrv.sas macro from Roland Rashleigh-Berry who

@@ -8,8 +8,10 @@
 %*              CHARSET, COMPRESS, DATAREP, ENCODING, ENCRYPT, ENGINE, LABEL, LIB, MEM, MODE, MTYPE, SORTEDBY, SORTLVL,
 %*              SORTSEQ, TYPE
 %*
+%* ExampleProg: ../programs/test_smile_attrc.sas
+%*
 %* Author     : Katja Glass
-%* Creation   : 2021-01-04
+%* Creation   : 2021-02-19
 %* License    : MIT
 %*
 %* Reference  : Main programming parts are coming from attrc.sas macro from Roland Rashleigh-Berry who

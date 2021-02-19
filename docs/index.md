@@ -24,7 +24,8 @@ Name |smile_attr_var
 Purpose |Function-style macro to return a variable attribute of a dataset. The following attributes are available: VARTYPE, VARLEN, VARLABEL, VARFMT and VARINFMT
 SAS Version |SAS 9.4
 Author |Katja Glass
-Date |2021-01-04
+Date |2021-02-19
+Example Program |../programs/test_smile_attr_var.sas
 Reference |Main programming parts are coming from attrv.sas macro from Roland Rashleigh-Berry who has published his code under the unlicence license in his utility package (http://www.datasavantconsulting.com/roland/Spectre/download.html)
 
 ********************************************
@@ -48,7 +49,8 @@ Name |smile_attrc
 Purpose |Function-style macro to return a character attribute of a dataset. The following attributes are available: CHARSET, COMPRESS, DATAREP, ENCODING, ENCRYPT, ENGINE, LABEL, LIB, MEM, MODE, MTYPE, SORTEDBY, SORTLVL, SORTSEQ, TYPE
 SAS Version |SAS 9.4
 Author |Katja Glass
-Date |2021-01-04
+Date |2021-02-19
+Example Program |../programs/test_smile_attrc.sas
 Reference |Main programming parts are coming from attrc.sas macro from Roland Rashleigh-Berry who has published his code under the unlicence license in his utility package (http://www.datasavantconsulting.com/roland/Spectre/download.html)
 
 ********************************************
@@ -71,7 +73,8 @@ Name |smile_attrn
 Purpose |Function-style macro to return a numeric attribute of a dataset. The following attributes are available: ALTERPW, ANOBS, ANY, ARAND, ARWU, AUDIT, AUDIT_DATA, AUDIT_BEFORE, AUDIT_ERROR, CRDTE, ICONST, INDEX, ISINDEX, ISSUBSET, LRECL, LRID, MAXGEN, MAXRC, MODTE, NDEL, NEXTGEN, NLOBS, NLOBSF, NOBS, NVARS, PW, RADIX, READPW, REUSE, TAPE, WHSTMT, WRITEPW
 SAS Version |SAS 9.4
 Author |Katja Glass
-Date |2021-01-04
+Date |2021-02-19
+Example Program |../programs/test_smile_attrn.sas
 Reference |Main programming parts are coming from attrn.sas macro from Roland Rashleigh-Berry who has published his code under the unlicence license in his utility package (http://www.datasavantconsulting.com/roland/Spectre/download.html)
 
 ********************************************
@@ -178,7 +181,8 @@ Purpose |Check existence of URL and store result in return code, information can
 Comment |Return codes are 0 - url found, 999 - no url provided, 998 - url not provided in quotes, otherwise html-return code (e.g. 404 file not found)
 SAS Version |SAS 9.4
 Author |Katja Glass
-Date |2021-01-04
+Date |2021-02-19
+Example Program |../programs/test_smile_url_check.sas
 Reference |The idea from this macro is coming from a paper by Joseph Henry - The ABCs of PROC HTTP (https://www.sas.com/content/dam/SAS/support/en/sas-global-forum-proceedings/2019/3232-2019.pdf)
 
 ********************************************

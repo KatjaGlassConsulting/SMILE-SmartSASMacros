@@ -9,8 +9,10 @@
 %*              ISINDEX, ISSUBSET, LRECL, LRID, MAXGEN, MAXRC, MODTE, NDEL, NEXTGEN, NLOBS, NLOBSF, NOBS, NVARS, PW, RADIX,
 %*              READPW, REUSE, TAPE, WHSTMT, WRITEPW
 %*
+%* ExampleProg: ../programs/test_smile_attrn.sas
+%*
 %* Author     : Katja Glass
-%* Creation   : 2021-01-04
+%* Creation   : 2021-02-19
 %* License    : MIT
 %*
 %* Reference  : Main programming parts are coming from attrn.sas macro from Roland Rashleigh-Berry who

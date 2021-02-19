@@ -8,8 +8,10 @@
 %* Purpose    : Function-style macro to return a variable attribute of a dataset. The following attributes are available:
 %*              VARTYPE, VARLEN, VARLABEL, VARFMT and VARINFMT
 %*
+%* ExampleProg: ../programs/test_smile_attr_var.sas
+%*
 %* Author     : Katja Glass
-%* Creation   : 2021-01-04
+%* Creation   : 2021-02-19
 %* License    : MIT
 %*
 %* Reference  : Main programming parts are coming from attrv.sas macro from Roland Rashleigh-Berry who

@@ -3,7 +3,7 @@
 Check existence of URL and store result in return code, information can optionally be printed to the log
 
 - Author: Katja Glass
-- Date: 2021-01-04
+- Date: 2021-02-19
 - SAS Version: SAS 9.4
 - License: MIT
 - Comment: Return codes are 0 - url found, 999 - no url provided, 998 - url not provided in quotes, otherwise html-return code (e.g. 404 file not found)
@@ -51,8 +51,10 @@ OPTIONS NONOTES;
 %* Comment    : Return codes are 0 - url found, 999 - no url provided,
 %*              998 - url not provided in quotes, otherwise html-return code (e.g. 404 file not found)
 %*
+%* ExampleProg: ../programs/test_smile_url_check.sas
+%*
 %* Author     : Katja Glass
-%* Creation   : 2021-01-04
+%* Creation   : 2021-02-19
 %* License    : MIT
 %*
 %* Reference  : The idea from this macro is coming from a paper by Joseph Henry - The ABCs of PROC HTTP

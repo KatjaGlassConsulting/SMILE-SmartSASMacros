@@ -3,7 +3,7 @@
 Function-style macro to return a numeric attribute of a dataset. The following attributes are available: ALTERPW, ANOBS, ANY, ARAND, ARWU, AUDIT, AUDIT_DATA, AUDIT_BEFORE, AUDIT_ERROR, CRDTE, ICONST, INDEX, ISINDEX, ISSUBSET, LRECL, LRID, MAXGEN, MAXRC, MODTE, NDEL, NEXTGEN, NLOBS, NLOBSF, NOBS, NVARS, PW, RADIX, READPW, REUSE, TAPE, WHSTMT, WRITEPW
 
 - Author: Katja Glass
-- Date: 2021-01-04
+- Date: 2021-02-19
 - SAS Version: SAS 9.4
 - License: MIT
 - Reference: Main programming parts are coming from attrn.sas macro from Roland Rashleigh-Berry who has published his code under the unlicence license in his utility package (http://www.datasavantconsulting.com/roland/Spectre/download.html)
@@ -44,8 +44,10 @@ ATTRIB |SAS ATTRN keyword (e.g. NOBS, CRDTE, ...)
 %*              ISINDEX, ISSUBSET, LRECL, LRID, MAXGEN, MAXRC, MODTE, NDEL, NEXTGEN, NLOBS, NLOBSF, NOBS, NVARS, PW, RADIX,
 %*              READPW, REUSE, TAPE, WHSTMT, WRITEPW
 %*
+%* ExampleProg: ../programs/test_smile_attrn.sas
+%*
 %* Author     : Katja Glass
-%* Creation   : 2021-01-04
+%* Creation   : 2021-02-19
 %* License    : MIT
 %*
 %* Reference  : Main programming parts are coming from attrn.sas macro from Roland Rashleigh-Berry who

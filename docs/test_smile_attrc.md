@@ -3,15 +3,15 @@
 Example program for macro calls of %smile_attrc
 
  - Author     : Katja Glass
- - Creation   : 2021-02-15
+ - Creation   : 2021-02-18
  - SAS Version: SAS 9.4
  - License    : MIT
  
 
-initialize macros
+Initialize macros
 
 ```sas
-%LET root = /folders/myshortcuts/git/SMILE-SmartSASMacros;
+%LET root = <path>;
 OPTIONS SASAUTOS=(SASAUTOS, "&root/macros");
 ```
 

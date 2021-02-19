@@ -11,7 +11,7 @@ Example program for macro calls of %smile_attr_var
 initialize macros
 
 ```sas
-%LET root = /folders/myshortcuts/git/SMILE-SmartSASMacros;
+%LET root = <path>;
 OPTIONS SASAUTOS=(SASAUTOS, "&root/macros");
 ```
 
