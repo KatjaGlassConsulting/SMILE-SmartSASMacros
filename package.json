@@ -1,6 +1,7 @@
 {
   "name": "smilesasmacros",
   "description": "SMILE – SAS Macros, Intuitive Library Extension",
+  "version": "1.0.0",
   "license": "MIT",
   "keywords": [
     "SAS",
@@ -23,17 +24,20 @@
     "url": "https://github.com/KatjaGlassConsulting/SMILE-SmartSASMacros/issues"
   },
   "homepage": "https://github.com/KatjaGlassConsulting/SMILE-SmartSASMacros#readme",
-  "version": "0.9.1",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "docs": "./sasjs/utils/build.sh"
+    "docs": "./sasjs/utils/build.sh",
+    "release": "standard-version"
   },
   "devDependencies": {
-    "@sasjs/cli": "^2.6.2"
+    "@sasjs/cli": "^2.8.0"
   },
   "directories": {
     "doc": "docs",
     "lib": "lib"
+  },
+  "dependencies": {
+    "standard-version": "^9.1.1"
   }
 }

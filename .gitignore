@@ -1,10 +1,5 @@
 ﻿lib/pdfbox-app-2.0.22.jar
 sasjsbuild/
 node_modules
-docgen/markdown_smile.md
-docgen/comments.md
+docgen
 site
-docgen/testprog_to_markdown.sas
-docgen/dev.sas
-docgen/github_get.md
-docgen/macro_to_markdown.sas
