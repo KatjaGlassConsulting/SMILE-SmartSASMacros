@@ -1,16 +1,16 @@
 site_name: SMILE - Smart SAS Macros
-
+ 
 #theme: material
 #    features:
 #        - navigation.tabs
-  #favicon: img/favicon.png
-
+#favicon: img/favicon.png
+ 
 nav:
   - Overview: index.md
   - Macros:
+    - smile_attr_var: smile_attr_var.md
     - smile_attrc: smile_attrc.md
     - smile_attrn: smile_attrn.md
-    - smile_attr_var: smile_attr_var.md
     - smile_ods_document_flat_label: smile_ods_document_flat_label.md
     - smile_pdf_merge: smile_pdf_merge.md
     - smile_pdf_read_bookmarks: smile_pdf_read_bookmarks.md
@@ -18,39 +18,39 @@ nav:
     - smile_url_check: smile_url_check.md
     - smile_url_download: smile_url_download.md
   - Example Programs:
+    - smile_attr_var: test_smile_attr_var.md
     - smile_attrc: test_smile_attrc.md
     - smile_attrn: test_smile_attrn.md
-    - smile_attr_var: test_smile_attr_var.md
     - smile_ods_document_flat_label: test_smile_ods_document_flat_label.md
     - smile_pdf_merge: test_smile_pdf_merge.md
     - smile_pdf_read_bookmarks: test_smile_pdf_read_bookmarks.md
-    - smile_smile_replace_in_text_files: test_smile_replace_in_text_files.md
+    - smile_replace_in_text_files: test_smile_replace_in_text_files.md
     - smile_url_check: test_smile_url_check.md
-
+ 
 # Style Sheet
 extra_css:
-  - stylesheets/general.css
-
+- stylesheets/general.css
+ 
 # Repository
 repo_name: SMILE-SmartSASMacros
 repo_url: https://github.com/KatjaGlassConsulting/SMILE-SmartSASMacros
-
+ 
 # Configuration
 theme:
-  name: material
-
-  features:
-    #- navigation.instant
-    - navigation.sections
-    #- navigation.tabs
-  favicon: img/favicon.png
-  icon:
-    logo: logo
-
+name: material
+ 
+features:
+  #- navigation.instant
+  - navigation.sections
+  #- navigation.tabs
+favicon: img/favicon.png
+icon:
+  logo: logo
+ 
 markdown_extensions:
-  - toc:
-      permalink: true
-  - pymdownx.highlight
-  - pymdownx.superfences
-  - pymdownx.snippets:
-      base_path: .
+- toc:
+    permalink: true
+- pymdownx.highlight
+- pymdownx.superfences
+- pymdownx.snippets:
+    base_path: .

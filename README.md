@@ -25,9 +25,9 @@ smile_url_download |Downloads a file from an URL and store it locally on OUTFILE
 The macros can be cloned or downloaded directly from the GitHub repository to use this within any SAS environment. The macros has been developed under SAS 9.4 Unix, but are likely to run on other operating systems and also under other SAS versions like from SAS 9.2.
  
 To use the macros in any program, these can be included single by single via `%INCLUDE "<macro>";` or the folder where the macros are located can be included into the SASAUTOS path `OPTIONS SASAUTOS=(<path>, SASAUTOS);`. The macros can also be stored into a SAS Macro store and used from there.
-
+ 
 The macros could easily be made available in any SAS environment with internet connection with the following two statements:
-
+ 
 ```sas
 FILENAME macros URL "https://raw.githubusercontent.com/KatjaGlassConsulting/SMILE-SmartSASMacros/main/all.sas";
 %INCLUDE macros;
