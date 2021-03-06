@@ -14,7 +14,7 @@
     
     
       
-        <title>smile_pdf_read_bookmarks - SMILE - Smart SAS Macros</title>
+        <title>smile_smile_replace_in_text_files - SMILE - Smart SAS Macros</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#test_smile_pdf_read_bookmarks" class="md-skip">
+        <a href="#test_smile_replace_in_text_files" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              smile_pdf_read_bookmarks
+              smile_smile_replace_in_text_files
             
           </span>
         </div>
@@ -449,6 +449,18 @@
             
   
   
+  
+    <li class="md-nav__item">
+      <a href="../test_smile_pdf_read_bookmarks/" class="md-nav__link">
+        smile_pdf_read_bookmarks
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
     
   
   
@@ -460,12 +472,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          smile_pdf_read_bookmarks
+          smile_smile_replace_in_text_files
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        smile_pdf_read_bookmarks
+        smile_smile_replace_in_text_files
       </a>
       
         
@@ -482,15 +494,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#example-1-read-bookmarks-from-a-document-containing-one-bookmark-level" class="md-nav__link">
-    Example 1 - Read bookmarks from a document containing one bookmark level
+  <a href="#example-1-replace-in-all-sas-files" class="md-nav__link">
+    Example 1 - replace  in all sas files
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-2-read-bookmarks-from-a-document-containing-several-bookmark-levels" class="md-nav__link">
-    Example 2 - Read bookmarks from a document containing several bookmark levels
+  <a href="#example-2-replace-todaydate-in-all-sas-files" class="md-nav__link">
+    Example 2 - replace {todayDate} in all sas files
   </a>
   
 </li>
@@ -499,18 +511,6 @@
   
 </nav>
       
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../test_smile_replace_in_text_files/" class="md-nav__link">
-        smile_smile_replace_in_text_files
-      </a>
     </li>
   
 
@@ -558,15 +558,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#example-1-read-bookmarks-from-a-document-containing-one-bookmark-level" class="md-nav__link">
-    Example 1 - Read bookmarks from a document containing one bookmark level
+  <a href="#example-1-replace-in-all-sas-files" class="md-nav__link">
+    Example 1 - replace  in all sas files
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-2-read-bookmarks-from-a-document-containing-several-bookmark-levels" class="md-nav__link">
-    Example 2 - Read bookmarks from a document containing several bookmark levels
+  <a href="#example-2-replace-todaydate-in-all-sas-files" class="md-nav__link">
+    Example 2 - replace {todayDate} in all sas files
   </a>
   
 </li>
@@ -583,142 +583,97 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/KatjaGlassConsulting/SMILE-SmartSASMacros/edit/master/docs/test_smile_pdf_read_bookmarks.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/KatjaGlassConsulting/SMILE-SmartSASMacros/edit/master/docs/test_smile_replace_in_text_files.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="test_smile_pdf_read_bookmarks">TEST_SMILE_PDF_READ_BOOKMARKS<a class="headerlink" href="#test_smile_pdf_read_bookmarks" title="Permanent link">&para;</a></h1>
-<p>Example program for macro calls of %smile_pdf_read_bookmarks</p>
+                <h1 id="test_smile_replace_in_text_files">TEST_SMILE_REPLACE_IN_TEXT_FILES<a class="headerlink" href="#test_smile_replace_in_text_files" title="Permanent link">&para;</a></h1>
+<p>Example program for macro calls of %smile_replace_in_text_files</p>
 <ul>
 <li>Author     : Katja Glass</li>
-<li>Creation   : 2021-02-18</li>
+<li>Creation   : 2021-02-15</li>
 <li>SAS Version: SAS 9.4</li>
 <li>License    : MIT</li>
 </ul>
-<p>Initialize macros</p>
+<p>initialize macros</p>
 <div class="highlight"><pre><span></span><code><span class="nb">%LET</span> root = &lt;path&gt;;
 <span class="k">OPTIONS</span> SASAUTOS=(SASAUTOS, <span class="s">&quot;</span><span class="nv">&amp;root</span><span class="s">/macros&quot;</span>);
+<span class="k">OPTIONS</span> NONOTES;
 </code></pre></div>
-<h2 id="example-1-read-bookmarks-from-a-document-containing-one-bookmark-level">Example 1 - Read bookmarks from a document containing one bookmark level<a class="headerlink" href="#example-1-read-bookmarks-from-a-document-containing-one-bookmark-level" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="nf">%smile_pdf_read_bookmarks</span>(pdfFile = <span class="nv">&amp;root</span>/results/ods_document_flat1<span class="m">.</span>pdf,
-                         outdat = book_flat1,
-                         pdfbox_jar_path = <span class="nv">&amp;root</span>/lib/pdfbox-app<span class="m">-2.0.22.</span>jar);
+<p>support macro to create a text file</p>
+<div class="highlight"><pre><span></span><code><span class="nb">%MACRO</span> create_text_file()<span class="kr">;</span>
+<span class="kr">    DATA </span><span class="kc">_NULL_</span>;
+        <span class="k">FILE</span> <span class="s">&quot;</span><span class="nv">&amp;root</span><span class="s">/results/temp/example.sas&quot;</span>;<span class="k"></span>
+<span class="k">        PUT </span><span class="s">&quot;* This is a file created by a program to demonstrate text replacements&quot;</span><span class="err">;</span>
+<span class="k">        PUT </span><span class="s">&quot;* Created: {todayDate}&quot;</span><span class="err">;</span>
+<span class="k">        PUT </span><span class="s">&#39;%LET path = &lt;path&gt;;&#39;</span><span class="err">;</span>
+<span class="kr">    RUN;</span>
+<span class="nb">%MEND</span>;
 </code></pre></div>
-<p>Bookmarks and levels are stored in BOOK_FLAT1</p>
-<table>
-<thead>
-<tr>
-<th>LEVEL</th>
-<th>TITLE</th>
-<th>PAGE</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>Table 1: By Group Report about shoes</td>
-<td>1</td>
-</tr>
-<tr>
-<td>1</td>
-<td>Table 2: Table Class Output</td>
-<td>5</td>
-</tr>
-<tr>
-<td>1</td>
-<td>Table 3: Multiple outputs - Cars for make = Acura</td>
-<td>6</td>
-</tr>
-<tr>
-<td>1</td>
-<td>Table 4: Multiple outputs - Cars for make = Audi</td>
-<td>7</td>
-</tr>
-<tr>
-<td>1</td>
-<td>Table 5: Multiple outputs - Cars for make = BMW</td>
-<td>8</td>
-</tr>
-<tr>
-<td>1</td>
-<td>Table 6: Different label</td>
-<td>9</td>
-</tr>
-<tr>
-<td>1</td>
-<td>Figure 1: Class graphic</td>
-<td>10</td>
-</tr>
-</tbody>
-</table>
-<h2 id="example-2-read-bookmarks-from-a-document-containing-several-bookmark-levels">Example 2 - Read bookmarks from a document containing several bookmark levels<a class="headerlink" href="#example-2-read-bookmarks-from-a-document-containing-several-bookmark-levels" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="nf">%smile_pdf_read_bookmarks</span>(pdfFile = <span class="nv">&amp;root</span>/results/ods_document_noflat1<span class="m">.</span>pdf,
-                         outdat = book_noflat1,
-                         pdfbox_jar_path = <span class="nv">&amp;root</span>/lib/pdfbox-app<span class="m">-2.0.22.</span>jar);
+<p>support macro to print content of text file</p>
+<div class="highlight"><pre><span></span><code><span class="nb">%MACRO</span> print_text_file()<span class="kr">;</span>
+<span class="kr">    DATA </span><span class="kc">_NULL_</span>;
+        <span class="k">INFILE</span> <span class="s">&quot;</span><span class="nv">&amp;root</span><span class="s">/results/temp/example.sas&quot;</span>;
+        <span class="k">INPUT</span>;<span class="k"></span>
+<span class="k">        PUT </span><span class="kc">_INFILE_</span><span class="err">;</span>
+<span class="kr">    RUN;</span>
+<span class="nb">%MEND</span>;
 </code></pre></div>
-<p>Bookmarks and levels are stored in BOOK_NOFLAT1</p>
-<table>
-<thead>
-<tr>
-<th>LEVEL</th>
-<th>TITLE</th>
-<th>PAGE</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>Table 1: By Group Report about shoes</td>
-<td>1</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Region=Canada</td>
-<td>1</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Region=Pacific</td>
-<td>3</td>
-</tr>
-<tr>
-<td>1</td>
-<td>Table 2: Table Class Output</td>
-<td>5</td>
-</tr>
-<tr>
-<td>1</td>
-<td>Table 3: Multiple outputs - Cars for make = Acura</td>
-<td>6</td>
-</tr>
-<tr>
-<td>1</td>
-<td>Table 4: Multiple outputs - Cars for make = Audi</td>
-<td>7</td>
-</tr>
-<tr>
-<td>1</td>
-<td>Table 5: Multiple outputs - Cars for make = BMW</td>
-<td>8</td>
-</tr>
-<tr>
-<td>1</td>
-<td>Table 6: Different label</td>
-<td>9</td>
-</tr>
-<tr>
-<td>1</td>
-<td>Figure 1: Class graphic</td>
-<td>10</td>
-</tr>
-<tr>
-<td>2</td>
-<td>The SGPlot Procedure</td>
-<td>10</td>
-</tr>
-</tbody>
-</table>
+<h2 id="example-1-replace-in-all-sas-files">Example 1 - replace <path> in all sas files<a class="headerlink" href="#example-1-replace-in-all-sas-files" title="Permanent link">&para;</a></h2>
+<p>create a sas file</p>
+<div class="highlight"><pre><span></span><code><span class="nf">%create_text_file</span>();
+</code></pre></div>
+<p>file has been created with the following content</p>
+<div class="highlight"><pre><span></span><code><span class="nf">%print_text_file</span>();
+</code></pre></div>
+<p><strong>Log Output:</strong></p>
+<div class="highlight"><pre><span></span><code>* This is a file created by a program to demonstrate text replacements
+* Created: {todayDate}
+%LET path = &lt;path&gt;;
+</code></pre></div>
+<p>call macro to replace <path> in all sas files</p>
+<div class="highlight"><pre><span></span><code><span class="nf">%smile_replace_in_text_files</span>(
+    inpath = <span class="nv">&amp;root</span>/results/temp,
+    outpath = <span class="nv">&amp;root</span>/results/temp,
+    replace_from = <span class="s">&#39;&lt;path&gt;&#39;</span>,
+    replace_to = <span class="s">&#39;c:\temp\myPath&#39;</span>);
+</code></pre></div>
+<p>file contains the new text</p>
+<div class="highlight"><pre><span></span><code><span class="nf">%print_text_file</span>();
+</code></pre></div>
+<p><strong>Log Output:</strong></p>
+<div class="highlight"><pre><span></span><code>* This is a file created by a program to demonstrate text replacements
+* Created: {todayDate}
+%LET path = c:\temp\myPath;
+</code></pre></div>
+<h2 id="example-2-replace-todaydate-in-all-sas-files">Example 2 - replace {todayDate} in all sas files<a class="headerlink" href="#example-2-replace-todaydate-in-all-sas-files" title="Permanent link">&para;</a></h2>
+<p>create a sas file</p>
+<div class="highlight"><pre><span></span><code><span class="nf">%create_text_file</span>();
+</code></pre></div>
+<p>file has been created with the following content</p>
+<div class="highlight"><pre><span></span><code><span class="nf">%print_text_file</span>();
+</code></pre></div>
+<p><strong>Log Output:</strong></p>
+<div class="highlight"><pre><span></span><code>* This is a file created by a program to demonstrate text replacements
+* Created: {todayDate}
+%LET path = &lt;path&gt;;
+</code></pre></div>
+<p>call macro to replace <path> in all sas files</p>
+<div class="highlight"><pre><span></span><code><span class="nf">%smile_replace_in_text_files</span>(
+    inpath = <span class="nv">&amp;root</span>/results/temp,
+    outpath = <span class="nv">&amp;root</span>/results/temp,
+    replace_from = <span class="s">&#39;{todayDate}&#39;</span>,
+    replace_to = <span class="s">&quot;%SYSFUNC(date(),date9.)&quot;</span>);
+</code></pre></div>
+<p>file contains the current date</p>
+<div class="highlight"><pre><span></span><code><span class="nf">%print_text_file</span>();
+</code></pre></div>
+<p><strong>Log Output:</strong></p>
+<div class="highlight"><pre><span></span><code>* This is a file created by a program to demonstrate text replacements
+* Created: 05MAR2021
+%LET path = &lt;path&gt;;
+</code></pre></div>
                 
               
               
@@ -736,7 +691,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../test_smile_pdf_merge/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../test_smile_pdf_read_bookmarks/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -745,19 +700,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              smile_pdf_merge
+              smile_pdf_read_bookmarks
             </div>
           </div>
         </a>
       
       
-        <a href="../test_smile_replace_in_text_files/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../test_smile_url_check/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              smile_smile_replace_in_text_files
+              smile_url_check
             </div>
           </div>
           <div class="md-footer__button md-icon">

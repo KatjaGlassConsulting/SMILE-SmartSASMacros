@@ -14,7 +14,7 @@
     
     
       
-        <title>smile_pdf_read_bookmarks - SMILE - Smart SAS Macros</title>
+        <title>smile_replace_in_text_files - SMILE - Smart SAS Macros</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#macro-smile_pdf_read_bookmarks" class="md-skip">
+        <a href="#macro-smile_replace_in_text_files" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              smile_pdf_read_bookmarks
+              smile_replace_in_text_files
             
           </span>
         </div>
@@ -309,6 +309,18 @@
             
   
   
+  
+    <li class="md-nav__item">
+      <a href="../smile_pdf_read_bookmarks/" class="md-nav__link">
+        smile_pdf_read_bookmarks
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
     
   
   
@@ -320,12 +332,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          smile_pdf_read_bookmarks
+          smile_replace_in_text_files
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        smile_pdf_read_bookmarks
+        smile_replace_in_text_files
       </a>
       
         
@@ -366,18 +378,6 @@
   
 </nav>
       
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../smile_replace_in_text_files/" class="md-nav__link">
-        smile_replace_in_text_files
-      </a>
     </li>
   
 
@@ -597,22 +597,19 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/KatjaGlassConsulting/SMILE-SmartSASMacros/edit/master/docs/smile_pdf_read_bookmarks.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/KatjaGlassConsulting/SMILE-SmartSASMacros/edit/master/docs/smile_replace_in_text_files.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="macro-smile_pdf_read_bookmarks">Macro SMILE_PDF_READ_BOOKMARKS<a class="headerlink" href="#macro-smile_pdf_read_bookmarks" title="Permanent link">&para;</a></h1>
-<p>Read PDF Bookmarks into a SAS dataset with the variables level, title and page</p>
+                <h1 id="macro-smile_replace_in_text_files">Macro SMILE_REPLACE_IN_TEXT_FILES<a class="headerlink" href="#macro-smile_replace_in_text_files" title="Permanent link">&para;</a></h1>
+<p>Replace text from all files contained in a folder with a different text</p>
 <ul>
 <li>Author: Katja Glass</li>
-<li>Date: 2021-02-13</li>
+<li>Date: 2021-03-05</li>
 <li>SAS Version: SAS 9.4</li>
 <li>License: MIT</li>
-<li>Comment: Make sure to download PDFBOX, e.g. from here https://pdfbox.apache.org/download.html - the full "app" version</li>
-<li>Issues: "unable to resolve class" messages mean the PDFBOX is not provided correctly. "ERROR: PROCEDURE GROOVY cannot be used when SAS is in the lock down state." means that your SAS environment does not support PROC GROOVY, for this the macro cannot run the groovy code.</li>
-<li>Reference: PDFBox contains a lot of useful functionalities (https://pdfbox.apache.org)</li>
-<li>Example Program: <a href="../test_smile_pdf_read_bookmarks/">test_smile_pdf_read_bookmarks</a></li>
+<li>Example Program: <a href="../test_smile_replace_in_text_files/">test_smile_replace_in_text_files</a></li>
 </ul>
 <h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
 <table>
@@ -624,28 +621,50 @@
 </thead>
 <tbody>
 <tr>
-<td>PDFFILE</td>
-<td>name of PDF file with bookmarks</td>
+<td>INPATH</td>
+<td>input directory (no quotes)</td>
 </tr>
 <tr>
-<td>OUTDAT</td>
-<td>output dataset</td>
+<td>OUTPATH</td>
+<td>output directory, if same as INPATH, files are overwritten (no quotes)</td>
 </tr>
 <tr>
-<td>PDFBOX_JAR</td>
-<td>path and jar file name for PDFBOX open source tool, e.g. &amp;path/pdfbox-app-2.0.22.jar</td>
+<td>REPLACE_FROM</td>
+<td>text which should be replaced (with quotes)</td>
+</tr>
+<tr>
+<td>REPLACE_WITH</td>
+<td>text that should newly be added (with quotes)</td>
+</tr>
+<tr>
+<td>FILETYPE</td>
+<td>extension of file types which should be processed, e.g. sas or txt (optional)</td>
 </tr>
 </tbody>
 </table>
 <p><br/></p>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>%smile_pdf_read_bookmarks(pdfFile = &lt;path&gt;/ods_document_flat1.pdf,
-                         outdat = book_flat1,
-                         pdfbox_jar_path = &lt;path&gt;/pdfbox-app-2.0.22.jar)
+<div class="highlight"><pre><span></span><code>%* replace the default root path in all example files;
+%smile_replace_in_text_files(
+    inpath = /home/u49641771/smile/programs,
+    outpath = /home/u49641771/smile/programs,
+    replace_from = &#39;%LET root = /folders/myshortcuts/git/SMILE-SmartSASMacros;&#39;,
+    replace_to = &#39;%LET root = /home/u49641771/smile;&#39;);
 
-%smile_pdf_read_bookmarks(pdfFile = &lt;path&gt;/ods_document_noflat1.pdf,
-                         outdat = book_noflat1,
-                         pdfbox_jar_path = &lt;path&gt;/pdfbox-app-2.0.22.jar)
+%* replace all tabls with four spaces;
+%smile_replace_in_text_files(
+    inpath = /home/u49641771/smile/programs,
+    outpath = /home/u49641771/smile/programs/blub,
+    replace_from = &#39;09&#39;x,
+    replace_to = &#39;    &#39;);
+
+%* replace all zero numbers with x in the output;
+%smile_replace_in_text_files(
+    inpath = /home/u49641771/smile/results,
+    outpath = /home/u49641771/smile/results/mod,
+    replace_from = &#39;0&#39;,
+    replace_to = &#39;x&#39;,
+    filetype = lst);
 </code></pre></div>
 <h2 id="macro">Macro<a class="headerlink" href="#macro" title="Permanent link">&para;</a></h2>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
@@ -755,114 +774,190 @@
 <span class="normal">105</span>
 <span class="normal">106</span>
 <span class="normal">107</span>
-<span class="normal">108</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>%************************************************************************************************************************;
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>%************************************************************************************************************************;
 %* Project    : SMILE - SAS Macros, Intuitive Library Extension
-%* Macro      : smile_pdf_read_bookmarks
-%* Parameters : PDFFILE    - name of PDF <span class="k">file</span> with bookmarks
-%*              OUTDAT     - <span class="k">output</span> dataset
-%*              PDFBOX_JAR - path <span class="k">and</span> jar <span class="k">file</span> name for PDFBOX open source tool, e<span class="m">.</span>g. <span class="nv">&amp;path</span>/pdfbox-app<span class="m">-2.0.22.</span>jar
+%* Macro      : smile_replace_in_text_files
+%* Parameters : INPATH       - <span class="k">input</span> directory (no quotes)
+%*              OUTPATH      - <span class="k">output</span> directory, <span class="k">if</span> same <span class="k">as</span> INPATH, files are overwritten (no quotes)
+%*              REPLACE_FROM - text which should be replaced (with quotes)
+%*              REPLACE_WITH - text that should newly be added (with quotes)
+%*              FILETYPE     - extension of <span class="k">file</span> types which should be processed, e<span class="m">.</span>g. sas <span class="k">or</span> txt (optional)
 %*
-%* Purpose    : Read PDF Bookmarks <span class="k">into</span> a SAS dataset with the variables level, <span class="k">title</span> <span class="k">and</span> <span class="k">page</span>
-%* Comment    : Make sure to download PDFBOX, e<span class="m">.</span>g. <span class="k">from</span> here https://pdfbox<span class="m">.</span>apache<span class="m">.</span>org/download<span class="m">.</span>html - the full <span class="s">&quot;app&quot;</span> version
-%* Issues     : <span class="s">&quot;unable to resolve class&quot;</span> messages mean the PDFBOX is <span class="k">not</span> provided correctly.
-%*              <span class="s">&quot;ERROR: PROCEDURE GROOVY cannot be used when SAS is in the lock down state.&quot;</span> means that your SAS environment
-%*              does <span class="k">not</span> support PROC GROOVY, for this the macro cannot run the groovy code.
+%* Purpose    : <span class="k">Replace</span> text <span class="k">from</span> all files contained <span class="k">in</span> a folder with a different text
 %*
-%* ExampleProg: ../programs/test_smile_pdf_read_bookmarks<span class="m">.</span>sas
+%* ExampleProg: ../programs/test_smile_replace_in_text_files<span class="m">.</span>sas
 %*
 %* Author     : Katja Glass
-%* Creation   : <span class="m">2021-02-13</span>
+%* Creation   : <span class="m">2021-03-05</span>
 %* License    : MIT
-%*
-%* Reference  : PDFBox contains a lot of useful functionalities (https://pdfbox<span class="m">.</span>apache<span class="m">.</span>org)
 %*
 %* SAS Version: SAS <span class="m">9.4</span>
 %*
 %************************************************************************************************************************;
 <span class="cm">/*</span>
 <span class="cm">Examples:</span>
-<span class="cm">%smile_pdf_read_bookmarks(pdfFile = &lt;path&gt;/ods_document_flat1.pdf,</span>
-<span class="cm">                         outdat = book_flat1,</span>
-<span class="cm">                         pdfbox_jar_path = &lt;path&gt;/pdfbox-app-2.0.22.jar)</span>
+<span class="cm">%* replace the default root path in all example files;</span>
+<span class="cm">%smile_replace_in_text_files(</span>
+<span class="cm">    inpath = /home/u49641771/smile/programs,</span>
+<span class="cm">    outpath = /home/u49641771/smile/programs,</span>
+<span class="cm">    replace_from = &#39;%LET root = /folders/myshortcuts/git/SMILE-SmartSASMacros;&#39;,</span>
+<span class="cm">    replace_to = &#39;%LET root = /home/u49641771/smile;&#39;);</span>
 
-<span class="cm">%smile_pdf_read_bookmarks(pdfFile = &lt;path&gt;/ods_document_noflat1.pdf,</span>
-<span class="cm">                         outdat = book_noflat1,</span>
-<span class="cm">                         pdfbox_jar_path = &lt;path&gt;/pdfbox-app-2.0.22.jar)</span>
+<span class="cm">%* replace all tabls with four spaces;</span>
+<span class="cm">%smile_replace_in_text_files(</span>
+<span class="cm">    inpath = /home/u49641771/smile/programs,</span>
+<span class="cm">    outpath = /home/u49641771/smile/programs/blub,</span>
+<span class="cm">    replace_from = &#39;09&#39;x,</span>
+<span class="cm">    replace_to = &#39;    &#39;);</span>
+
+<span class="cm">%* replace all zero numbers with x in the output;</span>
+<span class="cm">%smile_replace_in_text_files(</span>
+<span class="cm">    inpath = /home/u49641771/smile/results,</span>
+<span class="cm">    outpath = /home/u49641771/smile/results/mod,</span>
+<span class="cm">    replace_from = &#39;0&#39;,</span>
+<span class="cm">    replace_to = &#39;x&#39;,</span>
+<span class="cm">    filetype = lst);</span>
 <span class="cm">*/</span>
 %************************************************************************************************************************;
 
-<span class="nb">%MACRO</span> smile_pdf_read_bookmarks(pdfFile = , outdat = , pdfbox_jar_path = );
+<span class="nb">%MACRO</span> smile_replace_in_text_files(
+    inpath = ,
+    outpath = ,
+    replace_from = ,
+    replace_to = ,
+    filetype =
+);
 
-   <span class="nb">%LOCAL</span> jsonFile;
+    <span class="nb">%LOCAL</span> macro;
+   <span class="nb">%LET</span> macro = <span class="nv">&amp;sysmacroname</span>;
 
-   <span class="k">FILENAME</span> jsonFile TEMP;
-   <span class="nb">%LET</span> jsonFile = <span class="nb">%SYSFUNC</span>(<span class="nb">PATHNAME(</span>jsonFile));
+    <span class="nb">%IF</span> <span class="nb">%SYSFUNC</span>(<span class="nb">FILEEXIST(</span><span class="s">&quot;</span><span class="nv">&amp;inpath</span><span class="s">&quot;</span>)) &lt; <span class="m">1</span>
+    <span class="nb">%THEN</span> <span class="nb">%DO</span>;<span class="k"></span>
+<span class="k">        %PUT </span><span class="nb">%STR</span><span class="err">(ERR)</span><span class="k">OR</span><span class="err">: </span><span class="nv">&amp;macro</span><span class="err"> - INPATH folder does </span><span class="k">not</span><span class="err"> exist: </span><span class="nv">&amp;inpath.</span><span class="err">;</span>
+       <span class="nf">%RETURN</span>;
+    <span class="nb">%END</span>;
 
-   <span class="k">FILENAME</span> _rdbkpd TEMP<span class="kr">;</span>
+    <span class="nb">%IF</span> <span class="nb">%SYSFUNC</span>(<span class="nb">FILEEXIST(</span><span class="s">&quot;</span><span class="nv">&amp;outpath</span><span class="s">&quot;</span>)) &lt; <span class="m">1</span>
+    <span class="nb">%THEN</span> <span class="nb">%DO</span>;<span class="k"></span>
+<span class="k">        %PUT </span><span class="nb">%STR</span><span class="err">(ERR)</span><span class="k">OR</span><span class="err">: </span><span class="nv">&amp;macro</span><span class="err"> - OUTPATH folder does </span><span class="k">not</span><span class="err"> exist: </span><span class="nv">&amp;inpath.</span><span class="err">;</span>
+       <span class="nf">%RETURN</span>;
+    <span class="nb">%END</span>;
+
+    <span class="nb">%IF</span> <span class="nb">%LENGTH</span>(<span class="nv">&amp;replace_from</span>) = <span class="m">0</span>
+    <span class="nb">%THEN</span> <span class="nb">%DO</span>;<span class="k"></span>
+<span class="k">        %PUT </span><span class="nb">%STR</span><span class="err">(ERR)</span><span class="k">OR</span><span class="err">: </span><span class="nv">&amp;macro</span><span class="err"> - REPLACE_FROM must be provided.;</span>
+       <span class="nf">%RETURN</span>;
+    <span class="nb">%END</span>;
+
+    <span class="nb">%IF</span> <span class="nb">%LENGTH</span>(<span class="nv">&amp;replace_to</span>) = <span class="m">0</span>
+    <span class="nb">%THEN</span> <span class="nb">%DO</span>;<span class="k"></span>
+<span class="k">        %PUT </span><span class="nb">%STR</span><span class="err">(ERR)</span><span class="k">OR</span><span class="err">: </span><span class="nv">&amp;macro</span><span class="err"> - REPLACE_FROM must be provided.;</span>
+       <span class="nf">%RETURN</span>;
+    <span class="nb">%END</span>;
+
+    %* read all files (ignore those without dot (folders));
+    <span class="k">FILENAME</span> myPath <span class="s">&quot;</span><span class="nv">&amp;inpath</span><span class="s">&quot;</span><span class="kr">;  </span>
+<span class="kr">    DATA </span>_dir (<span class="k">KEEP</span>=<span class="k">filename</span>);
+        <span class="k">ATTRIB</span> <span class="k">filename</span> <span class="k">FORMAT</span>=$<span class="m">200</span>.;
+        <span class="k">list</span> = <span class="nb">DOPEN(</span><span class="s">&#39;myPath&#39;</span>);
+        <span class="k">IF</span> <span class="k">list</span> &gt; <span class="m">0</span>
+        <span class="k">THEN</span> <span class="k">DO</span>;
+            <span class="k">DO</span> i = <span class="m">1</span> to <span class="nb">dnum(</span><span class="k">list</span>);
+            <span class="k">filename</span> = <span class="nb">TRIM(DREAD(</span><span class="k">list</span>,i));
+            <span class="nb">%IF</span> <span class="nb">%LENGTH</span>(<span class="nv">&amp;filetype</span>) &gt; <span class="m">0</span>
+            <span class="nb">%THEN</span> <span class="nb">%DO</span>;
+                <span class="k">IF</span> <span class="k">INDEX</span>(<span class="nb">UPCASE(</span><span class="k">filename</span>),<span class="s">&quot;%UPCASE(.</span><span class="nv">&amp;filetype</span><span class="s">)&quot;</span>) &gt; <span class="m">0</span>
+                    <span class="k">THEN</span> <span class="k">OUTPUT</span>;
+            <span class="nb">%END</span>;
+            <span class="nb">%ELSE</span> <span class="nb">%DO</span>;
+                <span class="k">IF</span> <span class="k">INDEX</span>(<span class="k">filename</span>,<span class="s">&quot;.&quot;</span>) &gt; <span class="m">0</span>
+                    <span class="k">THEN</span> <span class="k">OUTPUT</span>;
+            <span class="nb">%END</span>;
+        <span class="k">END</span>;
+    <span class="k">END</span>;
+    rc = <span class="nb">CLOSE(</span><span class="k">list</span>)<span class="kr">;</span>
+<span class="kr">   RUN;</span>
+   <span class="k">FILENAME</span> myPath;
+
+   %* re-<span class="k">create</span> all files using a TRANWRD to perform replacement<span class="kr">;</span>
 <span class="kr">   DATA </span><span class="kc">_NULL_</span>;
-       <span class="k">FILE</span> _rdbkpd LRECL=<span class="m">5000</span>;<span class="k"></span>
-
-<span class="k">       PUT </span><span class="s">&#39;PROC GROOVY;&#39;</span><span class="err">;</span>
-<span class="k">       PUT </span><span class="s">&#39;    ADD CLASSPATH = &quot;&#39;</span><span class="err"> </span><span class="s">&quot;</span><span class="nv">&amp;pdfbox_jar_path</span><span class="s">&quot;</span><span class="err"> </span><span class="s">&#39;&quot;;&#39;</span><span class="err">;</span>
-<span class="k">       PUT </span><span class="s">&#39;    SUBMIT;&#39;</span><span class="err">;</span>
-<span class="k">       PUT </span><span class="err">;</span>
-<span class="k">       PUT </span><span class="s">&#39;    import java.io.File;&#39;</span><span class="err">;</span>
-<span class="k">       PUT </span><span class="s">&#39;    import java.io.FileWriter;&#39;</span><span class="err">;</span>
-<span class="k">       PUT </span><span class="s">&#39;    import java.io.IOException;&#39;</span><span class="err">;</span>
-<span class="k">       PUT </span><span class="s">&#39;    import java.io.PrintWriter;&#39;</span><span class="err">;</span>
-<span class="k">       PUT </span><span class="s">&#39;    import java.util.ArrayList;&#39;</span><span class="err">;</span>
-<span class="k">       PUT </span><span class="err">;</span>
-<span class="k">       PUT </span><span class="s">&#39;    import org.apache.pdfbox.pdmodel.PDDocument;&#39;</span><span class="err">;</span>
-<span class="k">       PUT </span><span class="s">&#39;    import org.apache.pdfbox.pdmodel.PDPage;&#39;</span><span class="err">;</span>
-<span class="k">       PUT </span><span class="s">&#39;    import org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDDocumentOutline;&#39;</span><span class="err">;</span>
-<span class="k">       PUT </span><span class="s">&#39;    import org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem;&#39;</span><span class="err">;</span>
-<span class="k">       PUT </span><span class="s">&#39;    import org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineNode;&#39;</span><span class="err">;</span>
-<span class="k">       PUT </span><span class="err">;</span>
-<span class="k">       PUT </span><span class="s">&#39;    public class PDFReadBookmarks {&#39;</span><span class="err">;</span>
-<span class="k">       PUT </span><span class="err">;</span>
-<span class="k">       PUT </span><span class="s">&#39;        public static void main(String[] args) throws IOException {&#39;</span><span class="err">;</span>
-<span class="k">       PUT </span><span class="s">&#39;            ArrayList&lt;String&gt; aBookmarks = new ArrayList&lt;String&gt;();&#39;</span><span class="err">;</span>
-<span class="k">       PUT </span><span class="err">;</span>
-<span class="k">       PUT </span><span class="s">&#39;            // Read the PDF document and investigate bookmarks into a list (JSON formatted)&#39;</span><span class="err">;</span>
-<span class="k">       PUT </span><span class="s">&#39;            PDDocument document = PDDocument.load(new File(&quot;&#39;</span><span class="err"> </span><span class="s">&quot;</span><span class="nv">&amp;pdffile</span><span class="s">&quot;</span><span class="err"> </span><span class="s">&#39;&quot;));&#39;</span><span class="err">;</span>
-<span class="k">       PUT </span><span class="s">&#39;            PDDocumentOutline outline =  document.getDocumentCatalog().getDocumentOutline();&#39;</span><span class="err">;</span>
-<span class="k">       PUT </span><span class="s">&#39;            addBookmark(aBookmarks, document, outline, 1);&#39;</span><span class="err">;</span>
-<span class="k">       PUT </span><span class="s">&#39;            document.close();&#39;</span><span class="err">;</span>
-<span class="k">       PUT </span><span class="err">;</span>
-<span class="k">       PUT </span><span class="s">&#39;            // Print bookmark information into a file&#39;</span><span class="err">;</span>
-<span class="k">       PUT </span><span class="s">&#39;            FileWriter fileWriter = new FileWriter(&quot;&#39;</span><span class="err"> </span><span class="s">&quot;</span><span class="nv">&amp;jsonFile</span><span class="s">&quot;</span><span class="err"> </span><span class="s">&#39;&quot;);&#39;</span><span class="err">;</span>
-<span class="k">       PUT </span><span class="s">&#39;            PrintWriter printWriter = new PrintWriter(fileWriter);&#39;</span><span class="err">;</span>
-<span class="k">       PUT </span><span class="s">&#39;            printWriter.print(aBookmarks);&#39;</span><span class="err">;</span>
-<span class="k">       PUT </span><span class="s">&#39;            printWriter.close();&#39;</span><span class="err">;</span>
-<span class="k">       PUT </span><span class="s">&#39;        }&#39;</span><span class="err">;</span>
-<span class="k">       PUT </span><span class="err">;</span>
-<span class="k">       PUT </span><span class="s">&#39;        static public void addBookmark(ArrayList&lt;String&gt; bookmarks, PDDocument document, PDOutlineNode bookmark, int level) throws IOException&#39;</span><span class="err">;</span>
-<span class="k">       PUT </span><span class="s">&#39;        {&#39;</span><span class="err">;</span>
-<span class="k">       PUT </span><span class="s">&#39;            PDOutlineItem current = bookmark.getFirstChild();&#39;</span><span class="err">;</span>
-<span class="k">       PUT </span><span class="s">&#39;            while (current != null)&#39;</span><span class="err">;</span>
-<span class="k">       PUT </span><span class="s">&#39;            {&#39;</span><span class="err">;</span>
-<span class="k">       PUT </span><span class="s">&#39;                PDPage currentPage = current.findDestinationPage(document);&#39;</span><span class="err">;</span>
-<span class="k">       PUT </span><span class="s">&#39;                Integer pageNumber = document.getDocumentCatalog().getPages().indexOf(currentPage) + 1;&#39;</span><span class="err">;</span>
-<span class="k">       PUT </span><span class="s">&#39;                String text = &quot;\n{</span><span class="se">\&quot;</span><span class="s">level</span><span class="se">\&quot;</span><span class="s">:&quot; + level + &quot;, </span><span class="se">\&quot;</span><span class="s">title</span><span class="se">\&quot;</span><span class="s">:</span><span class="se">\&quot;</span><span class="s">&quot; + current.getTitle() + &quot;</span><span class="se">\&quot;</span><span class="s">, </span><span class="se">\&quot;</span><span class="s">page</span><span class="se">\&quot;</span><span class="s">:&quot; + pageNumber + &quot;}&quot;;&#39;</span><span class="err">;</span>
-<span class="k">       PUT </span><span class="s">&#39;                bookmarks.add(text);&#39;</span><span class="err">;</span>
-<span class="k">       PUT </span><span class="s">&#39;                addBookmark(bookmarks, document, current, level + 1);&#39;</span><span class="err">;</span>
-<span class="k">       PUT </span><span class="s">&#39;                current = current.getNextSibling();&#39;</span><span class="err">;</span>
-<span class="k">       PUT </span><span class="s">&#39;            }&#39;</span><span class="err">;</span>
-<span class="k">       PUT </span><span class="s">&#39;        }&#39;</span><span class="err">;</span>
-<span class="k">       PUT </span><span class="s">&#39;    }&#39;</span><span class="err">;</span>
-<span class="k">       PUT </span><span class="s">&#39;ENDSUBMIT;&#39;</span><span class="err">;</span>
-<span class="k">       PUT </span><span class="s">&#39;QUIT;&#39;</span><span class="err">;</span>
-
-<span class="kr">   RUN;</span>
-   <span class="nf">%INCLUDE</span> _rdbkpd;
-
-   <span class="k">LIBNAME</span> jsonCont JSON <span class="s">&quot;</span><span class="nv">&amp;jsonFile</span><span class="s">&quot;</span><span class="kr">;</span>
-
-<span class="kr">   DATA </span><span class="nv">&amp;outdat</span>(<span class="k">DROP</span>=ordinal_root);
-       <span class="k">SET</span> jsonCont<span class="m">.</span>root<span class="kr">;</span>
+    <span class="k">SET</span> _dir;
+    <span class="k">ATTRIB</span> cmd <span class="k">FORMAT</span>=$<span class="m">1000</span>.;
+    <span class="k">ATTRIB</span> <span class="k">from</span> <span class="k">FORMAT</span>=$<span class="m">1000</span>.;
+    <span class="k">ATTRIB</span> to <span class="k">FORMAT</span>=$<span class="m">1000</span>.;
+    <span class="k">from</span> = <span class="nb">SYMGET(</span><span class="s">&#39;replace_from&#39;</span>);
+    to = <span class="nb">SYMGET(</span><span class="s">&#39;replace_to&#39;</span>);
+    %* <span class="k">create</span> three filenames (<span class="k">input</span>, <span class="k">output</span>, temporary <span class="k">in</span>-between (needed <span class="k">if</span> <span class="k">input</span>=<span class="k">output</span>));
+    <span class="k">CALL</span> EXECUTE(<span class="s">&#39;FILENAME _rep_tmp TEMP;&#39;</span>);
+    cmd = <span class="s">&quot;FILENAME _rep_in &#39;</span><span class="nv">&amp;inpath</span><span class="s">/&quot;</span> || STRIP(<span class="k">filename</span>) || <span class="s">&quot;&#39;;&quot;</span>;
+        <span class="k">CALL</span> EXECUTE(cmd);
+    cmd = <span class="s">&quot;FILENAME _rep_out &#39;</span><span class="nv">&amp;outpath</span><span class="s">/&quot;</span> || STRIP(<span class="k">filename</span>) || <span class="s">&quot;&#39;;&quot;</span>;
+        <span class="k">CALL</span> EXECUTE(cmd);
+        %* <span class="k">replace</span> texts <span class="k">and</span> <span class="k">create</span> temporary <span class="k">file</span>;
+        <span class="k">CALL</span> EXECUTE(<span class="s">&#39;DATA _NULL_;&#39;</span>);
+        <span class="k">CALL</span> EXECUTE(<span class="s">&#39;  INFILE _rep_in LRECL=2000 END=_eof;&#39;</span>);
+        <span class="k">CALL</span> EXECUTE(<span class="s">&#39;  FILE _rep_tmp LRECL=2000;&#39;</span>);
+        <span class="k">CALL</span> EXECUTE(<span class="s">&#39;  ATTRIB line FORMAT=$2000.;&#39;</span>);
+        <span class="k">CALL</span> EXECUTE(<span class="s">&#39;  INPUT;&#39;</span>);
+        <span class="k">CALL</span> EXECUTE(<span class="s">&#39;  line = _INFILE_;&#39;</span>);     
+        cmd = <span class="s">&quot;line = TRANWRD(line,&quot;</span> || STRIP(<span class="k">from</span>) || <span class="s">&quot;, &quot;</span> || STRIP(to) || <span class="s">&#39;);&#39;</span>;<span class="k"></span>
+<span class="k">        PUT </span><span class="err">cmd = ;</span>
+        <span class="k">CALL</span> EXECUTE(cmd);
+        <span class="k">CALL</span> EXECUTE(<span class="s">&#39;  IF LENGTHN(line) = 0 THEN PUT;&#39;</span>);
+        <span class="k">CALL</span> EXECUTE(<span class="s">&#39;  ELSE DO;&#39;</span>);
+        <span class="k">CALL</span> EXECUTE(<span class="s">&#39;      pos = LENGTHN(line) - LENGTHN(STRIP(line)) + 1;&#39;</span>);
+        <span class="k">CALL</span> EXECUTE(<span class="s">&#39;      PUT @pos line;&#39;</span>);
+        <span class="k">CALL</span> EXECUTE(<span class="s">&#39;  END;&#39;</span>);
+        <span class="k">CALL</span> EXECUTE(<span class="s">&#39;RUN;&#39;</span>);
+        %* store temporary <span class="k">file</span> <span class="k">as</span> final <span class="k">file</span>;
+        <span class="k">CALL</span> EXECUTE(<span class="s">&#39;DATA _NULL_;&#39;</span>);
+        <span class="k">CALL</span> EXECUTE(<span class="s">&quot;  rc=FCOPY(&#39;_rep_tmp&#39;, &#39;_rep_out&#39;);&quot;</span>);
+        <span class="k">CALL</span> EXECUTE(<span class="s">&#39;RUN;&#39;</span>)<span class="kr">;</span>
 <span class="kr">   RUN;</span>
 
-<span class="nb">%MEND</span> smile_pdf_read_bookmarks;
+<span class="kr">   PROC DATASETS </span>LIB=WORK NOLIST;
+       <span class="k">DELETE</span> _dir<span class="kr">;</span>
+<span class="kr">   RUN;</span>
+
+<span class="nb">%MEND</span> smile_replace_in_text_files;
 </code></pre></div>
 </td></tr></table>
                 
@@ -882,7 +977,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../smile_pdf_merge/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../smile_pdf_read_bookmarks/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -891,19 +986,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              smile_pdf_merge
+              smile_pdf_read_bookmarks
             </div>
           </div>
         </a>
       
       
-        <a href="../smile_replace_in_text_files/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../smile_url_check/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              smile_replace_in_text_files
+              smile_url_check
             </div>
           </div>
           <div class="md-footer__button md-icon">
