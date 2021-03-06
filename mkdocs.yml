@@ -14,6 +14,7 @@ nav:
     - smile_ods_document_flat_label: smile_ods_document_flat_label.md
     - smile_pdf_merge: smile_pdf_merge.md
     - smile_pdf_read_bookmarks: smile_pdf_read_bookmarks.md
+    - smile_replace_in_text_files: smile_replace_in_text_files.md
     - smile_url_check: smile_url_check.md
     - smile_url_download: smile_url_download.md
   - Example Programs:
@@ -23,6 +24,7 @@ nav:
     - smile_ods_document_flat_label: test_smile_ods_document_flat_label.md
     - smile_pdf_merge: test_smile_pdf_merge.md
     - smile_pdf_read_bookmarks: test_smile_pdf_read_bookmarks.md
+    - smile_smile_replace_in_text_files: test_smile_replace_in_text_files.md
     - smile_url_check: test_smile_url_check.md
 
 # Style Sheet

@@ -1,4 +1,15 @@
-# Overview
+# SMILE - Smart SAS Macros
+
+SMILE stands for <b>S</b>mart SAS <b>M</b>acros - an <b>I</b>ntuitive <b>L</b>ibrary <b>E</b>xtension
+
+The macros could easily be made available in any SAS environment with internet connection with the following two statements:
+
+```sas
+FILENAME macros URL "https://raw.githubusercontent.com/KatjaGlassConsulting/SMILE-SmartSASMacros/main/all.sas";
+%INCLUDE macros;
+```
+
+## Macro Overview
 
 The following macros are available in the SMILE - Smart SAS Macros - an Intuitive Library Extension.
  
@@ -10,6 +21,7 @@ smile_attrn |Function-style macro to return a numeric attribute of a dataset. Th
 smile_ods_document_flat_label |Flat navigation and optionally re-label navigation for ODS DOCUMENT. The navigation bookmark level is reduced to one level only. Optionally a label can be applied to all content items or the navigation label can be removed completely.
 smile_pdf_merge |Merge multiple PDF files and create one bookmark entry per PDF file with PROC GROOVY and open-source Tool PDFBox
 smile_pdf_read_bookmarks |Read PDF Bookmarks into a SAS dataset with the variables level, title and page
+smile_replace_in_text_files |Replace text from all files contained in a folder with a different text
 smile_url_check |Check existence of URL and store result in return code, information can optionally be printed to the log
 smile_url_download |Downloads a file from an URL and store it locally on OUTFILE. Additionally return code can be stored and information can optionally be printed to the log.
 
@@ -168,6 +180,32 @@ Parameter | Description
 PDFFILE |name of PDF file with bookmarks
 OUTDAT |output dataset
 PDFBOX_JAR |path and jar file name for PDFBOX open source tool, e.g. &path/pdfbox-app-2.0.22.jar
+
+<br/>
+
+
+### smile_replace_in_text_files
+
+Key | Description
+---|---
+Name |smile_replace_in_text_files
+Purpose |Replace text from all files contained in a folder with a different text
+SAS Version |SAS 9.4
+Author |Katja Glass
+Date |2021-03-05
+Example Program |../programs/test_smile_replace_in_text_files.sas
+
+********************************************
+
+The following parameters are used:
+
+Parameter | Description
+---|---
+INPATH |input directory (no quotes)
+OUTPATH |output directory, if same as INPATH, files are overwritten (no quotes)
+REPLACE_FROM |text which should be replaced (with quotes)
+REPLACE_WITH |text that should newly be added (with quotes)
+FILETYPE |extension of file types which should be processed, e.g. sas or txt (optional)
 
 <br/>
 
