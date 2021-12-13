@@ -31,13 +31,13 @@
     "release": "standard-version"
   },
   "devDependencies": {
-    "@sasjs/cli": "^2.8.0"
+    "@sasjs/cli": "^3.0.3"
   },
   "directories": {
     "doc": "docs",
     "lib": "lib"
   },
   "dependencies": {
-    "standard-version": "^9.1.1"
+    "standard-version": "^9.3.2"
   }
 }
