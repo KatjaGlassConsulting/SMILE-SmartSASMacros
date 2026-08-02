@@ -1,0 +1,12 @@
+ERROR: SMILE_ATTR_VAR - DATA (dummy) does not exist.
+ERROR: SMILE_ATTR_VAR - Variable VAR (dummy) does not exist in DATA (sashelp.class).
+ERROR: SMILE_ATTR_VAR - Invalid value for ATTRIB (dummy) - only the following are supported:
+SMILE_ATTR_VAR - VARTYPE, VARLEN, VARLABEL, VARFMT and VARINFMT
+VARTYPE for name:  C
+VARTYPE for age:   N
+VARLABEL for name: Student Name
+VARLEN for name:   8
+data does not exist:     -1
+variable does not exist: -1
+invalid attribute:       -1
+NOTE: Option OBS changed to 100.

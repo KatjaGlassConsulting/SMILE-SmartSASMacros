@@ -1,0 +1,5 @@
+
+var_name  vartype      varlabel  varlen
+--------  -------  ------------  ------
+Name      C        Student Name       8
+Age       N        Age in years       8

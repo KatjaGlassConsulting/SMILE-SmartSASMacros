@@ -1,0 +1,37 @@
+NOTE: Option OBS changed to 100.
+NOTE: Option TITLE changed to Table 2: Multiple outputs - Cars for make = Acura.
+NOTE: PROC REPORT data=sashelp.cars
+
+NOTE: PROC REPORT output 4 observations with 4 variables.
+
+NOTE: Read 4 rows from sashelp.cars.
+NOTE: Wrote (console) (4 rows, 4 columns).
+NOTE: PROC REPORT elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: ODS PDF: rendering images at 150 DPI.
+NOTE: ODS PDF: wrote report to input_pdf_merge_2.pdf.
+NOTE: Option TITLE changed to Table 3: Multiple outputs - Cars for make = BMW.
+NOTE: PROC REPORT data=sashelp.cars
+
+NOTE: PROC REPORT output 2 observations with 4 variables.
+
+NOTE: Read 2 rows from sashelp.cars.
+NOTE: Wrote (console) (2 rows, 4 columns).
+NOTE: PROC REPORT elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: ODS PDF: rendering images at 150 DPI.
+NOTE: ODS PDF: wrote report to input_pdf_merge_3.pdf.
+NOTE: Option TITLE changed to Table 4: Multiple outputs - Cars for make = Honda.
+NOTE: PROC REPORT data=sashelp.cars
+
+NOTE: PROC REPORT output 2 observations with 4 variables.
+
+NOTE: Read 2 rows from sashelp.cars.
+NOTE: Wrote (console) (2 rows, 4 columns).
+NOTE: PROC REPORT elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: ODS PDF: rendering images at 150 DPI.
+NOTE: ODS PDF: wrote report to input_pdf_merge_4.pdf.
