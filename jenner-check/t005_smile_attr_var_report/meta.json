@@ -1,0 +1,7 @@
+{
+  "bundle": "t005_smile_attr_var_report",
+  "source_file": "macros/smile_attr_var.sas",
+  "source_blob_sha": "b36cf698c6f8b57a540625dff1b7f66d14a1efca",
+  "source_commit": "42bebe10806c13083c4f0d0eb8755d9308070270",
+  "notes": "Macro definition copied verbatim from macros/smile_attr_var.sas. The repo's own test program only ever prints the macro's return values via %PUT (log output). This bundle instead collects the macro's return values for two sashelp.class variables (name, age; the same two the repo's test program uses) into a small dataset and PROC PRINTs it, so the macro's actual results are visible in the run's listing output."
+}

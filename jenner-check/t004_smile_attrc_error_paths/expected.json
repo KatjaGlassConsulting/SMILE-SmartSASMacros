@@ -1,0 +1,14 @@
+{
+  "_captured_at": "2026-08-02T09:50:00Z",
+  "_captured_run_id": "r_6ae768eb3fa34c568c585120b32247f8",
+  "status": "ok",
+  "exit_code": 0,
+  "log_contains": [
+    "ERROR: SMILE_ATTRC - DATA (sashelp.class2) does not exist.",
+    "ERROR: SMILE_ATTRC - Invalid value for ATTRIB (dummy).",
+    "invalid data:      -1",
+    "invalid attribute: -1"
+  ],
+  "log_does_not_contain": ["[JENNER-ERROR"],
+  "diagnostics": {"parse_warnings": [], "runtime_warnings": []}
+}

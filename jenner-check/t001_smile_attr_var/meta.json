@@ -1,0 +1,7 @@
+{
+  "bundle": "t001_smile_attr_var",
+  "source_file": "macros/smile_attr_var.sas, programs/test_smile_attr_var.sas",
+  "source_blob_sha": "b36cf698c6f8b57a540625dff1b7f66d14a1efca",
+  "source_commit": "42bebe10806c13083c4f0d0eb8755d9308070270",
+  "notes": "Macro definition copied verbatim from macros/smile_attr_var.sas. Caller adapted from programs/test_smile_attr_var.sas: the repo's SASAUTOS %INCLUDE setup (which points at a local checkout path) is replaced with an inline macro definition; the macro calls themselves (VARTYPE/VARLABEL/VARLEN against sashelp.class, plus the three documented error cases) are unmodified."
+}

@@ -1,0 +1,7 @@
+{
+  "bundle": "t003_example_pdf_merge_create_single_pdfs",
+  "source_file": "programs/example_pdf_merge_create_single_pdfs.sas",
+  "source_blob_sha": "f0d0af0c4cc028209b3045dba6b6ec28c1d0a2ae",
+  "source_commit": "42bebe10806c13083c4f0d0eb8755d9308070270",
+  "notes": "Adapted from programs/example_pdf_merge_create_single_pdfs.sas: (1) dropped the PROC REPORT DATA=sashelp.shoes block -- SASHELP.SHOES is not shipped in this Jenner build; (2) dropped the PROC REPORT statement-level CONTENTS=\"\" option -- confirmed as a genuine, documented-but-unimplemented parser gap, filed separately as a Jenner regression test; (3) swapped the Audi make for Honda in the loopTroughMake macro calls -- this Jenner build's sashelp.cars is a smaller curated subset with zero Audi rows. The PROC REPORT COLUMN list, WHERE= filtering, macro loop structure, and ODS PDF usage are unmodified from the repo's script."
+}

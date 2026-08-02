@@ -1,0 +1,14 @@
+{
+  "_captured_at": "2026-08-02T09:30:00Z",
+  "_captured_run_id": "r_4c5445d4db6341518a87f28acfdd6b8a",
+  "status": "ok",
+  "exit_code": 0,
+  "log_contains": [
+    "Class NOBS(1):  19",
+    "Class NLOBSF:   1",
+    "Class NVARS:    5",
+    "ERROR: SMILE_ATTRN - DATA (sashelp.class2) does not exist."
+  ],
+  "log_does_not_contain": ["[JENNER-ERROR"],
+  "diagnostics": {"parse_warnings": [], "runtime_warnings": []}
+}

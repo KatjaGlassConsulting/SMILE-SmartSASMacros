@@ -1,0 +1,12 @@
+ERROR: SMILE_ATTRN - DATA (sashelp.class2) does not exist.
+ERROR: SMILE_ATTRN - Invalid value for ATTRIB (dummy).
+Class NOBS(1):  19
+Class NOBS(2):  19
+Class NLOBS:    19
+Class NLOBSF:   1
+Class ANOBS(1): 1
+Class ANOBS(2): 1
+Class NVARS:    5
+invalid data:      -1
+invalid attribute: -1
+NOTE: Option OBS changed to 100.

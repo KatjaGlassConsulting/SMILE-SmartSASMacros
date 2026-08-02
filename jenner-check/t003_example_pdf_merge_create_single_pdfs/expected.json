@@ -1,0 +1,16 @@
+{
+  "_captured_at": "2026-08-02T09:45:00Z",
+  "_captured_run_id": "r_7b7b4783cccc4f9ca4e4c321c7b66580",
+  "status": "ok",
+  "exit_code": 0,
+  "log_contains": [
+    "NOTE: Option TITLE changed to Table 2: Multiple outputs - Cars for make = Acura.",
+    "NOTE: PROC REPORT output 4 observations with 4 variables.",
+    "NOTE: Option TITLE changed to Table 3: Multiple outputs - Cars for make = BMW.",
+    "NOTE: PROC REPORT output 2 observations with 4 variables.",
+    "NOTE: Option TITLE changed to Table 4: Multiple outputs - Cars for make = Honda.",
+    "NOTE: ODS PDF: rendering images at 150 DPI."
+  ],
+  "log_does_not_contain": ["[JENNER-ERROR"],
+  "diagnostics": {"parse_warnings": [], "runtime_warnings": []}
+}

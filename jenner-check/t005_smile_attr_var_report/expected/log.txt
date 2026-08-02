@@ -1,0 +1,11 @@
+NOTE: Option OBS changed to 100.
+NOTE: DATA var_attrs
+
+
+NOTE: Wrote var_attrs (2 rows, 4 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: PROC PRINT data=var_attrs
+
+NOTE: PROC PRINT completed: 2 observations printed, 4 variables

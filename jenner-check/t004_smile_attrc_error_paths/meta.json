@@ -1,0 +1,7 @@
+{
+  "bundle": "t004_smile_attrc_error_paths",
+  "source_file": "macros/smile_attrc.sas, programs/test_smile_attrc.sas",
+  "source_blob_sha": "4ec487d2a4aecc0da41f5a7e0e2e7f2a214e9fd5",
+  "source_commit": "42bebe10806c13083c4f0d0eb8755d9308070270",
+  "notes": "Macro definition copied verbatim from macros/smile_attrc.sas. Scoped to the macro's two parameter-validation error branches (invalid ATTRIB name; DATA that does not exist), which run correctly on Jenner. The macro's successful-lookup path depends on %SYSFUNC(ATTRC(...)), which has a known engine gap (does not resolve character attributes at macro-processing time), so that path is intentionally not exercised here. Adapted from programs/test_smile_attrc.sas Example 2: swapped the invalid-dataset call's attribute from NOBS (itself invalid for ATTRC, so the original test's two calls both hit the same 'invalid attribute' branch) to LABEL, so this bundle exercises the 'dataset does not exist' and 'invalid attribute' branches distinctly, matching the macro's documented error-handling design."
+}

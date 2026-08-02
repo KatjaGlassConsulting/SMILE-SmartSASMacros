@@ -1,0 +1,7 @@
+{
+  "bundle": "t002_smile_attrn",
+  "source_file": "macros/smile_attrn.sas, programs/test_smile_attrn.sas",
+  "source_blob_sha": "138996c5f8eeef4b89e75480ab97454ef8c06ddb",
+  "source_commit": "42bebe10806c13083c4f0d0eb8755d9308070270",
+  "notes": "Macro definition copied verbatim from macros/smile_attrn.sas. Caller adapted from programs/test_smile_attrn.sas: the repo's SASAUTOS %INCLUDE setup is replaced with an inline macro definition; the macro calls themselves (NOBS/NLOBS/NLOBSF/ANOBS/NVARS against sashelp.class, including the WHERE= dataset-option cases, plus the two documented error cases) are unmodified."
+}
